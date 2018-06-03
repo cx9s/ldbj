@@ -1,0 +1,22 @@
+{
+  "name": "Flask Heroku Project-INNOVATION",
+  "description": "Flask Heroku Project-INNOVATION",
+  "keywords": [
+    "flask",
+    "python",
+    "sample"
+  ],
+  "repository": "https://github.com/yefim/flask-heroku-sample",
+  "addons": [
+    {
+      "plan": "heroku-redis:hobby-dev",
+      "as": "REDIS"
+    },
+    {
+      "plan": "heroku-postgresql",
+      "options": {
+        "version": "9.5"
+      }
+    }
+  ]
+}
