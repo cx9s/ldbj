@@ -12,6 +12,6 @@ SECRET_KEY = 'AIzaSyAlpjgnmPOM99xvTK_KzGCvVWLMXC_MaA0'
 SQLALCHEMY_DATABASE_URI = 'sqlite:///projdb.sqlite'
 PAGESIZE = 50
 
-MONGODB_URI = 'mongodb://heroku_hs9pl7w5:i21juj3d1ct7g31ec5vp0cj8lj@ds125113.mlab.com:25113/heroku_hs9pl7w5'
+MONGODB_URI = 'mongodb://heroku_m90g1d47:cx9830918@ds147190.mlab.com:47190/heroku_m90g1d47'
 
 SECONDS = 900
