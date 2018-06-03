@@ -46,29 +46,29 @@ def main():
     with open(INPUT_FILE, 'r') as infile:
         i = 1
         for line in infile:
-            if i == 2:
+            if i == 1:
 
-                line_str = line
-                line_str = line_str.replace('\r', '').replace('\n', '')
-                column_list = line_str.split(SPLIT_FLAG)
+                line_str = line.replace('\r', '').replace('\n', '')
+                line_list = line_str.split(SPLIT_FLAG)
 
-                del column_list[0]
-                del column_list[0]
-                column_list.pop()
+                del line_list[0]
+                del line_list[0]
 
-                print(column_list)
+                print(line_list)
 
-                for k in column_list:
+                for k in line_list:
                     wrapUsers(k)
             i += 1
 
         print(resList)
 
 
+# insert mongoDB
+    """
         client = db_connection(MONGODB_URI)
         for row in resList:
-            insert_data(client, 'users', row)
-
+           insert_data(client, 'users', row)
+    """
 
     print('~~~~~~~main end~~~~~~~')
 
