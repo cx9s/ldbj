@@ -26,9 +26,9 @@ def get_all_data_from_collection(client, collection_name):
 
 
 
-def get_data_from_collection_by_year(client, collection_name, year):
+def get_user_from_collection_by_name(client, collection_name, name):
     db = client.get_default_database()
-    cursor = db[collection_name].find({"year":year})
+    cursor = db[collection_name].find({"user":name})
     ret_list = []
     for doc in cursor:
         ret_list.append(doc)
