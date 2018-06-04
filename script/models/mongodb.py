@@ -36,6 +36,16 @@ def get_user_from_collection_by_name(client, collection_name, name):
 
 
 
+def get_feeList_from_collection_by_name(client, collection_name, name):
+    db = client.get_default_database()
+    cursor = db[collection_name].find({"user":name})
+    ret_list = []
+    for doc in cursor:
+        ret_list.append(doc)
+    return ret_list
+
+
+
 def get_data_from_collection_by_country(client, collection_name, country):
     db = client.get_default_database()
     cursor = db[collection_name].find({"country":country})
