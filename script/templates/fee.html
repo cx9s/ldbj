@@ -26,11 +26,11 @@
           <li class="nav-item">
             <a class="nav-link" href="/">Home</a>
           </li>
-          <li class="nav-item active">
-            <a class="nav-link" href="#">Player<span class="sr-only">(current)</span></a>
-          </li>
           <li class="nav-item">
-            <a class="nav-link" href="/fee">Fee</a>
+            <a class="nav-link" href="/player">Player</a>
+          </li>
+          <li class="nav-item active">
+            <a class="nav-link" href="#">Fee<span class="sr-only">(current)</span></a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="#">About</a>
@@ -41,8 +41,8 @@
 
     <main>
         <section class="jumbotron">
-            <h1 class="h1" style="text-align: center;">球员信息</h1>
-            <form class="form-inline my-2 my-lg-0" action="javascript:get_user($('#uName').val());">
+            <h1 class="h1" style="text-align: center;">队费信息</h1>
+            <form class="form-inline my-2 my-lg-0" action="javascript:get_feeList($('#uName').val());">
                 <input id="uName" class="form-control mr-sm-2" style="max-width: 50%" type="text" list="playerList" placeholder="球员姓名">
                 <datalist id="playerList">
                     <!--<option value="abc"></option>-->
@@ -52,24 +52,42 @@
 
             <hr class="my-4">
 
-            <table class="table table-hover" id="playerTable">
-                <thead>
+            <table class="table" id="total" style="display: none;">
+                <tbody>
                     <tr>
-                        <th scope="col">姓名</th>
-                        <th scope="col">号码</th>
-                        <th scope="col">生日</th>
-                        <th scope="col">位置</th>
+                        <th scope="row" id="total_name"></th>
+                        <td>结余：<span class="" id="total_amount"></span></td>
                     </tr>
-                </thead>
+                </tbody>
                 <tbody>
                     <!--<tr class="table-dark">
-                        <th scope="row">Dark</th>
                         <td>Column content</td>
                         <td>Column content</td>
                         <td>Column content</td>
                     </tr>
                     <tr class="table-light">
-                        <th scope="row">Light</th>
+                        <td>Column content</td>
+                        <td>Column content</td>
+                        <td>Column content</td>
+                    </tr>-->
+                </tbody>
+            </table>
+
+            <table class="table table-hover" id="feeTable">
+                <thead>
+                    <tr>
+                        <th scope="col">日期</th>
+                        <th scope="col">场地</th>
+                        <th scope="col">费用</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!--<tr class="table-dark">
+                        <td>Column content</td>
+                        <td>Column content</td>
+                        <td>Column content</td>
+                    </tr>
+                    <tr class="table-light">
                         <td>Column content</td>
                         <td>Column content</td>
                         <td>Column content</td>
@@ -106,13 +124,32 @@ $(function(){
 });
 
 //get a user details
-function get_user(name) {
+function get_feeList(name) {
 	$.ajax({
-        url: "/api/get_user_by_name?n=" + name,
+        url: "/api/get_feeList_by_name?n=" + name,
         type: "GET",
         dataType: "json",
         success: function (data) {
-            $('#playerTable').find('tbody').html(data);
+            var total = 0;
+            var res_str = '';
+            for( var i = 0; i < data.length; i++){
+                if(data[i].amount >= 0){
+                    res_str = res_str + '<tr class="table-success"><td>' + data[i].date + '</td><td>' + data[i].loc + '</td><td>' + data[i].amount + '</td></tr>'
+                } else {
+                    res_str = res_str + '<tr class="table-warning"><td>' + data[i].date + '</td><td>' + data[i].loc + '</td><td>' + data[i].amount + '</td></tr>'
+                }
+                total = total + data[i].amount;
+            }
+            $('#total_name').html(data[0].user);
+            $('#total_amount').html(total);
+            $('#total').show();
+            if (total >=0 ){
+                $('#total').addClass('table-info');
+            }
+            if (total < 0){
+                $('#total').addClass('table-danger');
+            }
+            $('#feeTable').find('tbody').html(res_str);
         },
         error: function (response, status, error) {
             console.log('Error: ' + error + ". Status: " + status);

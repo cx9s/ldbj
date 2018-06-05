@@ -9,8 +9,12 @@ def index():
     return render_template('index.html')
 
 @main.route('/player')
-def year():
+def player():
     return render_template('player.html')
+
+@main.route('/fee')
+def fee():
+    return render_template('fee.html')
 
 @main.route('/ping')
 def ping():
