@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>绿动北京足球俱乐部</title>
+    <meta name="author" content="cx9">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no"">
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <![endif]-->
+    <!-- Bootstrap CSS (bootswatch) -->
+    <link href="https://stackpath.bootstrapcdn.com/bootswatch/4.1.1/spacelab/bootstrap.min.css" rel="stylesheet" integrity="sha384-TgQmpeh1IG9vQ1WxIzpdfm5FX08N4+Nr5uzpgqvZAKQwWems+NIMmOVIMFxGq6EZ" crossorigin="anonymous">
+
+</head>
+</head>
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <a class="navbar-brand" href="/">绿动北京足球俱乐部</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor03" aria-controls="navbarColor03" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarColor03">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="/">Home</a>
+          </li>
+          <li class="nav-item active">
+            <a class="nav-link" href="/player">Player<span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Fee</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">About</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+    <main>
+        <section class="section">
+            <h1 class="h1">球员信息</h1>
+            <form class="form-inline my-2 my-lg-0" action="javascript:get_user($('#uName').val());">
+                <input id="uName" class="form-control mr-sm-2" type="text" placeholder="球员姓名">
+                <button class="btn btn-secondary my-2 my-sm-0" type="submit">Search</button>
+            </form>
+
+            <table class="table table-hover" id="playerList">
+                <thead>
+                    <tr>
+                        <th scope="col">Type</th>
+                        <th scope="col">Column heading</th>
+                        <th scope="col">Column heading</th>
+                        <th scope="col">Column heading</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="table-dark">
+                        <th scope="row">姓名</th>
+                        <td>号码</td>
+                        <td>生日</td>
+                        <td>位置</td>
+                    </tr>
+                    <!--<tr class="table-light">
+                        <th scope="row">Light</th>
+                        <td>Column content</td>
+                        <td>Column content</td>
+                        <td>Column content</td>
+                    </tr>-->
+                </tbody>
+            </table>
+        </section>
+
+    </main>
+
+<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+<!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script> -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
+
+
+<script language="JavaScript" type="application/javascript">
+
+//get a user details
+function get_user(name) {
+	$.ajax({
+        url: "/api/get_user_by_name?n=" + name,
+        type: "GET",
+        dataType: "json",
+        success: function (data) {
+            $('#playerList').html(data);
+        },
+        error: function (response, status, error) {
+            console.log('Error: ' + error + ". Status: " + status);
+        },
+        async: false
+	});
+}
+
+</script>
+</body>
+</html>

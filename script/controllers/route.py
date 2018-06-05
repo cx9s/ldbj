@@ -8,9 +8,9 @@ from . import main
 def index():
     return render_template('index.html')
 
-@main.route('/activity')
+@main.route('/player')
 def year():
-    return render_template('activity.html')
+    return render_template('player.html')
 
 @main.route('/ping')
 def ping():
