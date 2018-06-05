@@ -56,55 +56,5 @@
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
-
-<script language="JavaScript" type="application/javascript">
-    $('#uSubmit').click(function () {
-        get_user($('#uName').val());
-        get_feeList($('#uName').val());
-    });
-
-//get a user details
-function get_user(name) {
-	$.ajax({
-        url: "/api/get_user_by_name?n=" + name,
-        type: "GET",
-        dataType: "json",
-        success: function (data) {
-            $('#detail').html(JSON.stringify(data));
-        },
-        error: function (response, status, error) {
-            console.log('Error: ' + error + ". Status: " + status);
-        },
-        async: false
-	});
-}
-
-
-function get_feeList(name) {
-	$.ajax({
-        url: "/api/get_feeList_by_name?n=" + name,
-        type: "GET",
-        dataType: "json",
-        success: function (data) {
-            var rowStr = '<table>';
-            for (var i=0; i < data.length; i++){
-                var row = data[i];
-                var user = row.user;
-                var date = row.date;
-                var loc = row.loc;
-                var amount = row.amount;
-                rowStr = rowStr + '<tr><td>' + user + '</td><td>' + date + '</td><td>' + loc + '</td><td>' + amount + '</td></tr>';
-            }
-            rowStr = rowStr + '</table>'
-            $('#feeList').html(rowStr);
-        },
-        error: function (response, status, error) {
-            console.log('Error: ' + error + ". Status: " + status);
-        },
-        async: false
-	});
-}
-
-</script>
 </body>
 </html>

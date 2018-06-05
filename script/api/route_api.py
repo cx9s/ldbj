@@ -11,11 +11,7 @@ def get_name_list():
     collection_name = 'users'
     client = db_connection(MONGODB_URI)
     res_list = get_name_list_from_collection(client, collection_name)
-
-    res_str = '';
-    for row in res_list:
-        res_str = res_str + '<option value="' + row + '"></option>'
-    return jsonify(res_str)
+    return jsonify(res_list)
 
 
 @api.route('/get_user_by_name')

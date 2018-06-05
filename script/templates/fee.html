@@ -42,12 +42,15 @@
     <main>
         <section class="jumbotron">
             <h1 class="h1" style="text-align: center;">队费信息</h1>
-            <form class="form-inline my-2 my-lg-0" action="javascript:get_feeList($('#uName').val());">
-                <input id="uName" class="form-control mr-sm-2" style="max-width: 50%" type="text" list="playerList" placeholder="球员姓名">
-                <datalist id="playerList">
-                    <!--<option value="abc"></option>-->
-                </datalist>
+            <form class="form-inline my-2 my-lg-0" action="javascript:get_feeList($('#playerList').val());">
+                <div class="form-group">
+                <select class="custom-select" id="playerList">
+                    <option selected="" value="">选择球员</option>
+                    <!--<option value="陈譞">陈譞</option>-->
+                </select>
+
                 <button class="btn btn-secondary my-2 my-sm-0" type="submit">Search</button>
+</div>
             </form>
 
             <hr class="my-4">
@@ -114,7 +117,11 @@ $(function(){
         type: "GET",
         dataType: "json",
         success: function (data) {
-            $('#playerList').html(data);
+            var res_str = '';
+            for (var i = 0; i < data.length; i++) {
+                res_str = res_str + '<option value="' + data[i] + '">' + data[i] + '</option>'
+            }
+            $('#playerList').append(res_str);
         },
         error: function (response, status, error) {
             console.log('Error: ' + error + ". Status: " + status);
@@ -125,37 +132,40 @@ $(function(){
 
 //get a user details
 function get_feeList(name) {
-	$.ajax({
-        url: "/api/get_feeList_by_name?n=" + name,
-        type: "GET",
-        dataType: "json",
-        success: function (data) {
-            var total = 0;
-            var res_str = '';
-            for( var i = 0; i < data.length; i++){
-                if(data[i].amount >= 0){
-                    res_str = res_str + '<tr class="table-success"><td>' + data[i].date + '</td><td>' + data[i].loc + '</td><td>' + data[i].amount + '</td></tr>'
-                } else {
-                    res_str = res_str + '<tr class="table-warning"><td>' + data[i].date + '</td><td>' + data[i].loc + '</td><td>' + data[i].amount + '</td></tr>'
+    if ( name && name != '') {
+        $.ajax({
+            url: "/api/get_feeList_by_name?n=" + name,
+            type: "GET",
+            dataType: "json",
+            success: function (data) {
+                var total = 0;
+                var res_str = '';
+                for (var i = 0; i < data.length; i++) {
+                    if (data[i].amount >= 0) {
+                        res_str = res_str + '<tr class="table-success"><td>' + data[i].date + '</td><td>' + data[i].loc + '</td><td>' + data[i].amount + '</td></tr>'
+                    } else {
+                        res_str = res_str + '<tr class="table-warning"><td>' + data[i].date + '</td><td>' + data[i].loc + '</td><td>' + data[i].amount + '</td></tr>'
+                    }
+                    total = total + data[i].amount;
                 }
-                total = total + data[i].amount;
-            }
-            $('#total_name').html(data[0].user);
-            $('#total_amount').html(total);
-            $('#total').show();
-            if (total >=0 ){
-                $('#total').addClass('table-info');
-            }
-            if (total < 0){
-                $('#total').addClass('table-danger');
-            }
-            $('#feeTable').find('tbody').html(res_str);
-        },
-        error: function (response, status, error) {
-            console.log('Error: ' + error + ". Status: " + status);
-        },
-        async: false
-	});
+                $('#total_name').html(data[0].user);
+                $('#total_amount').html(total);
+                $('#total').removeClass('table-info').removeClass('table-danger')
+                if (total >= 0) {
+                    $('#total').addClass('table-info');
+                }
+                if (total < 0) {
+                    $('#total').addClass('table-danger');
+                }
+                $('#total').show();
+                $('#feeTable').find('tbody').html(res_str);
+            },
+            error: function (response, status, error) {
+                console.log('Error: ' + error + ". Status: " + status);
+            },
+            async: false
+        });
+    }
 }
 
 </script>

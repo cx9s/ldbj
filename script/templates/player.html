@@ -96,7 +96,11 @@ $(function(){
         type: "GET",
         dataType: "json",
         success: function (data) {
-            $('#playerList').html(data);
+            var res_str = '';
+            for (var i = 0; i < data.length; i++) {
+                res_str = res_str + '<option value="' + data[i] + '"></option>'
+            }
+            $('#playerList').html(res_str);
         },
         error: function (response, status, error) {
             console.log('Error: ' + error + ". Status: " + status);
