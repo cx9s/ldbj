@@ -116,7 +116,24 @@ function get_user(name) {
         type: "GET",
         dataType: "json",
         success: function (data) {
-            $('#playerTable').find('tbody').html(data);
+
+            var res_str = '';
+            var colorClass = 'table-dark';
+            for(var i = 0; i < data.length; i++) {
+                if (i%2 === 0) {
+                    colorClass = 'table-success';
+                }
+                else {
+                    colorClass = 'table-light';
+                }
+                var pos_str = '';
+                for (var j = 0; j < data[i].position.length; j++) {
+                    pos_str = pos_str + '<span class="badge badge-primary">' + data[i].position[j] + '</span>'
+                }
+                res_str = res_str + '<tr class="' + colorClass + '"><th scope="row">' + data[i].user + '</th><td>' + data[i].num + '</td><td>' + data[i].dob + '</td><td>' + pos_str + '</td></tr>'
+            }
+
+            $('#playerTable').find('tbody').html(res_str);
         },
         error: function (response, status, error) {
             console.log('Error: ' + error + ". Status: " + status);

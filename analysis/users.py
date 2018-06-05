@@ -4,8 +4,8 @@ json = [
        "num":"9",
        "dob":"1983-09-18",
        "position":[
-           "lwf",
-           "amf"
+           "LWF",
+           "AMF"
        ],
        "phone":13810103773,
        "addr":"远洋风景小区"
@@ -15,7 +15,7 @@ json = [
        "num":"15",
        "dob":"1985-03-15",
        "position":[
-           "lb"
+           "LB"
        ],
        "phone":13810103773,
        "addr":"远洋风景小区"

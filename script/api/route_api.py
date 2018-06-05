@@ -20,23 +20,9 @@ def get_user_by_name():
     collection_name = 'users'
     client = db_connection(MONGODB_URI)
     res_list = get_user_from_collection_by_name(client, collection_name, name)
-
-    res_str = '';
-    odd = True;
-    colorClass = 'table-dark'
     for row in res_list:
         row.__delitem__('_id')
-        pos_str = ''
-        for pos in row['position']:
-            pos_str = pos_str + '<span class="badge badge-primary">' + pos + '</span>'
-        if odd == True:
-            colorClass = 'table-success'
-            odd = False
-        else:
-            colorClass = 'table-light'
-            odd = True
-        res_str = res_str + '<tr class="' + colorClass + '"><th scope="row">' + row['user'] + '</th><td>' + str(row['num']) + '</td><td>' + row['dob'] + '</td><td>' + pos_str + '</td></tr>'
-    return jsonify(res_str)
+    return jsonify(res_list)
 
 
 @api.route('/get_feeList_by_name')
