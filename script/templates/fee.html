@@ -44,21 +44,21 @@
             <h1 class="h1" style="text-align: center;">队费信息</h1>
             <form class="form-inline my-2 my-lg-0" action="javascript:get_feeList($('#playerList').val());">
                 <div class="form-group">
-                <select class="custom-select" id="playerList">
-                    <option selected="" value="">选择球员</option>
-                    <!--<option value="陈譞">陈譞</option>-->
-                </select>
+                    <select class="custom-select form-control mr-2" style="max-width: 50%;" id="playerList">
+                        <option selected="" value="">请选择</option>
+                        <!--<option value="陈譞">陈譞</option>-->
+                    </select>
 
-                <button class="btn btn-secondary my-2 my-sm-0" type="submit">Search</button>
-</div>
+                    <button class="btn btn-secondary my-2 my-sm-0" type="submit">Search</button>
+                </div>
             </form>
 
             <hr class="my-4">
 
-            <table class="table" id="total" style="display: none;">
+            <table class="table table-info" id="total">
                 <tbody>
                     <tr>
-                        <th scope="row" id="total_name"></th>
+                        <th scope="row" id="total_name">球员</th>
                         <td>结余：<span class="" id="total_amount"></span></td>
                     </tr>
                 </tbody>
@@ -74,11 +74,6 @@
                 </thead>
                 <tbody>
                     <!--<tr class="table-dark">
-                        <td>Column content</td>
-                        <td>Column content</td>
-                        <td>Column content</td>
-                    </tr>
-                    <tr class="table-light">
                         <td>Column content</td>
                         <td>Column content</td>
                         <td>Column content</td>
@@ -145,7 +140,6 @@ function get_feeList(name) {
                 if (total < 0) {
                     $('#total').addClass('table-danger');
                 }
-                $('#total').show();
                 $('#feeTable').find('tbody').html(res_str);
             },
             error: function (response, status, error) {

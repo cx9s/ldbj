@@ -43,7 +43,7 @@
         <section class="jumbotron">
             <h1 class="h1" style="text-align: center;">球员信息</h1>
             <form class="form-inline my-2 my-lg-0" action="javascript:get_user($('#uName').val());">
-                <input id="uName" class="form-control mr-sm-2" style="max-width: 50%" type="text" list="playerList" placeholder="球员姓名">
+                <input id="uName" class="form-control mr-2" style="max-width: 50%;" type="text" list="playerList" placeholder="球员姓名">
                 <datalist id="playerList">
                     <!--<option value="abc"></option>-->
                 </datalist>
@@ -52,9 +52,9 @@
 
             <hr class="my-4">
 
-            <table class="table table-hover" id="playerTable">
+            <table class="table table-hover table-striped" id="playerTable">
                 <thead>
-                    <tr>
+                    <tr class="table-success">
                         <th scope="col">姓名</th>
                         <th scope="col">号码</th>
                         <th scope="col">生日</th>
@@ -62,14 +62,8 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <!--<tr class="table-dark">
+                    <!--<tr>
                         <th scope="row">Dark</th>
-                        <td>Column content</td>
-                        <td>Column content</td>
-                        <td>Column content</td>
-                    </tr>
-                    <tr class="table-light">
-                        <th scope="row">Light</th>
                         <td>Column content</td>
                         <td>Column content</td>
                         <td>Column content</td>
@@ -118,19 +112,12 @@ function get_user(name) {
         success: function (data) {
 
             var res_str = '';
-            var colorClass = 'table-dark';
             for(var i = 0; i < data.length; i++) {
-                if (i%2 === 0) {
-                    colorClass = 'table-success';
-                }
-                else {
-                    colorClass = 'table-light';
-                }
                 var pos_str = '';
                 for (var j = 0; j < data[i].position.length; j++) {
-                    pos_str = pos_str + '<span class="badge badge-primary">' + data[i].position[j] + '</span>'
+                    pos_str = pos_str + '<span class="badge badge-primary mr-1">' + data[i].position[j] + '</span>'
                 }
-                res_str = res_str + '<tr class="' + colorClass + '"><th scope="row">' + data[i].user + '</th><td>' + data[i].num + '</td><td>' + data[i].dob + '</td><td>' + pos_str + '</td></tr>'
+                res_str = res_str + '<tr><th scope="row">' + data[i].user + '</th><td>' + data[i].num + '</td><td>' + data[i].dob + '</td><td>' + pos_str + '</td></tr>'
             }
 
             $('#playerTable').find('tbody').html(res_str);
