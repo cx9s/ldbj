@@ -6,7 +6,8 @@ PROJECT_NAME = '绿动北京足球俱乐部'
 DEBUG = True
 
 # Cookie security key
-SECRET_KEY = 'AIzaSyAlpjgnmPOM99xvTK_KzGCvVWLMXC_MaA0'
+#SECRET_KEY = 'AIzaSyAlpjgnmPOM99xvTK_KzGCvVWLMXC_MaA0'
+SECRET_KEY = 'lvdongshiguanjun'
 
 # Use google cloud or not
 SQLALCHEMY_DATABASE_URI = 'sqlite:///projdb.sqlite'
