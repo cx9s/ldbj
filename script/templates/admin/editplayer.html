@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>绿动北京足球俱乐部</title>
+    <meta name="author" content="cx9">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no"">
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <![endif]-->
+    <!-- Bootstrap CSS (bootswatch) -->
+    <link href="https://stackpath.bootstrapcdn.com/bootswatch/4.1.1/spacelab/bootstrap.min.css" rel="stylesheet" integrity="sha384-TgQmpeh1IG9vQ1WxIzpdfm5FX08N4+Nr5uzpgqvZAKQwWems+NIMmOVIMFxGq6EZ" crossorigin="anonymous">
+
+</head>
+</head>
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <a class="navbar-brand" href="/">绿动北京足球俱乐部</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor03" aria-controls="navbarColor03" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarColor03">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="/">首页</a>
+          </li>
+          <li class="nav-item active">
+            <a class="nav-link" href="/editplayer">修改球员<span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/editfee">更新队费</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+    <main>
+        <section class="jumbotron">
+            <h1 class="h1" style="text-align: center;">修改球员信息</h1>
+            <form class="form-inline my-2 my-lg-0" action="javascript:get_user($('#playerList').val());">
+                <div class="form-group">
+                    <select class="custom-select form-control mr-2" style="max-width: 50%;" id="playerList">
+                        <option selected="" value="">请选择</option>
+                        <!--<option value="陈譞">陈譞</option>-->
+                    </select>
+
+                    <button class="btn btn-secondary my-2 my-sm-0" type="submit">Search</button>
+                </div>
+            </form>
+
+            <hr class="my-4">
+
+            <form method="post" action="api/edit_user">
+                <fieldset>
+                    <legend>全部信息</legend>
+                    <div class="form-group">
+                        <label class="col-form-label" for="user">球员姓名</label>
+                        <input type="text" class="form-control" required readonly placeholder="" id="user" name="user">
+                    </div>
+                    <div class="form-group">
+                        <label class="col-form-label" for="num">球衣号码</label>
+                        <input type="number" class="form-control" required placeholder="" min="0" id="num" name="num">
+                        <p class="text-danger">号码修改为"0"将球员下放到预备队，例"奥托"。</p>
+                    </div>
+                    <div class="form-group">
+                        <label for="pos">场上位置</label>
+                            <select multiple="true" class="form-control" id="pos" name="pos">
+                            <option value="GK">守门员</option>
+                            <option value="CB">中后卫</option>
+                            <option value="SB">边后卫</option>
+                            <option value="LB">左后卫</option>
+                            <option value="RB">右后卫</option>
+                            <option value="SMF">边前卫</option>
+                            <option value="LMF">左边前卫</option>
+                            <option value="RMF">右边前卫</option>
+                            <option value="DMF">后腰</option>
+                            <option value="CMF">中场</option>
+                            <option value="OMF">前腰</option>
+                            <option value="AMF">进攻型前卫</option>
+                            <option value="FW">前锋</option>
+                            <option value="WF">边锋</option>
+                            <option value="LWF">左边锋</option>
+                            <option value="RWF">左边锋</option>
+                            <option value="CF">中锋</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-form-label" for="dob">生日</label>
+                        <input type="text" class="form-control" placeholder="" min="0" id="dob" name="dob">
+                    </div>
+                    <div class="form-group">
+                        <label class="col-form-label" for="phone">手机号码</label>
+                        <input type="tel" class="form-control" placeholder="" id="phone" name="phone">
+                    </div>
+                    <div class="form-group">
+                        <label for="email">邮箱</label>
+                        <input type="email" class="form-control" id="email" name="email" aria-describedby="emailHelp" placeholder="">
+                        <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-form-label" for="addr">地址</label>
+                        <input type="text" class="form-control" placeholder="" id="addr" name="addr">
+                    </div>
+                    <button type="submit" class="btn btn-primary">确认修改</button>
+                </fieldset>
+            </form>
+
+
+        </section>
+
+    </main>
+
+<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+<!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script> -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
+
+
+<script language="JavaScript" type="application/javascript">
+
+$(function(){
+    $.ajax({
+        url: "/api/get_name_list",
+        type: "GET",
+        dataType: "json",
+        success: function (data) {
+            var res_str = '';
+            for (var i in data) {
+                res_str = res_str + '<option value="' + data[i] + '">' + data[i] + '</option>'
+            }
+            $('#playerList').append(res_str);
+        },
+        error: function (response, status, error) {
+            console.log('Error: ' + error + ". Status: " + status);
+        },
+        async: false
+	});
+});
+
+//get a user details
+function get_user(name) {
+    if ( name && name != '') {
+        $.ajax({
+            url: "/api/get_user_detail?n=" + name,
+            type: "GET",
+            dataType: "json",
+            success: function (data) {
+                var res_user = data[0];console.log(res_user)
+                $('#user').val(res_user.user);
+                $('#num').val(res_user.num);
+
+                for (var i in res_user.position){
+                    $("#pos option").each(function(){
+                        if($(this).val() == res_user.position[i]){
+                            $(this).attr("selected",true);
+                        }
+                    });
+                }
+
+                $('#dob').val(res_user.dob);
+                $('#phone').val(res_user.phone);
+                $('#addr').val(res_user.addr);
+                $('#email').val(res_user.email);
+
+            },
+            error: function (response, status, error) {
+                console.log('Error: ' + error + ". Status: " + status);
+            },
+            async: false
+        });
+    }
+}
+
+</script>
+</body>
+</html>

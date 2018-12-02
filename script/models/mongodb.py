@@ -48,6 +48,26 @@ def get_user_from_collection_by_name(client, collection_name, name):
 
 
 
+def get_user_detail_by_name(client, collection_name, name):
+    db = client.get_default_database()
+    cursor = db[collection_name].find({'user':name})
+    ret_list = []
+    for doc in cursor:
+        ret_list.append(doc)
+    print(ret_list)
+    return ret_list
+
+
+
+def edit_user_detail_by_name(client, collection_name, name, set_json):
+    db = client.get_default_database()
+    db[collection_name].update(
+        {"user": name},
+        {"$set": set_json}
+    )
+
+
+
 def get_feeList_from_collection_by_name(client, collection_name, name):
     db = client.get_default_database()
     cursor = db[collection_name].find({"user":name}).sort([('date', -1)])

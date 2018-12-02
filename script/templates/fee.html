@@ -101,7 +101,7 @@ $(function(){
         dataType: "json",
         success: function (data) {
             var res_str = '';
-            for (var i = 0; i < data.length; i++) {
+            for (var i in data) {
                 res_str = res_str + '<option value="' + data[i] + '">' + data[i] + '</option>'
             }
             $('#playerList').append(res_str);
