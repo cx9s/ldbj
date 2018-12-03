@@ -2,12 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6bd0e57e-399c-45e0-b2d0-2eff12b1dfdb" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/script/templates/admin/editfee.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/script/api/route_api.py" afterPath="$PROJECT_DIR$/script/api/route_api.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/script/controllers/route.py" afterPath="$PROJECT_DIR$/script/controllers/route.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/script/models/mongodb.py" afterPath="$PROJECT_DIR$/script/models/mongodb.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/script/templates/admin/editplayer.html" afterPath="$PROJECT_DIR$/script/templates/admin/editplayer.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/script/templates/admin/editfee.html" afterPath="$PROJECT_DIR$/script/templates/admin/editfee.html" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -57,17 +53,17 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="editfee.html" pinned="false" current-in-tab="false">
+      <file leaf-file-name="editfee.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/script/templates/admin/editfee.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="321">
-              <caret line="67" column="56" lean-forward="false" selection-start-line="67" selection-start-column="56" selection-end-line="67" selection-end-column="56" />
+            <state relative-caret-position="292">
+              <caret line="118" column="12" lean-forward="false" selection-start-line="118" selection-start-column="12" selection-end-line="118" selection-end-column="12" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="route_api.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="route_api.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/script/api/route_api.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="223">
@@ -123,6 +119,7 @@
       <find>get_user</find>
       <find>id</find>
       <find>jsonify</find>
+      <find>playerClick</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -160,9 +157,9 @@
         <option value="$PROJECT_DIR$/script/controllers/route.py" />
         <option value="$PROJECT_DIR$/script/templates/fee.html" />
         <option value="$PROJECT_DIR$/script/templates/admin/editplayer.html" />
-        <option value="$PROJECT_DIR$/script/templates/admin/editfee.html" />
         <option value="$PROJECT_DIR$/script/models/mongodb.py" />
         <option value="$PROJECT_DIR$/script/api/route_api.py" />
+        <option value="$PROJECT_DIR$/script/templates/admin/editfee.html" />
       </list>
     </option>
   </component>
@@ -906,14 +903,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/script/templates/admin/editfee.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="321">
-          <caret line="67" column="56" lean-forward="false" selection-start-line="67" selection-start-column="56" selection-end-line="67" selection-end-column="56" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="45">
@@ -939,6 +928,14 @@
           <folding>
             <element signature="e#21#97#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/script/templates/admin/editfee.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="292">
+          <caret line="118" column="12" lean-forward="false" selection-start-line="118" selection-start-column="12" selection-end-line="118" selection-end-column="12" />
+          <folding />
         </state>
       </provider>
     </entry>

@@ -99,13 +99,25 @@ $(function(){
                 res_str = res_str + '<option value="' + data[i] + '">' + data[i] + '</option>'
             }
             $('#playerList').append(res_str);
-            playerClick();
         },
         error: function (response, status, error) {
             console.log('Error: ' + error + ". Status: " + status);
         },
         async: false
 	});
+
+
+    //set #date to today
+    var now = new Date();
+    var month = (now.getMonth() + 1);
+    var day = now.getDate();
+    if (month < 10)
+        month = "0" + month;
+    if (day < 10)
+        day = "0" + day;
+    var today = now.getFullYear() + '-' + month + '-' + day;
+    $('#date').val(today);
+
 });
 
 //playerList option click
