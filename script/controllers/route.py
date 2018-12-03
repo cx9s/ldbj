@@ -20,6 +20,10 @@ def fee():
 def editplayer():
     return render_template('admin/editplayer.html')
 
+@main.route('/editfee')
+def editfee():
+    return render_template('admin/editfee.html')
+
 @main.route('/ping')
 def ping():
     return 'ping ok!'

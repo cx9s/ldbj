@@ -1,9 +1,9 @@
 # -*-coding:utf-8-*-
-from flask import jsonify, request, url_for, json, redirect
+from flask import jsonify, request, url_for, json, redirect, render_template
 from . import api
 from script.models.mongodb import db_connection, get_all_data_from_collection, get_user_from_collection_by_name, \
     get_data_from_collection_by_country, get_feeList_from_collection_by_name, get_name_list_from_collection, \
-    get_user_detail_by_name, edit_user_detail_by_name
+    get_user_detail_by_name, edit_user_detail_by_name, edit_fee_list
 from script.config import MONGODB_URI
 
 
@@ -59,15 +59,27 @@ def edit_user():
     collection_name = 'users'
     client = db_connection(MONGODB_URI)
     edit_user_detail_by_name(client, collection_name, name, query_json)
-    return redirect(url_for('main.editplayer'))
+    return render_template('admin/editplayer.html')
 
 
-@api.route('/get_dataset_by_country')
-def get_dataset_by_country():
-    country = request.args.get('c')
-    collection_name = 'data_by_country'
+@api.route('/edit_fee', methods=['POST'])
+def edit_fee():
+    query_json = {key: dict(request.form)[key][0] for key in dict(request.form)}
+    date = query_json['date']
+    loc = query_json['loc']
+    totalAmount = int(query_json['totalAmount'])
+    playerList=request.form.getlist('playerList')
+
+    i = len(playerList)
+    amount = round(totalAmount/i,1)
+    insert_json = []
+
+    for index, item in enumerate(playerList):
+        fee = {"user":item, "date":date, "loc":loc, "amount":amount}
+        insert_json.append(fee)
+    print(insert_json)
+
+    collection_name = 'fee'
     client = db_connection(MONGODB_URI)
-    ret_list = get_data_from_collection_by_country(client, collection_name, country)
-    for row in ret_list:
-        row.__delitem__('_id')
-    return jsonify(ret_list=ret_list)
+    edit_fee_list(client, collection_name, insert_json)
+    return render_template('admin/editfee.html')

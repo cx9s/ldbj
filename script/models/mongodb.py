@@ -68,6 +68,12 @@ def edit_user_detail_by_name(client, collection_name, name, set_json):
 
 
 
+def edit_fee_list(client, collection_name, insert_json):
+    db = client.get_default_database()
+    db[collection_name].insert(insert_json)
+
+
+
 def get_feeList_from_collection_by_name(client, collection_name, name):
     db = client.get_default_database()
     cursor = db[collection_name].find({"user":name}).sort([('date', -1)])

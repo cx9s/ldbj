@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>绿动北京足球俱乐部</title>
+    <meta name="author" content="cx9">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no"">
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <![endif]-->
+    <!-- Bootstrap CSS (bootswatch) -->
+    <link href="https://stackpath.bootstrapcdn.com/bootswatch/4.1.1/spacelab/bootstrap.min.css" rel="stylesheet" integrity="sha384-TgQmpeh1IG9vQ1WxIzpdfm5FX08N4+Nr5uzpgqvZAKQwWems+NIMmOVIMFxGq6EZ" crossorigin="anonymous">
+
+</head>
+</head>
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <a class="navbar-brand" href="/">绿动北京足球俱乐部</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor03" aria-controls="navbarColor03" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarColor03">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="/">首页</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/editplayer">修改球员</a>
+          </li>
+          <li class="nav-item active">
+            <a class="nav-link" href="#">更新队费<span class="sr-only">(current)</span></a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+    <main>
+        <section class="jumbotron">
+            <h1 class="h1" style="text-align: center;">更新球队费用</h1>
+
+            <hr class="my-4">
+
+            <form method="post" action="api/edit_fee">
+                <fieldset>
+                    <legend>活动扣款/征收队费</legend>
+                    <div class="form-group">
+                        <label class="col-form-label" for="date">活动日期</label>
+                        <input type="date" class="form-control" required placeholder="" min="0" id="date" name="date">
+                    </div>
+                    <div class="form-group">
+                        <label class="col-form-label" for="loc">活动地点</label>
+                        <input type="text" class="form-control" required placeholder="" id="loc" name="loc">
+                    </div>
+                    <div class="form-group">
+                        <label class="col-form-label" for="totalAmount">总金额</label>
+                        <input type="text" class="form-control" required placeholder="" id="totalAmount" name="totalAmount">
+                        <p class="text-danger">扣款填复数（-），充值填正数（+）。</p>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-form-label">选择球员</label>
+
+                        <div class="form-group">
+                            <select class="custom-select form-control mr-2" size="5" required style="max-width: 50%;" id="playerList" name="playerList" multiple>
+                                <!--<option value="陈譞">陈譞</option>-->
+                            </select>
+                        <p class="text-danger">可多选，所选队员将平分"总金额"。</p>
+                        </div>
+
+                    </div>
+                    <button type="botton" class="btn btn-primary">确认</button>
+                </fieldset>
+            </form>
+
+
+        </section>
+
+    </main>
+
+<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+<!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script> -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
+
+
+<script language="JavaScript" type="application/javascript">
+
+$(function(){
+    $.ajax({
+        url: "/api/get_name_list",
+        type: "GET",
+        dataType: "json",
+        success: function (data) {
+            var res_str = '';
+            for (var i in data) {
+                res_str = res_str + '<option value="' + data[i] + '">' + data[i] + '</option>'
+            }
+            $('#playerList').append(res_str);
+            playerClick();
+        },
+        error: function (response, status, error) {
+            console.log('Error: ' + error + ". Status: " + status);
+        },
+        async: false
+	});
+});
+
+//playerList option click
+/*function playerClick() {
+    $('#playerList option').click(function () {
+        playerToSelect(this);
+    });
+    $('#selectedList option').click(function () {
+        playerUnselect(this);
+    });
+}
+
+function playerToSelect(opt) {
+    $(opt).unbind();
+    $("#selectedList").append($(opt).attr("selected", true).click(function () {
+        playerUnselect(this);
+    }));
+}
+function playerUnselect(opt) {
+    $(opt).unbind();
+    $("#playerList").append($(opt).attr("selected", false).click(function () {
+        playerToSelect(this);
+    }));
+}*/
+
+</script>
+</body>
+</html>
