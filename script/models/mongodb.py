@@ -1,93 +1,77 @@
 import pymongo
-import json
-import re
+from script.config import MONGODB_URI
 
-
-def db_connection(mongodb_url):
-    client = pymongo.MongoClient(mongodb_url,
-                                 connectTimeoutMS=30000,
-                                 socketTimeoutMS=None,
-                                 socketKeepAlive=True)
-    return client
-
-
-def insert_data(client, collection, data):
+def connectDB():
+    client = pymongo.MongoClient(MONGODB_URI,
+                                 connectTimeoutMS = 30000,
+                                 socketTimeoutMS = None,
+                                 socketKeepAlive = True)
     db = client.get_default_database()
-    db[collection].insert_one(data)
+    return  db
 
 
+#user model
+"""
+{
+    "_id": {
+        "$oid": "5b151ad7f8f1d01911d487e4"
+    },
+    "user": "马熙",
+    "num": 81,
+    "dob": "1983-08-01",
+    "position": [],
+    "phone": 13401135828,
+    "addr": ""
+}
+"""
 
-def get_all_data_from_collection(client, collection_name):
-    db = client.get_default_database()
-    cursor = db[collection_name].find()
-    ret_list = []
-    for doc in cursor:
-        ret_list.append(doc)
-    return ret_list
+class User:
+    def __init__(self):
+        self.db = connectDB()
+        self.collection = self.db['users']
 
+    def getItems(self, itemName, sortExp):
+        cursor = self.collection.find({'num':{'$gt':0}}).sort(sortExp)
+        res_list = []
+        for item in cursor:
+            res_list.append(item[itemName])
+        return res_list
 
+    def get(self, queryExp, sortExp):
+        cursor = self.collection.find(queryExp).sort(sortExp)
+        res_list = []
+        for item in cursor:
+            res_list.append(item)
+        return res_list
 
-def get_name_list_from_collection(client, collection_name):
-    db = client.get_default_database()
-    cursor = db[collection_name].find({'num':{'$gt':0}}).sort([('num',1)])
-    ret_list = []
-    for doc in cursor:
-        ret_list.append(doc['user'])
-    return ret_list
-
-
-
-def get_user_from_collection_by_name(client, collection_name, name):
-    db = client.get_default_database()
-    cursor = db[collection_name].find({'user':re.compile(name)}).sort([('num', 1)])
-    ret_list = []
-    for doc in cursor:
-        if doc['num']>0:
-            ret_list.append(doc)
-    return ret_list
-
-
-
-def get_user_detail_by_name(client, collection_name, name):
-    db = client.get_default_database()
-    cursor = db[collection_name].find({'user':name})
-    ret_list = []
-    for doc in cursor:
-        ret_list.append(doc)
-    print(ret_list)
-    return ret_list
+    def update(self, queryExp, setExp):
+        self.collection.update(queryExp,setExp)
 
 
+#fee model
+"""
+{
+    "_id": {
+        "$oid": "5b15574c2ee2031d58849e51"
+    },
+    "user": "陈譞",
+    "date": "2012-03-10",
+    "loc": "奥林匹克森林公园",
+    "amount": 100
+}
+"""
 
-def edit_user_detail_by_name(client, collection_name, name, set_json):
-    db = client.get_default_database()
-    db[collection_name].update(
-        {"user": name},
-        {"$set": set_json}
-    )
+class Fee:
+    def __init__(self):
+        self.db = connectDB()
+        self.collection = self.db['fee']
 
+    def insert(self, insExt):
+        self.collection.insert(insExt)
 
-
-def edit_fee_list(client, collection_name, insert_json):
-    db = client.get_default_database()
-    db[collection_name].insert(insert_json)
-
-
-
-def get_feeList_from_collection_by_name(client, collection_name, name):
-    db = client.get_default_database()
-    cursor = db[collection_name].find({"user":name}).sort([('date', -1)])
-    ret_list = []
-    for doc in cursor:
-        ret_list.append(doc)
-    return ret_list
-
-
-
-def get_data_from_collection_by_country(client, collection_name, country):
-    db = client.get_default_database()
-    cursor = db[collection_name].find({"country":country})
-    ret_list = []
-    for doc in cursor:
-        ret_list.append(doc)
-    return ret_list
+    def get(self, queryExp, sortExp):
+        cursor = self.collection.find(queryExp).sort(sortExp)
+        res_list = []
+        for item in cursor:
+            res_list.append(item)
+        return res_list

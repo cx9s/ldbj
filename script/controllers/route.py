@@ -1,5 +1,4 @@
 from flask import render_template, jsonify
-from script.models.mongodb import get_all_data_from_collection
 from script.config import MONGODB_URI
 from . import main
 

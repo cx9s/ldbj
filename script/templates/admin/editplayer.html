@@ -145,7 +145,7 @@ $(function(){
 function get_user(name) {
     if ( name && name != '') {
         $.ajax({
-            url: "/api/get_user_detail?n=" + name,
+            url: "/api/get_user_by_name?n=" + name,
             type: "GET",
             dataType: "json",
             success: function (data) {
