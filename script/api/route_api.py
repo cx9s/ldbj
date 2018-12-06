@@ -1,8 +1,7 @@
 # -*-coding:utf-8-*-
-from flask import jsonify, request, url_for, json, redirect, render_template
+from flask import jsonify, request, url_for, json, redirect
 from . import api
 from script.models.mongodb import User, Fee
-from script.config import MONGODB_URI
 import re
 
 

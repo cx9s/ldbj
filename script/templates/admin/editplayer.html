@@ -1,42 +1,10 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>绿动北京足球俱乐部</title>
-    <meta name="author" content="cx9">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no"">
-    <!--[if lt IE 9]>
-    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-    <![endif]-->
-    <!-- Bootstrap CSS (bootswatch) -->
-    <link href="https://stackpath.bootstrapcdn.com/bootswatch/4.1.1/spacelab/bootstrap.min.css" rel="stylesheet" integrity="sha384-TgQmpeh1IG9vQ1WxIzpdfm5FX08N4+Nr5uzpgqvZAKQwWems+NIMmOVIMFxGq6EZ" crossorigin="anonymous">
+{% extends 'base.html' %}
+{% set active_page = 'editplayer' %}
+{% block head %} {% endblock %}
+{% block style %} {% endblock %}
 
-</head>
-</head>
-<body>
+{% block body %}
 
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-      <a class="navbar-brand" href="/">绿动北京足球俱乐部</a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor03" aria-controls="navbarColor03" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-
-      <div class="collapse navbar-collapse" id="navbarColor03">
-        <ul class="navbar-nav mr-auto">
-          <li class="nav-item">
-            <a class="nav-link" href="/">首页</a>
-          </li>
-          <li class="nav-item active">
-            <a class="nav-link" href="#">修改球员<span class="sr-only">(current)</span></a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="/editfee">更新队费</a>
-          </li>
-        </ul>
-      </div>
-    </nav>
-
-    <main>
         <section class="jumbotron">
             <h1 class="h1" style="text-align: center;">修改球员信息</h1>
             <form class="form-inline my-2 my-lg-0" action="javascript:get_user($('#playerList').val());">
@@ -66,7 +34,7 @@
                     </div>
                     <div class="form-group">
                         <label for="pos">场上位置</label>
-                            <select multiple="true" class="form-control" id="pos" name="pos">
+                            <select multiple="true" class="form-control" required id="pos" name="pos">
                             <option value="GK">守门员</option>
                             <option value="CB">中后卫</option>
                             <option value="SB">边后卫</option>
@@ -88,20 +56,20 @@
                     </div>
                     <div class="form-group">
                         <label class="col-form-label" for="dob">生日</label>
-                        <input type="text" class="form-control" placeholder="" min="0" id="dob" name="dob">
+                        <input type="date" class="form-control" required placeholder="" min="1960-01-01" max="2000-12-31" id="dob" name="dob">
                     </div>
                     <div class="form-group">
                         <label class="col-form-label" for="phone">手机号码</label>
-                        <input type="tel" class="form-control" placeholder="" id="phone" name="phone">
+                        <input type="tel" class="form-control" required placeholder="" id="phone" name="phone">
                     </div>
                     <div class="form-group">
                         <label for="email">邮箱</label>
-                        <input type="email" class="form-control" id="email" name="email" aria-describedby="emailHelp" placeholder="">
-                        <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+                        <input type="email" class="form-control" required id="email" name="email" aria-describedby="emailHelp" placeholder="">
+                        <small id="emailHelp" class="form-text text-muted">邮箱地址不会流出哦。</small>
                     </div>
                     <div class="form-group">
                         <label class="col-form-label" for="addr">地址</label>
-                        <input type="text" class="form-control" placeholder="" id="addr" name="addr">
+                        <input type="text" class="form-control" required placeholder="" id="addr" name="addr">
                     </div>
                     <button type="submit" class="btn btn-primary">确认修改</button>
                 </fieldset>
@@ -110,16 +78,9 @@
 
         </section>
 
-    </main>
+{% endblock %}
 
-<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
-<!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script> -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
-
-
+{% block jscript %}
 <script language="JavaScript" type="application/javascript">
 
 $(function(){
@@ -176,5 +137,4 @@ function get_user(name) {
 }
 
 </script>
-</body>
-</html>
+{% endblock %}
