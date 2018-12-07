@@ -71,7 +71,7 @@ $(function(){
 	});
 });
 
-//get a user details
+//get a player details
 function get_feeList(name) {
     if ( name && name != '') {
         $.ajax({
@@ -89,7 +89,7 @@ function get_feeList(name) {
                     }
                     total = total + data[i].amount;
                 }
-                $('#total_name').html(data[0].user);
+                $('#total_name').html(data[0].name);
                 $('#total_amount').html(total);
                 $('#total').removeClass('table-info').removeClass('table-danger')
                 if (total >= 0) {

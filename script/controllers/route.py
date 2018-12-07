@@ -2,11 +2,12 @@ from flask import render_template, jsonify
 from script.config import MONGODB_URI
 from . import main
 
+
 @main.route('/')
 def index():
     return render_template('index.html')
 
-@main.route('/player')
+@main.route('/playerlist')
 def player():
     return render_template('player.html')
 
@@ -25,5 +26,3 @@ def editfee():
 @main.route('/ping')
 def ping():
     return 'ping ok!'
-
-

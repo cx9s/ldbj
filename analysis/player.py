@@ -1,6 +1,6 @@
 json = [
    {
-       "user":"陈譞",
+       "name":"陈譞",
        "num":"9",
        "dob":"1983-09-18",
        "position":[
@@ -11,7 +11,7 @@ json = [
        "addr":"远洋风景小区"
    },
     {
-       "user":"石伟",
+       "name":"石伟",
        "num":"15",
        "dob":"1985-03-15",
        "position":[
@@ -24,13 +24,12 @@ json = [
 
 
 from analysis.config import SPLIT_FLAG, INPUT_FILE
-from script.config import MONGODB_URI
-from script.models.mongodb import db_connection, insert_data
+from script.models.mongodb import Player
 
 
-def wrapUsers(name):
+def wrapPlayer(name):
     record = {}
-    record['user'] = name
+    record['name'] = name
     record['num'] = 0
     record['dob'] = ""
     record['position'] = []
@@ -57,18 +56,18 @@ def main():
                 print(line_list)
 
                 for k in line_list:
-                    wrapUsers(k)
+                    wrapPlayer(k)
             i += 1
 
         print(resList)
 
 
 # insert mongoDB
-    """
-        client = db_connection(MONGODB_URI)
-        for row in resList:
-           insert_data(client, 'users', row)
-    """
+
+    player = Player()
+    for row in resList:
+       player.insert(row)
+
 
     print('~~~~~~~main end~~~~~~~')
 

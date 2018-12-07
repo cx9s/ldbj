@@ -1,22 +1,52 @@
 # -*-coding:utf-8-*-
 from flask import jsonify, request, url_for, json, redirect
 from . import api
-from script.models.mongodb import User, Fee
+from script.models.mongodb import Player, Fee
 import re
 
 
+# restful api
+
+tasks = [
+    {
+        'id': 1,
+        'title': u'Buy groceries',
+        'description': u'Milk, Cheese, Pizza, Fruit, Tylenol',
+        'done': False
+    },
+    {
+        'id': 2,
+        'title': u'Learn Python',
+        'description': u'Need to find a good Python tutorial on the web',
+        'done': False
+    }
+]
+
+@api.route('/todo/tasks', methods=['GET'])
+def get_tasks():
+    return jsonify({'tasks': tasks})
+
+
+@api.route('/users', methods=['GET'])
+def get_users():
+
+    return ''
+
+
+# restful api end
+
 @api.route('/get_name_list')
 def get_name_list():
-    user = User()
-    res_list = user.getItems('user','num')
+    player = Player()
+    res_list = player.getItems('name','num')
     return jsonify(res_list)
 
 
-@api.route('/get_user_by_name')
-def get_user_by_name():
+@api.route('/get_player_by_name')
+def get_player_by_name():
     name = request.args.get('n')
-    user = User()
-    res_list = user.get({'user':re.compile(name)}, 'num')
+    player = Player()
+    res_list = player.get({'name':re.compile(name)}, 'num')
     for row in res_list:
         row.__delitem__('_id')
     return jsonify(res_list)
@@ -28,21 +58,21 @@ def get_user_by_name():
 def get_feeList_by_name():
     name = request.args.get('n')
     fee = Fee()
-    res_list = fee.get({"user":name}, [('date', -1)])
+    res_list = fee.get({"name":name}, [('date', -1)])
     for row in res_list:
         row.__delitem__('_id')
     return jsonify(res_list)
 
 
-@api.route('/edit_user', methods=['POST'])
-def edit_user():
+@api.route('/edit_player', methods=['POST'])
+def edit_player():
     query_json = {key: dict(request.form)[key][0] for key in dict(request.form)}
-    name = query_json['user']
+    name = query_json['name']
     query_json['num'] = int(query_json['num'])
     query_json['phone'] = int(query_json['phone'])
 
-    user = User()
-    user.update({'user': name}, {'$set': query_json})
+    player = Player()
+    player.update({'name': name}, {'$set': query_json})
 
     return redirect("/editplayer")
 
@@ -60,7 +90,7 @@ def edit_fee():
     insert_json = []
 
     for index, item in enumerate(playerList):
-        fee = {"user":item, "date":date, "loc":loc, "amount":amount}
+        fee = {"name":item, "date":date, "loc":loc, "amount":amount}
         insert_json.append(fee)
 
     fee = Fee()

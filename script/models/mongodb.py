@@ -10,13 +10,13 @@ def connectDB():
     return  db
 
 
-#user model
+#player model
 """
 {
     "_id": {
         "$oid": "5b151ad7f8f1d01911d487e4"
     },
-    "user": "马熙",
+    "name": "马熙",
     "num": 81,
     "dob": "1983-08-01",
     "position": [],
@@ -25,10 +25,13 @@ def connectDB():
 }
 """
 
-class User:
+class Player:
     def __init__(self):
         self.db = connectDB()
-        self.collection = self.db['users']
+        self.collection = self.db['player']
+
+    def insert(self, insExp):
+        self.collection.insert(insExp)
 
     def getItems(self, itemName, sortExp):
         cursor = self.collection.find({'num':{'$gt':0}}).sort(sortExp)
@@ -54,7 +57,7 @@ class User:
     "_id": {
         "$oid": "5b15574c2ee2031d58849e51"
     },
-    "user": "陈譞",
+    "name": "陈譞",
     "date": "2012-03-10",
     "loc": "奥林匹克森林公园",
     "amount": 100

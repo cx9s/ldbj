@@ -1,12 +1,12 @@
 json = [
    {
-      "user":"陈譞",
+      "name":"陈譞",
       "date":"2012-03-10",
       "loc":"奥利匹克森林公园",
       "amount":100
    },
     {
-        "user": "石伟",
+        "name": "石伟",
         "date": "2012-03-10",
         "loc": "奥利匹克森林公园",
         "amount": -35
@@ -17,14 +17,14 @@ json = [
 
 from analysis.config import SPLIT_FLAG, INPUT_FILE
 from script.config import MONGODB_URI
-from script.models.mongodb import db_connection, insert_data
+from script.models.mongodb import Fee
 
 from decimal import Decimal
 
 
 def wrapFee(index, list):
     record = {}
-    record['user'] = nameList[index]
+    record['name'] = nameList[index]
     record['date'] = list[0]
     record['loc'] = list[1]
     record['amount'] = float(list[index])
@@ -63,11 +63,11 @@ def main():
 
 
 # insert mongoDB
-    """
-    client = db_connection(MONGODB_URI)
+
+    fee = Fee()
     for row in resList:
-        insert_data(client, 'fee', row)
-    """
+        fee.insert(row)
+
 
     print('~~~~~~~main end~~~~~~~')
 

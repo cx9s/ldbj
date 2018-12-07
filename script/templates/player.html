@@ -6,7 +6,7 @@
 {% block body %}
         <section class="jumbotron">
             <h1 class="h1" style="text-align: center;">球员信息</h1>
-            <form class="form-inline my-2 my-lg-0" action="javascript:get_user($('#uName').val());">
+            <form class="form-inline my-2 my-lg-0" action="javascript:get_player($('#uName').val());">
                 <input id="uName" class="form-control mr-2" style="max-width: 50%;" type="text" list="playerList" placeholder="球员姓名">
                 <datalist id="playerList">
                     <!--<option value="abc"></option>-->
@@ -59,10 +59,10 @@ $(function(){
 	});
 });
 
-//get a user details
-function get_user(name) {
+//get a player details
+function get_player(name) {
 	$.ajax({
-        url: "/api/get_user_by_name?n=" + name,
+        url: "/api/get_player_by_name?n=" + name,
         type: "GET",
         dataType: "json",
         success: function (data) {
@@ -73,7 +73,7 @@ function get_user(name) {
                 for (var j = 0; j < data[i].position.length; j++) {
                     pos_str = pos_str + '<span class="badge badge-primary mr-1">' + data[i].position[j] + '</span>'
                 }
-                res_str = res_str + '<tr><th scope="row">' + data[i].user + '</th><td>' + data[i].num + '</td><td>' + data[i].dob + '</td><td>' + pos_str + '</td></tr>'
+                res_str = res_str + '<tr><th scope="row">' + data[i].name + '</th><td>' + data[i].num + '</td><td>' + data[i].dob + '</td><td>' + pos_str + '</td></tr>'
             }
 
             $('#playerTable').find('tbody').html(res_str);

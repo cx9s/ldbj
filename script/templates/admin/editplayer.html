@@ -7,7 +7,7 @@
 
         <section class="jumbotron">
             <h1 class="h1" style="text-align: center;">修改球员信息</h1>
-            <form class="form-inline my-2 my-lg-0" action="javascript:get_user($('#playerList').val());">
+            <form class="form-inline my-2 my-lg-0" action="javascript:get_player($('#playerList').val());">
                 <div class="form-group">
                     <select class="custom-select form-control mr-2" style="max-width: 50%;" id="playerList">
                         <option selected="" value="">请选择</option>
@@ -20,12 +20,12 @@
 
             <hr class="my-4">
 
-            <form method="post" action="api/edit_user">
+            <form method="post" action="api/edit_player">
                 <fieldset>
                     <legend>全部信息</legend>
                     <div class="form-group">
-                        <label class="col-form-label" for="user">球员姓名</label>
-                        <input type="text" class="form-control" required readonly placeholder="" id="user" name="user">
+                        <label class="col-form-label" for="name">球员姓名</label>
+                        <input type="text" class="form-control" required readonly placeholder="" id="name" name="name">
                     </div>
                     <div class="form-group">
                         <label class="col-form-label" for="num">球衣号码</label>
@@ -102,30 +102,30 @@ $(function(){
 	});
 });
 
-//get a user details
-function get_user(name) {
+//get a player details
+function get_player(name) {
     if ( name && name != '') {
         $.ajax({
-            url: "/api/get_user_by_name?n=" + name,
+            url: "/api/get_player_by_name?n=" + name,
             type: "GET",
             dataType: "json",
             success: function (data) {
-                var res_user = data[0];console.log(res_user)
-                $('#user').val(res_user.user);
-                $('#num').val(res_user.num);
+                var res_player = data[0];console.log(res_player)
+                $('#name').val(res_player.name);
+                $('#num').val(res_player.num);
 
-                for (var i in res_user.position){
+                for (var i in res_player.position){
                     $("#pos option").each(function(){
-                        if($(this).val() == res_user.position[i]){
+                        if($(this).val() == res_player.position[i]){
                             $(this).attr("selected",true);
                         }
                     });
                 }
 
-                $('#dob').val(res_user.dob);
-                $('#phone').val(res_user.phone);
-                $('#addr').val(res_user.addr);
-                $('#email').val(res_user.email);
+                $('#dob').val(res_player.dob);
+                $('#phone').val(res_player.phone);
+                $('#addr').val(res_player.addr);
+                $('#email').val(res_player.email);
 
             },
             error: function (response, status, error) {
