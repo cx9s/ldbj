@@ -16,6 +16,9 @@ def create_app():
     # config secret key
     app.config['SECRET_KEY'] = SECRET_KEY
 
+    #config json output encode
+    app.config['JSON_AS_ASCII'] = False
+
     # init app by mail
     mail.init_app(app)
 

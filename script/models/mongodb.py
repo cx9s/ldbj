@@ -30,8 +30,10 @@ class Player:
         self.db = connectDB()
         self.collection = self.db['player']
 
-    def insert(self, insExp):
-        self.collection.insert(insExp)
+    def insertOne(self, insExp):
+        self.collection.insert_one(insExp)
+        insExp.__delitem__('_id')
+        return insExp
 
     def getItems(self, itemName, sortExp):
         cursor = self.collection.find({'num':{'$gt':0}}).sort(sortExp)
@@ -40,7 +42,14 @@ class Player:
             res_list.append(item[itemName])
         return res_list
 
-    def get(self, queryExp, sortExp):
+    def get(self, queryExp):
+        cursor = self.collection.find(queryExp)
+        res_list = []
+        for item in cursor:
+            res_list.append(item)
+        return res_list
+
+    def getAndSort(self, queryExp, sortExp):
         cursor = self.collection.find(queryExp).sort(sortExp)
         res_list = []
         for item in cursor:
@@ -48,7 +57,10 @@ class Player:
         return res_list
 
     def update(self, queryExp, setExp):
-        self.collection.update(queryExp,setExp)
+        self.collection.update(queryExp,{'$set': setExp})
+
+    def delete(self, queryExp):
+        self.collection.remove(queryExp)
 
 
 #fee model
@@ -69,12 +81,21 @@ class Fee:
         self.db = connectDB()
         self.collection = self.db['fee']
 
-    def insert(self, insExt):
-        self.collection.insert(insExt)
+    def insert(self, insExp):
+        self.collection.insert(insExp)
+        for row in insExp:
+            row.__delitem__('_id')
+        return insExp
 
-    def get(self, queryExp, sortExp):
+    def getAndSort(self, queryExp, sortExp):
         cursor = self.collection.find(queryExp).sort(sortExp)
         res_list = []
         for item in cursor:
             res_list.append(item)
         return res_list
+
+    def update(self, queryExp, setExp):
+        self.collection.update(queryExp,{'$set': setExp})
+
+    def delete(self, queryExp):
+        self.collection.remove(queryExp)

@@ -7,7 +7,7 @@ from . import main
 def index():
     return render_template('index.html')
 
-@main.route('/playerlist')
+@main.route('/player')
 def player():
     return render_template('player.html')
 
