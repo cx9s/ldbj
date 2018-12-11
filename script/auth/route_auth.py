@@ -1,6 +1,4 @@
-from flask import request, redirect, render_template, url_for, jsonify
-from flask_login import LoginManager
-from flask_wtf.csrf import CSRFProtect
+from flask import request, redirect, render_template, url_for
 from script.models.mongodb import User
 from script.models.form import LoginForm
 from flask_login import login_user, logout_user, login_required, current_user
