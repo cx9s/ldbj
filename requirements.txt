@@ -21,3 +21,4 @@ gevent
 gunicorn
 requests
 celery
+flask-login
