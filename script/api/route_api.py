@@ -1,5 +1,5 @@
 # -*-coding:utf-8-*-
-from flask import jsonify, request, url_for, json, redirect, abort
+from flask import jsonify, request, url_for, json, redirect, abort, flash
 from . import api
 from script.models.mongodb import Player, Fee
 import re
@@ -225,6 +225,7 @@ def edit_player():
 
     player = Player()
     player.update({'name': name}, query_json)
+    flash(name+' 信息修改成功！', 'success')
     return redirect("/editplayer")
 
 
@@ -239,11 +240,14 @@ def edit_fee():
     i = len(playerList)
     amount = round(totalAmount/i)
     insExp = []
-
     for index, item in enumerate(playerList):
         fee = {"name":item, "date":date, "loc":loc, "amount":amount}
         insExp.append(fee)
 
     fee = Fee()
     data = fee.insert(insExp)
+
+    flashExp = '成功更新 '+str(i)+' 名队员费用，共计 '+str(totalAmount)+' 元！'
+    print(flashExp)
+    flash(flashExp, 'success')
     return redirect("/editfee")

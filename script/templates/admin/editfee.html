@@ -7,6 +7,14 @@
 
         <section class="jumbotron">
             <h1 class="h1" style="text-align: center;">更新球队费用</h1>
+            {% with success = get_flashed_messages(category_filter=['success']) %}
+                {% if success %}
+                    <div class="alert alert-success">
+                        <button type="button" class="close" data-dismiss="alert">&times;</button>
+                        {{ success[0] }}
+                    </div>
+                {% endif %}
+            {% endwith %}
 
             <hr class="my-4">
 
@@ -37,6 +45,7 @@
                         </div>
 
                     </div>
+                    <input type="hidden" name="csrf_token" value="{{ csrf_token() }}" />
                     <button type="botton" class="btn btn-primary">确认</button>
                 </fieldset>
             </form>

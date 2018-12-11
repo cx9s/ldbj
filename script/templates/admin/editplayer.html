@@ -7,6 +7,14 @@
 
         <section class="jumbotron">
             <h1 class="h1" style="text-align: center;">修改球员信息</h1>
+            {% with success = get_flashed_messages(category_filter=['success']) %}
+                {% if success %}
+                    <div class="alert alert-success">
+                        <button type="button" class="close" data-dismiss="alert">&times;</button>
+                        {{ success[0] }}
+                    </div>
+                {% endif %}
+            {% endwith %}
             <form class="form-inline my-2 my-lg-0" action="javascript:get_player($('#playerList').val());">
                 <div class="form-group">
                     <select class="custom-select form-control mr-2" style="max-width: 50%;" id="playerList">
@@ -71,6 +79,7 @@
                         <label class="col-form-label" for="addr">地址</label>
                         <input type="text" class="form-control" required placeholder="" id="addr" name="addr">
                     </div>
+                    <input type="hidden" name="csrf_token" value="{{ csrf_token() }}" />
                     <button type="submit" class="btn btn-primary">确认修改</button>
                 </fieldset>
             </form>
