@@ -24,23 +24,35 @@
         <span class="navbar-toggler-icon"></span>
       </button>
 
-        {% set navigation = [
+        {% if current_user.username == 'admin' %}
+            {% set navigation = [
                                 ('/', 'index', '首页'),
                                 ('/player', 'player', '球员'),
                                 ('/fee', 'fee', '队费'),
-                                ('/about', 'about', 'About'),
+                                ('/about', 'about', '关于我们'),
                                 ('/editplayer', 'editplayer', '修改球员'),
-                                ('/editfee', 'editfee', '更新队费')
-                            ] -%}
-        {% set active_page = active_page|default('index') -%}
+                                ('/editfee', 'editfee', '更新队费'),
+                                ('/auth/logout', 'logout', '退出登录'),
+                                ] -%}
 
+            {% else %}
+            {% set navigation = [
+                                ('/', 'index', '首页'),
+                                ('/player', 'player', '球员'),
+                                ('/fee', 'fee', '队费'),
+                                ('/about', 'about', '关于我们'),
+                                ('/auth/login', 'login', '管理员登录')
+                                ] -%}
+        {% endif%}
+
+        {% set active_page = active_page|default('index') -%}
       <div class="collapse navbar-collapse" id="navbarColor03">
         <ul class="navbar-nav mr-auto">
             {% for href, id, caption in navigation %}
             <li class="nav-item{%if id == active_page %} active{% endif %}">
                 <a class="nav-link" href="{{href|e}}">{{caption|e}}</a>
             </li>
-            {% endfor%}
+            {% endfor %}
         </ul>
       </div>
     </nav>

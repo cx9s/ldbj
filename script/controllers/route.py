@@ -15,6 +15,10 @@ def player():
 def fee():
     return render_template('fee.html')
 
+@main.route('/about')
+def about():
+    return render_template('about.html')
+
 @main.route('/editplayer')
 @login_required
 def editplayer():
