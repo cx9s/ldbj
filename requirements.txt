@@ -8,7 +8,7 @@ itsdangerous==0.24
 Jinja2==2.8
 MarkupSafe==0.23
 Werkzeug==0.11.10
-WTForms==1.0.5
+WTForms==2.2.1
 sqlalchemy
 flask_sqlalchemy
 PyMySQL==0.7.9
@@ -21,5 +21,5 @@ gevent
 gunicorn
 requests
 celery
-flask-login
+Flask-Login
 Flask-WTF
