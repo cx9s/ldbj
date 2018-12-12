@@ -22,7 +22,7 @@ def about():
 @main.route('/editplayer')
 @login_required
 def editplayer():
-    return render_template('admin/editplayer.html', username=current_user.username)
+    return render_template('admin/editplayer.html')
 
 @main.route('/editfee')
 @login_required

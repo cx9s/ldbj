@@ -3,9 +3,36 @@ from flask import jsonify, request, url_for, json, redirect, abort, flash
 from . import api
 from script.models.mongodb import Player, Fee
 import re
+from functools import wraps
 
 
 # restful api
+#define @requires_auth for api
+def check_auth(username, password):
+    return username == 'admin' and password == 'admin'
+
+def authenticate():
+    message = {'API': "Basic Auth."}
+    resp = jsonify(message)
+
+    resp.status_code = 401
+    resp.headers['WWW-Authenticate'] = 'Basic realm="Example"'
+
+    return resp
+
+def requires_auth(f):
+    @wraps(f)
+    def decorated(*args, **kwargs):
+        auth = request.authorization
+        if not auth:
+            return authenticate()
+
+        elif not check_auth(auth.username, auth.password):
+            return authenticate()
+        return f(*args, **kwargs)
+
+    return decorated
+
 #players
 @api.route('/players', methods = ['GET'])
 def get_players():
@@ -18,6 +45,7 @@ def get_players():
 
 
 @api.route('/players', methods=['POST'])
+@requires_auth
 def add_player():
     if not request.json or not 'name' in request.json:
         abort(400)
@@ -47,6 +75,7 @@ def get_player(pName):
 
 
 @api.route('/players/<string:pName>', methods=['PUT'])
+@requires_auth
 def update_player(pName):
     player = Player()
     res_list = player.get({'name':pName})
@@ -82,6 +111,7 @@ def update_player(pName):
 
 
 @api.route('/players/<string:pName>', methods=['DELETE'])
+@requires_auth
 def del_player(pName):
     player = Player()
     res_list = player.get({'name':pName})
@@ -113,6 +143,7 @@ def get_fees_by_name_and_date(name,date):
 
 
 @api.route('/fees', methods=['POST'])
+@requires_auth
 def add_fee():
     if not request.json:
         abort(400)
@@ -136,6 +167,7 @@ def add_fee():
 
 
 @api.route('/fees/<string:name>/<string:date>', methods=['PUT'])
+@requires_auth
 def update_fee(name, date):
     loc = request.args.get('loc')
     amount = request.args.get('amount')
@@ -168,6 +200,7 @@ def update_fee(name, date):
 
 
 @api.route('/fees/<string:name>/<string:date>', methods=['DELETE'])
+@requires_auth
 def del_fee(name, date):
     loc = request.args.get('loc')
     amount = request.args.get('amount')
@@ -198,7 +231,7 @@ def get_player_by_name():
     return jsonify(res_list)
 
 
-
+from flask_login import current_user
 
 @api.route('/get_feeList_by_name')
 def get_feeList_by_name():
@@ -212,42 +245,48 @@ def get_feeList_by_name():
 
 @api.route('/edit_player', methods=['POST'])
 def edit_player():
-    query_json = {key: dict(request.form)[key][0] for key in dict(request.form)}
-    name = query_json['name']
-    query_json['num'] = int(query_json['num'])
-    query_json['phone'] = int(query_json['phone'])
+    if current_user.is_authenticated:
+        query_json = {key: dict(request.form)[key][0] for key in dict(request.form)}
+        name = query_json['name']
+        query_json['num'] = int(query_json['num'])
+        query_json['phone'] = int(query_json['phone'])
 
-    posList = request.form.getlist('position')
-    position = []
-    for index, item in enumerate(posList):
-        position.append(item)
-    query_json['position'] = position
+        posList = request.form.getlist('position')
+        position = []
+        for index, item in enumerate(posList):
+            position.append(item)
+        query_json['position'] = position
 
-    player = Player()
-    player.update({'name': name}, query_json)
-    flash(name+' 信息修改成功！', 'success')
-    return redirect("/editplayer")
+        player = Player()
+        player.update({'name': name}, query_json)
+        flash(name+' 信息修改成功！', 'success')
+        return redirect("/editplayer")
+    else:
+        return redirect("/auth/login")
 
 
 @api.route('/edit_fee', methods=['POST'])
 def edit_fee():
-    query_json = {key: dict(request.form)[key][0] for key in dict(request.form)}
-    date = query_json['date']
-    loc = query_json['loc']
-    totalAmount = float(query_json['totalAmount'])
-    playerList=request.form.getlist('playerList')
+    if current_user.is_authenticated:
+        query_json = {key: dict(request.form)[key][0] for key in dict(request.form)}
+        date = query_json['date']
+        loc = query_json['loc']
+        totalAmount = float(query_json['totalAmount'])
+        playerList=request.form.getlist('playerList')
 
-    i = len(playerList)
-    amount = round(totalAmount/i)
-    insExp = []
-    for index, item in enumerate(playerList):
-        fee = {"name":item, "date":date, "loc":loc, "amount":amount}
-        insExp.append(fee)
+        i = len(playerList)
+        amount = round(totalAmount/i)
+        insExp = []
+        for index, item in enumerate(playerList):
+            fee = {"name":item, "date":date, "loc":loc, "amount":amount}
+            insExp.append(fee)
 
-    fee = Fee()
-    data = fee.insert(insExp)
+        fee = Fee()
+        data = fee.insert(insExp)
 
-    flashExp = '成功更新 '+str(i)+' 名队员费用，共计 '+str(totalAmount)+' 元！'
-    print(flashExp)
-    flash(flashExp, 'success')
-    return redirect("/editfee")
+        flashExp = '成功更新 '+str(i)+' 名队员费用，共计 '+str(totalAmount)+' 元！'
+        print(flashExp)
+        flash(flashExp, 'success')
+        return redirect("/editfee")
+    else:
+        return redirect("/auth/login")
