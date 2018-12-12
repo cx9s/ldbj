@@ -225,7 +225,7 @@ def get_name_list():
 def get_player_by_name():
     name = request.args.get('n')
     player = Player()
-    res_list = player.getAndSort({'name':re.compile(name)}, 'num')
+    res_list = player.getAndSort({'name':re.compile(name),'num':{'$gt':0}}, 'num')
     for row in res_list:
         row.__delitem__('_id')
     return jsonify(res_list)
