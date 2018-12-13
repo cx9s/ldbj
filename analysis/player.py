@@ -8,6 +8,7 @@ json = [
            "AMF"
        ],
        "phone":13810103773,
+       "email":"12730529@qq.com",
        "addr":"远洋风景小区"
    },
     {
@@ -18,6 +19,7 @@ json = [
            "LB"
        ],
        "phone":13810103773,
+       "email":"12730529@qq.com",
        "addr":"远洋风景小区"
    }
 ]
@@ -34,6 +36,7 @@ def wrapPlayer(name):
     record['dob'] = ""
     record['position'] = []
     record['phone'] = 0
+    record['email'] = ""
     record['addr'] = ""
     resList.append(record)
 

@@ -27,6 +27,7 @@ def connectDB():
     "dob": "1983-08-01",
     "position": [],
     "phone": 13401135828,
+    "email": 123@sina.com,
     "addr": ""
 }
 """
@@ -95,6 +96,15 @@ class Fee:
 
     def getAndSort(self, queryExp, sortExp):
         cursor = self.collection.find(queryExp).sort(sortExp)
+        res_list = []
+        for item in cursor:
+            res_list.append(item)
+        return res_list
+
+    def getNameAndTotalUndue(self):
+        group = {'_id': "$%s" % 'name','total': {'$sum': '$amount'}}
+        match = {'total': {'$lte': 0}}
+        cursor = self.collection.aggregate([{'$group': group},{'$match': match}])
         res_list = []
         for item in cursor:
             res_list.append(item)

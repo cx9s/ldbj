@@ -4,6 +4,7 @@ from . import api
 from script.models.mongodb import Player, Fee
 import re
 import functools
+from script.models.mail import sendMail
 
 
 # restful api
@@ -284,8 +285,57 @@ def edit_fee():
         data = fee.insert(insExp)
 
         flashExp = '成功更新 '+str(i)+' 名队员费用，共计 '+str(totalAmount)+' 元！'
-        print(flashExp)
+        """
+        res_list = fee.getNameAndTotalUndue()
+        if len(res_list) != 0:
+            print(res_list)
+            msgExp = []
+            msgFlash = '已向欠费队员：'
+            player = Player()
+            for item in res_list:
+                p = player.get({'name':item['_id']})
+                p = p[0].__delitem__('_id')
+                if type(p['email']) != None and p['email'] != '':
+                    msgExp.append({
+                        "subject": "队费提醒",
+                        "addr": p['email'],
+                        "msgHTML": "<p>亲爱的 "+p['name']+"，该交费了哦</p>"
+                    })
+                    msgFlash += p['name']
+            if len(msgExp) != 0:
+                print('send mail')
+                flash(msgFlash, 'success')
+            
+            msgExp = [
+                {
+                    "subject": "队费提醒",
+                    "addr": "12730529@qq.com",
+                    "msgHTML": "<h2>亲爱的 "+playerList[0]+"</h2><p>该交费了哦</p>"
+                }
+            ]
+            sendMail(msgExp)
+            """
         flash(flashExp, 'success')
         return redirect("/editfee")
     else:
         return redirect("/auth/login")
+
+
+#test sendMail()
+@api.route("/testmail")
+@requires_auth
+def testmail():
+    msgExp=[
+                {
+                    "subject":"第一封",
+                    "addr":"12730529@qq.com",
+                    "msgHTML":"<h2>h2标签内容</h2>"
+                },
+                {
+                    "subject":"第二封",
+                    "addr":"12730529@qq.com",
+                    "msgHTML":"<p>p标签里的内容<p>"
+                }
+            ]
+    sendMail(msgExp)
+    return 'success'

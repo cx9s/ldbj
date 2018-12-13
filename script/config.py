@@ -17,3 +17,16 @@ PAGESIZE = 50
 MONGODB_URI = 'mongodb://heroku_m90g1d47:jc639222qm88pkui341ek34ser@ds147190.mlab.com:47190/heroku_m90g1d47'
 
 SECONDS = 900
+
+# the flag whether open email notification
+ENABLE_MAIL_NOTICE = False
+# the host of mail server
+MAIL_SERVER = 'smtp.sina.com'
+# default sender
+MAIL_DEFAULT_SENDER = 'liqi723@sina.com'
+MAIL_USERNAME = 'liqi723@sina.com'
+# the password of default sender
+MAIL_PASSWORD = 'liqi0723'
+MAIL_PORT = 465
+MAIL_USE_TLS = False
+MAIL_USE_SSL = True

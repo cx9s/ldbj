@@ -7,8 +7,6 @@ from flask_wtf.csrf import CSRFProtect
 from script.models.mongodb import User
 from script.models.form import LoginForm
 
-mail = Mail()
-
 
 def create_app():
     app = Flask(__name__)
@@ -23,13 +21,15 @@ def create_app():
     #config json output encode
     app.config['JSON_AS_ASCII'] = False
 
-    # init app by mail
-    mail.init_app(app)
-
     # config jinja
     # app.jinja_env.variable_start_string = '(('
     # app.jinja_env.variable_end_string = '))'
     app.jinja_env.trim_blocks = True
+
+    # init app by mail
+    mail = Mail()
+    app.config.from_object(__name__)
+    mail.init_app(app)
 
     # use login_manager to manage session
     login_manager = LoginManager()
