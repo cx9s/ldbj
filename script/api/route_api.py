@@ -3,7 +3,7 @@ from flask import jsonify, request, url_for, json, redirect, abort, flash
 from . import api
 from script.models.mongodb import Player, Fee
 import re
-from functools import wraps
+import functools
 
 
 # restful api
@@ -14,14 +14,13 @@ def check_auth(username, password):
 def authenticate():
     message = {'API': "Basic Auth."}
     resp = jsonify(message)
-
     resp.status_code = 401
     resp.headers['WWW-Authenticate'] = 'Basic realm="Example"'
 
     return resp
 
 def requires_auth(f):
-    @wraps(f)
+    @functools.wraps(f)
     def decorated(*args, **kwargs):
         auth = request.authorization
         if not auth:

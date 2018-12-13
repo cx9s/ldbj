@@ -23,4 +23,3 @@ requests
 celery
 Flask-Login
 Flask-WTF
-functools
