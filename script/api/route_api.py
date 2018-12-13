@@ -246,16 +246,28 @@ def get_feeList_by_name():
 @api.route('/edit_player', methods=['POST'])
 def edit_player():
     if current_user.is_authenticated:
-        query_json = {key: dict(request.form)[key][0] for key in dict(request.form)}
-        name = query_json['name']
-        query_json['num'] = int(query_json['num'])
-        query_json['phone'] = int(query_json['phone'])
+        request_json = {key: dict(request.form)[key][0] for key in dict(request.form)}
+        query_json = {
+            "name":"",
+            "num":0,
+            "dob":"",
+            "position":[],
+            "phone":0,
+            "email":"",
+            "addr":""
+        }
+        name = request_json['name']
+        query_json['name'] = name
+        query_json['num'] = int(request_json['num'])
+        query_json['dob'] = request_json['dob']
 
         posList = request.form.getlist('position')
-        position = []
         for index, item in enumerate(posList):
-            position.append(item)
-        query_json['position'] = position
+            query_json['position'].append(item)
+
+        query_json['phone'] = int(request_json['phone'])
+        query_json['email'] = request_json['email']
+        query_json['addr'] = request_json['addr']
 
         player = Player()
         player.update({'name': name}, query_json)

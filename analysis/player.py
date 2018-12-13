@@ -1,7 +1,7 @@
 json = [
    {
        "name":"陈譞",
-       "num":"9",
+       "num":9,
        "dob":"1983-09-18",
        "position":[
            "LWF",
@@ -13,7 +13,7 @@ json = [
    },
     {
        "name":"石伟",
-       "num":"15",
+       "num":15,
        "dob":"1985-03-15",
        "position":[
            "LB"
