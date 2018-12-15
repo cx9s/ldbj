@@ -39,8 +39,6 @@ def get_players():
     if request.method == 'GET':
         player = Player()
         res_list = player.getAndSort({},'num')
-        for row in res_list:
-            row.__delitem__('_id')
         return jsonify({'players':res_list}), 200
 
 
@@ -69,8 +67,6 @@ def get_player(pName):
     res_list = player.get({'name':pName})
     if len(res_list) == 0:
         abort(404)
-    for row in res_list:
-        row.__delitem__('_id')
     return jsonify({'player':res_list[0]}), 200
 
 
@@ -81,8 +77,6 @@ def update_player(pName):
     res_list = player.get({'name':pName})
     if len(res_list) == 0:
         abort(404)
-    for row in res_list:
-        row.__delitem__('_id')
     p = res_list[0]
 
     if not request.json:
@@ -127,7 +121,6 @@ def get_fees_by_name(name):
     fee = Fee()
     res_list = fee.getAndSort({"name":name}, [('date', -1)])
     for row in res_list:
-        row.__delitem__('_id')
         row['amount'] = int(row['amount'])
     return jsonify({'fees':res_list}), 200
 
@@ -137,7 +130,6 @@ def get_fees_by_name_and_date(name,date):
     fee = Fee()
     res_list = fee.getAndSort({"name":name,"date":date}, '_id')
     for row in res_list:
-        row.__delitem__('_id')
         row['amount'] = int(row['amount'])
     return jsonify({'fees':res_list}), 200
 
@@ -176,8 +168,6 @@ def update_fee(name, date):
     res_list = fee.getAndSort(queryExp, '_id')
     if len(res_list) == 0:
         abort(404)
-    for row in res_list:
-        row.__delitem__('_id')
     f = res_list[0]
 
     if not request.json:
@@ -214,10 +204,12 @@ def del_fee(name, date):
 
 # restful api end
 
-@api.route('/get_name_list')
+@api.route('/get_name_num_list')
 def get_name_list():
     player = Player()
-    res_list = player.getItems('name','num')
+    queryExp = {'num':{'$gt':0}}
+    itemsExp = {"name":1, "num":1, "_id":0}
+    res_list = player.getItems(queryExp, itemsExp, 'num')
     return jsonify(res_list)
 
 
@@ -226,8 +218,6 @@ def get_player_by_name():
     name = request.args.get('n')
     player = Player()
     res_list = player.getAndSort({'name':re.compile(name),'num':{'$gt':0}}, 'num')
-    for row in res_list:
-        row.__delitem__('_id')
     return jsonify(res_list)
 
 
@@ -238,8 +228,6 @@ def get_feeList_by_name():
     name = request.args.get('n')
     fee = Fee()
     res_list = fee.getAndSort({"name":name}, [('date', -1)])
-    for row in res_list:
-        row.__delitem__('_id')
     return jsonify(res_list)
 
 
@@ -298,6 +286,7 @@ def edit_fee():
 
         flashExp = '成功更新 '+str(i)+' 名队员费用，共计 '+str(totalAmount)+' 元！'
         """
+        使用 $in
         res_list = fee.getNameAndTotalUndue()
         if len(res_list) != 0:
             print(res_list)
@@ -306,7 +295,7 @@ def edit_fee():
             player = Player()
             for item in res_list:
                 p = player.get({'name':item['_id']})
-                p = p[0].__delitem__('_id')
+                p = p[0]
                 if type(p['email']) != None and p['email'] != '':
                     msgExp.append({
                         "subject": "队费提醒",

@@ -2,38 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6bd0e57e-399c-45e0-b2d0-2eff12b1dfdb" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/script/static/css/bootstrap.min.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/script/static/css/ga/xtcss.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/script/static/css/jquery.fancybox.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/script/static/css/media.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/script/static/css/swiper.min.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/script/static/js/bootstrap.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/script/static/js/ga/common.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/script/static/js/ga/index.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/script/static/js/ga/news.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/script/static/js/ga/xtjs.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/script/static/js/html5shiv.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/script/static/js/jquery.fancybox.pack.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/script/static/js/jquery.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/script/static/js/pagination.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/script/static/js/respond.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/script/static/js/swiper.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/script/templates/ga/index_ga.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/script/templates/ga/template_ga.html" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/script/static/activity/data/yearDemo.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/script/static/activity/js/map.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/script/static/activity/js/map1.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/script/static/activity/js/palette.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/script/static/css/style.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/script/static/img/activities.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/script/static/img/statistics.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/script/static/js/app.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/script/static/js/d3/d3.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/script/static/js/d3/d3.layout.js" afterPath="" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/script/static/css/index.css" afterPath="$PROJECT_DIR$/script/static/css/base.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/script/api/route_api.py" afterPath="$PROJECT_DIR$/script/api/route_api.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/script/templates/base.html" afterPath="$PROJECT_DIR$/script/templates/base.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/script/models/mongodb.py" afterPath="$PROJECT_DIR$/script/models/mongodb.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/script/static/css/base.css" afterPath="$PROJECT_DIR$/script/static/css/base.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/script/templates/admin/editfee.html" afterPath="$PROJECT_DIR$/script/templates/admin/editfee.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/script/templates/admin/editplayer.html" afterPath="$PROJECT_DIR$/script/templates/admin/editplayer.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/script/templates/fee.html" afterPath="$PROJECT_DIR$/script/templates/fee.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/script/templates/index.html" afterPath="$PROJECT_DIR$/script/templates/index.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/script/templates/player.html" afterPath="$PROJECT_DIR$/script/templates/player.html" />
@@ -46,7 +20,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="CoverageDataManager">
-    <SUITE FILE_PATH="coverage/ldbj$app.coverage" NAME="app Coverage Results" MODIFIED="1544837676577" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/ldbj$app.coverage" NAME="app Coverage Results" MODIFIED="1544885397024" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/ldbj$players.coverage" NAME="player Coverage Results" MODIFIED="1544195148492" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/analysis" />
     <SUITE FILE_PATH="coverage/ldbj$fee.coverage" NAME="fee Coverage Results" MODIFIED="1544743148363" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/analysis" />
     <SUITE FILE_PATH="coverage/ldbj$users.coverage" NAME="users Coverage Results" MODIFIED="1528109782234" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/analysis" />
@@ -57,7 +31,7 @@
       <file leaf-file-name="route.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/script/controllers/route.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="495">
+            <state relative-caret-position="334">
               <caret line="33" column="21" lean-forward="false" selection-start-line="33" selection-start-column="21" selection-end-line="33" selection-end-column="21" />
               <folding>
                 <element signature="e#0#70#0" expanded="true" />
@@ -69,8 +43,18 @@
       <file leaf-file-name="player.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/script/templates/player.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="105">
-              <caret line="7" column="26" lean-forward="false" selection-start-line="7" selection-start-column="26" selection-end-line="7" selection-end-column="26" />
+            <state relative-caret-position="-184">
+              <caret line="50" column="91" lean-forward="false" selection-start-line="50" selection-start-column="91" selection-end-line="50" selection-end-column="91" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="route_api.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/script/api/route_api.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="158">
+              <caret line="218" column="21" lean-forward="true" selection-start-line="218" selection-start-column="21" selection-end-line="218" selection-end-column="21" />
               <folding />
             </state>
           </provider>
@@ -79,48 +63,38 @@
       <file leaf-file-name="fee.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/script/templates/fee.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="105">
-              <caret line="7" column="26" lean-forward="false" selection-start-line="7" selection-start-column="26" selection-end-line="7" selection-end-column="26" />
+            <state relative-caret-position="145">
+              <caret line="62" column="125" lean-forward="true" selection-start-line="62" selection-start-column="16" selection-end-line="62" selection-end-column="125" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="base.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/script/templates/base.html">
+      <file leaf-file-name="mongodb.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/script/models/mongodb.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="180">
-              <caret line="12" column="96" lean-forward="false" selection-start-line="12" selection-start-column="96" selection-end-line="12" selection-end-column="96" />
+            <state relative-caret-position="113">
+              <caret line="138" column="37" lean-forward="false" selection-start-line="138" selection-start-column="34" selection-end-line="138" selection-end-column="37" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="base.css" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/script/static/css/base.css">
+      <file leaf-file-name="editplayer.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/script/templates/admin/editplayer.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="29" lean-forward="false" selection-start-line="0" selection-start-column="29" selection-end-line="0" selection-end-column="29" />
+            <state relative-caret-position="211">
+              <caret line="136" column="50" lean-forward="false" selection-start-line="136" selection-start-column="50" selection-end-line="136" selection-end-column="50" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="editfee.html" pinned="false" current-in-tab="false">
+      <file leaf-file-name="editfee.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/script/templates/admin/editfee.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-162">
-              <caret line="4" column="0" lean-forward="true" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="index.html" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/script/templates/index.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="150">
-              <caret line="10" column="84" lean-forward="false" selection-start-line="10" selection-start-column="84" selection-end-line="10" selection-end-column="84" />
+            <state relative-caret-position="129">
+              <caret line="68" column="125" lean-forward="false" selection-start-line="68" selection-start-column="125" selection-end-line="68" selection-end-column="125" />
               <folding />
             </state>
           </provider>
@@ -141,20 +115,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>../</find>
-      <find>img/</find>
-      <find>public/</find>
-      <find>caic</find>
-      <find>images/</find>
-      <find>&quot;images/</find>
-      <find>com/images</find>
-      <find>comimages</find>
-      <find>&quot;images</find>
-      <find>img/xicon4.png</find>
-      <find>中赫国安</find>
-      <find>商城</find>
-      <find>ldL</find>
-      <find>slide1.j</find>
       <find>logo</find>
       <find>xicon_wx</find>
       <find>.xmenu .xsite .xubox</find>
@@ -171,6 +131,20 @@
       <find>backgr</find>
       <find>Logo</find>
       <find>get_name_list</find>
+      <find>get_name</find>
+      <find>player.get</find>
+      <find>player.get(</find>
+      <find>__de</find>
+      <find>getAnd</find>
+      <find>__delitem__</find>
+      <find>prin</find>
+      <find>get_n</find>
+      <find>edit</find>
+      <find>cons</find>
+      <find>get</find>
+      <find>get_player_by_name</find>
+      <find>getItems</find>
+      <find>email</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -191,8 +165,6 @@
         <option value="$PROJECT_DIR$/script/api/__init__.py" />
         <option value="$PROJECT_DIR$/script/auth/__init__.py" />
         <option value="$PROJECT_DIR$/script/templates/admin/login.html" />
-        <option value="$PROJECT_DIR$/script/templates/admin/editplayer.html" />
-        <option value="$PROJECT_DIR$/script/templates/admin/editfee.html" />
         <option value="$PROJECT_DIR$/script/auth/route_auth.py" />
         <option value="$PROJECT_DIR$/script/templates/about.html" />
         <option value="$PROJECT_DIR$/README.md" />
@@ -203,8 +175,6 @@
         <option value="$PROJECT_DIR$/script/config.py" />
         <option value="$PROJECT_DIR$/script/models/mail.py" />
         <option value="$PROJECT_DIR$/analysis/player.py" />
-        <option value="$PROJECT_DIR$/script/models/mongodb.py" />
-        <option value="$PROJECT_DIR$/script/api/route_api.py" />
         <option value="$PROJECT_DIR$/script/static/css/bootstrap.css" />
         <option value="$PROJECT_DIR$/script/static/css/swiper.min.css" />
         <option value="$PROJECT_DIR$/script/static/js/jquery.min.js" />
@@ -226,10 +196,14 @@
         <option value="$PROJECT_DIR$/script/templates/index_guoan.html" />
         <option value="$PROJECT_DIR$/script/controllers/route.py" />
         <option value="$PROJECT_DIR$/script/templates/base.html" />
-        <option value="$PROJECT_DIR$/script/templates/fee.html" />
-        <option value="$PROJECT_DIR$/script/templates/player.html" />
-        <option value="$PROJECT_DIR$/script/templates/index.html" />
         <option value="$PROJECT_DIR$/script/static/css/base.css" />
+        <option value="$PROJECT_DIR$/script/templates/index.html" />
+        <option value="$PROJECT_DIR$/script/templates/player.html" />
+        <option value="$PROJECT_DIR$/script/templates/fee.html" />
+        <option value="$PROJECT_DIR$/script/models/mongodb.py" />
+        <option value="$PROJECT_DIR$/script/api/route_api.py" />
+        <option value="$PROJECT_DIR$/script/templates/admin/editplayer.html" />
+        <option value="$PROJECT_DIR$/script/templates/admin/editfee.html" />
       </list>
     </option>
   </component>
@@ -823,26 +797,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/script/auth/route_auth.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="251">
-          <caret line="34" column="39" lean-forward="false" selection-start-line="34" selection-start-column="39" selection-end-line="34" selection-end-column="39" />
-          <folding>
-            <element signature="e#0#61#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/script/__init__.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="411">
-          <caret line="49" column="0" lean-forward="false" selection-start-line="49" selection-start-column="0" selection-end-line="49" selection-end-column="0" />
-          <folding>
-            <element signature="e#24#47#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="45">
@@ -867,28 +821,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/script/models/mail.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="15" column="1" lean-forward="true" selection-start-line="15" selection-start-column="1" selection-end-line="15" selection-end-column="1" />
-          <folding>
-            <element signature="e#0#36#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/analysis/player.json">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/script/templates/admin/editplayer.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="866">
-          <caret line="81" column="74" lean-forward="true" selection-start-line="81" selection-start-column="74" selection-end-line="81" selection-end-column="74" />
           <folding />
         </state>
       </provider>
@@ -924,26 +860,6 @@
         <state relative-caret-position="60">
           <caret line="4" column="22" lean-forward="false" selection-start-line="4" selection-start-column="22" selection-end-line="4" selection-end-column="22" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/script/models/mongodb.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-895">
-          <caret line="44" column="42" lean-forward="true" selection-start-line="44" selection-start-column="42" selection-end-line="44" selection-end-column="42" />
-          <folding>
-            <element signature="e#0#14#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/script/api/route_api.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="55">
-          <caret line="336" column="23" lean-forward="true" selection-start-line="336" selection-start-column="23" selection-end-line="336" selection-end-column="23" />
-          <folding>
-            <element signature="e#21#94#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1177,48 +1093,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/script/controllers/route.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="495">
-          <caret line="33" column="21" lean-forward="false" selection-start-line="33" selection-start-column="21" selection-end-line="33" selection-end-column="21" />
-          <folding>
-            <element signature="e#0#70#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/script/templates/fee.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="7" column="26" lean-forward="false" selection-start-line="7" selection-start-column="26" selection-end-line="7" selection-end-column="26" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/script/templates/player.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="7" column="26" lean-forward="false" selection-start-line="7" selection-start-column="26" selection-end-line="7" selection-end-column="26" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/script/templates/admin/editfee.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-162">
-          <caret line="4" column="0" lean-forward="true" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/script/static/css/base.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="29" lean-forward="false" selection-start-line="0" selection-start-column="29" selection-end-line="0" selection-end-column="29" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/script/templates/base.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="180">
@@ -1227,10 +1101,100 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/script/static/css/base.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="5" column="8" lean-forward="false" selection-start-line="5" selection-start-column="8" selection-end-line="5" selection-end-column="8" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/script/templates/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="10" column="84" lean-forward="false" selection-start-line="10" selection-start-column="84" selection-end-line="10" selection-end-column="84" />
+        <state relative-caret-position="105">
+          <caret line="7" column="24" lean-forward="false" selection-start-line="7" selection-start-column="24" selection-end-line="7" selection-end-column="24" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/script/__init__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="360">
+          <caret line="49" column="0" lean-forward="false" selection-start-line="49" selection-start-column="0" selection-end-line="49" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/script/auth/route_auth.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="276">
+          <caret line="34" column="39" lean-forward="false" selection-start-line="34" selection-start-column="39" selection-end-line="34" selection-end-column="39" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/script/models/mail.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="184">
+          <caret line="15" column="1" lean-forward="true" selection-start-line="15" selection-start-column="1" selection-end-line="15" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/script/controllers/route.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="334">
+          <caret line="33" column="21" lean-forward="false" selection-start-line="33" selection-start-column="21" selection-end-line="33" selection-end-column="21" />
+          <folding>
+            <element signature="e#0#70#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/script/models/mongodb.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="113">
+          <caret line="138" column="37" lean-forward="false" selection-start-line="138" selection-start-column="34" selection-end-line="138" selection-end-column="37" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/script/api/route_api.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="158">
+          <caret line="218" column="21" lean-forward="true" selection-start-line="218" selection-start-column="21" selection-end-line="218" selection-end-column="21" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/script/templates/player.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-184">
+          <caret line="50" column="91" lean-forward="false" selection-start-line="50" selection-start-column="91" selection-end-line="50" selection-end-column="91" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/script/templates/fee.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="145">
+          <caret line="62" column="125" lean-forward="true" selection-start-line="62" selection-start-column="16" selection-end-line="62" selection-end-column="125" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/script/templates/admin/editplayer.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="211">
+          <caret line="136" column="50" lean-forward="false" selection-start-line="136" selection-start-column="50" selection-end-line="136" selection-end-column="50" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/script/templates/admin/editfee.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="129">
+          <caret line="68" column="125" lean-forward="false" selection-start-line="68" selection-start-column="125" selection-end-line="68" selection-end-column="125" />
           <folding />
         </state>
       </provider>

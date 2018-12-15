@@ -42,13 +42,13 @@
 
 $(function(){
     $.ajax({
-        url: "/api/get_name_list",
+        url: "/api/get_name_num_list",
         type: "GET",
         dataType: "json",
         success: function (data) {
             var res_str = '';
             for (var i = 0; i < data.length; i++) {
-                res_str = res_str + '<option value="' + data[i] + '"></option>'
+                res_str = res_str + '<option value="' + data[i].name + '">#' + data[i].num +'</option>'
             }
             $('#playerList').html(res_str);
         },

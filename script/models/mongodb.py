@@ -42,25 +42,26 @@ class Player:
         insExp.__delitem__('_id')
         return insExp
 
-    def getItems(self, itemName, sortExp):
-        cursor = self.collection.find({'num':{'$gt':0}}).sort(sortExp)
+    def getItems(self, queryExp, itemsExp, sortExp):
+        cursor = self.collection.find(queryExp,itemsExp).sort(sortExp)
         res_list = []
         for item in cursor:
-            res_list.append(item[itemName])
+            res_list.append(item)
         return res_list
 
     def get(self, queryExp):
-        cursor = self.collection.find(queryExp)
+        cursor = self.collection.find(queryExp, {'_id':0})
         res_list = []
         for item in cursor:
             res_list.append(item)
         return res_list
 
     def getAndSort(self, queryExp, sortExp):
-        cursor = self.collection.find(queryExp).sort(sortExp)
+        cursor = self.collection.find(queryExp, {'_id':0}).sort(sortExp)
         res_list = []
         for item in cursor:
             res_list.append(item)
+        print(res_list)
         return res_list
 
     def update(self, queryExp, setExp):
@@ -95,7 +96,7 @@ class Fee:
         return insExp
 
     def getAndSort(self, queryExp, sortExp):
-        cursor = self.collection.find(queryExp).sort(sortExp)
+        cursor = self.collection.find(queryExp, {'_id':0}).sort(sortExp)
         res_list = []
         for item in cursor:
             res_list.append(item)
