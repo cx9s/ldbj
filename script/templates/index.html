@@ -5,10 +5,10 @@
 
 {% block body %}
     <section class="jumbotron">
-        <h1 class="display-6" style="text-align: center;">绿动是冠军！</h1>
+        <h1 class="h1">绿动是冠军！</h1>
         <hr class="my-4">
         <p class="lead">
-            <img src="../static/img/champion.jpg" width="100%" height="auto" alt="">
+            <img src="{{ url_for('static', filename='../static/img/champion.jpg') }}" width="100%" height="auto" alt="">
         </p>
     </section>
 {% endblock %}

@@ -1,0 +1,3040 @@
+@charset "utf-8";
+/* CSS Document  xt*/
+@font-face{font-family: BebasRegular;src: url('../../fonts/BebasRegular.ttf');}
+@font-face{font-family: Soleto-Light;src: url('../../fonts/Soleto-Light.otf');}
+@font-face{font-family: Soleto-Regular;src: url('../../fonts/Soleto-Regular.otf');}
+body{margin:0;padding:0;background:#f4f4f4;color:#555;font-family:Arial,Verdana,Sans-serif,"Microsoft YaHei","SimSun";}
+li,ul,ol { list-style:none; margin:0; padding:0;}
+a img{border:none;}
+a:link,a:visited{outline-style:none;color:#333;text-decoration:none;}
+a:hover,a:active{text-decoration:none;color:#463b7f;}
+i{ display:inline-block; vertical-align: middle;}
+select,input,img,button,textarea{vertical-align:middle;margin:0;padding:0;outline:none;border:0;}
+.xl { float:left;}
+.xr { float:right;}
+.xpos { position:relative;}
+img{max-width:100%;}
+.xSabs img{display:block;margin:10px auto;height:auto;}
+.xSabs table{width:100%!important;}
+.container-fluid { min-width:355px;}
+.xSec .xrum{display: none;}
+.navbar { position:fixed; left:0;right:0;z-index:9997; border:0; transition:all .5s;}
+/*.navbar.addFancy{right:17px;}*/
+.navbar-default{ background:none;}
+.navbar-default .navbar-toggle { border:0; float:left;}
+.navbar-default .navbar-toggle .icon-bar { background:#fff !important;}
+.navbar-default .navbar-toggle:focus, .navbar-default .navbar-toggle:hover {}
+
+.navbar-default .navbar-nav>li>a,.navbar-default .navbar-nav>.active>a, .navbar-default .navbar-nav>.active>a:focus { color:#fff; }
+.navbar-default .navbar-nav>li>a:hover { color:#ffea10;}
+.navbar-default .navbar-collapse, .navbar-default .navbar-form { border-color:transparent;}
+
+/* mm修改*/
+body{overflow-x: hidden;}
+.xcaic .x_c img{margin: 0px auto;}
+.xicon10 em{display: none;}
+@-moz-document url-prefix(){.ban_fonts_lili{right: 190px;}}
+.ban_fonts_lili {/*width: 46rem;*/position: absolute; right: 160px;top: 30%;margin-top: -30px;}
+.ban_fonts_lili a{color: #fff;}
+.ban_fonts_lili a h2{font-size: 3rem; font-family: "黑体"}
+.ban_fonts_lili a h3{text-transform: uppercase; font-size: 5rem; font-family: "Soleto-Regular"}
+.ban_fonts_lili .ban_more{font-size: 1rem; width: 13rem; display: block; line-height: 3rem; font-style: normal;}
+.ban_fonts_lili .ban_more em{display: block; height: 1px; border-bottom: 1px solid #fff; transition: .3s; }
+.ban_fonts_lili{padding: 30px;}
+.ban_fonts_lili:hover .ban_more{color: yellow;}
+.ban_fonts_lili:hover .ban_more em{border-color: yellow;animation: move 6s infinite linear;}
+.video_src embed{display: block; margin: 0px auto;}
+.fancybox-close{background-image:url(http://www.fcguoan.com/public/images/fancybox_sprite@2x.png) !important;}
+.fancybox-outer{max-width: 960px !important; height: auto !important; margin: 0px auto !important;}
+.fancybox-inner{max-width: 100% !important; height: auto; margin: 0px auto;}
+.fancybox-outer:hover .fancybox-nav span{ visibility: visible !important;}
+.fancybox-nav{width: 100px !important;}
+.fancybox-nav span{width: 32px !important; height: 60px !important;background-size: 100% !important;}
+.fancybox-prev span{background-image:url(http://www.fcguoan.com/public/img/left_bg.png) !important;  background-position:0px 0px !important;}
+.fancybox-next span{background-image:url(http://www.fcguoan.com/public/img/left_bg.png) !important; background-position:0px -90px !important;}
+.fancybox-overlay{background: url(http://www.fcguoan.com/public/images/fancybox_overlay.png) !important;}
+.fancybox-prev{left: -100px !important;}
+.fancybox-next{right: -100px !important;}
+.fancybox-lock .fancybox-overlay,.fancybox-overlay-fixed{z-index: 99999 !important;}
+.fancybox-opened{z-index: 999999 !important;}
+.jifen_table tr.qmmactive{ background: #dededb; }
+/*.downactive{ color:#00a651 !important;}*/
+.qmmImages .x_nr{text-align: left;}
+.xSimages.qmmImages .xcon .ximg img{margin: 0px auto;}
+.qmmSite{height: auto;}
+
+.xcertify .swiper-slide .swiper-slide-prev:hover {
+    background:#333 !important; color:#f00;
+}
+.xcertify .swiper-button-next{}
+/*.qmmPerson .navbar{position:static;}
+    */
+@keyframes move {
+    0% {
+    width:50%;
+  }
+  50%, 10% {
+    width: 100%;
+  }
+}
+@-webkit-keyframes move {
+  0% {
+    width:50%;
+  }
+  50%, 10% {
+    width: 100%;
+  }
+}
+ /*end*/
+
+.xtoggle { display:none;}
+.xMtoggle { display:block;}
+
+i.xicon1 { width:23px; height:23px; background:url(http://www.fcguoan.com/public/img/xicon1.png) center no-repeat;background-size: cover; margin-right:24px;}
+i.xicon2 { width:27px; height:21px; background:url(http://www.fcguoan.com/public/img/xicon2.png) center no-repeat; background-size: cover;margin-right:20px;}
+i.xicon3 { display:inline-block;width:1.5em; height:1.5em; background:url(http://www.fcguoan.com/public/img/xicon3.png) center no-repeat; /*margin-top:6px;*/}
+i.xicon3+span{display:inline-block;width:0;height:100%;vertical-align:middle;}
+i.xicon5 { margin-left:12px; width:7px; height:10px; background:url(http://www.fcguoan.com/public/img/xicon5.png) 0 -10px no-repeat; margin-top:-2px;}
+i.xicon6 { width:25px; height:25px; background:url(http://www.fcguoan.com/public/img/xicon6.png) 0 0 no-repeat; background-size:100% !important;}
+i.xicon7 { width:25px; height:25px; background:url(http://www.fcguoan.com/public/img/xicon7.png) 0 0 no-repeat; background-size:100%;}
+i.xicon8 { width:25px; height:25px; background:url(http://www.fcguoan.com/public/img/xicon8.png) 0 0 no-repeat; background-size:100%;}
+i.xicon9 { width:18px; height:18px; background:url(http://www.fcguoan.com/public/img/certify_btnbg.png) 0 0 no-repeat;}
+i.xicon10 { width:20px; height:20px; background:url(http://www.fcguoan.com/public/img/caic_i1.png) center center no-repeat;}
+i.xicon11 { width:20px; height:20px; background:url(http://www.fcguoan.com/public/img/caic_i2.png) center center no-repeat;}
+i.xicon12 { width:1059px; height:439px; background:url(http://www.fcguoan.com/public/img/caic_tit.png) center center no-repeat;}
+i.xicon13 { width:16px; height:16px; background:url(http://www.fcguoan.com/public/img/v_1.png) center center no-repeat; margin-right:4px; margin-top:-4px;}
+i.xicon14 { width:16px; height:16px; background:url(http://www.fcguoan.com/public/img/v_2.png) center center no-repeat; margin-right:4px; margin-top:-4px;}
+i.xicon15 { width:20px; height:20px; background:url(http://www.fcguoan.com/public/img/xicon15.png) center center no-repeat; margin-right:4px; margin-top:-2px;}
+i.xicon16 { width:20px; height:20px; background:url(http://www.fcguoan.com/public/img/notice_lileft.png) 0 0 no-repeat; margin-top:-10px;}
+i.xicon_wx { width:36px; height:28px; background:url(http://www.fcguoan.com/public/img/icon_wx.png) 0 0 no-repeat; }
+i.xicon_tb { width:30px; height:28px; background:url(http://www.fcguoan.com/public/img/icon_tb.png) 0 0 no-repeat; }
+i.xicon_yk { width:32px; height:28px; background:url(http://www.fcguoan.com/public/img/icon_yk.png) 0 0 no-repeat; }
+i.xicon_tt { width:36px; height:28px; background:url(http://www.fcguoan.com/public/img/icon_tt.png) 0 0 no-repeat; }
+i.xicon_wb { width:36px; height:28px; background:url(http://www.fcguoan.com/public/img/icon_wb.png) 0 0 no-repeat; }
+i.xicon_p_r { width:20px; height:20px; background:url(http://www.fcguoan.com/public/img/page_r.png) 0 0 no-repeat; margin-top:-2px; }
+i.xicon_p_l { width:20px; height:20px; background:url(http://www.fcguoan.com/public/img/page_l.png) 0 0 no-repeat; margin-top:-2px;}
+i.xNewsc_bg { width:20px; height:20px; background:url(http://www.fcguoan.com/public/img/xNewsc_bg.png) 0 0 no-repeat; margin-top:-2px;}
+i.year_bg { width:20px; height:20px; background:url(http://www.fcguoan.com/public/img/xSn_year_bg.png) 0 0 no-repeat; margin-top:-2px;}
+i.xicon_btnbg { width:15px; height:15px; background:url(http://www.fcguoan.com/public/img/xS_btnbg.png) 0 0 no-repeat; margin-top:-2px; background-size:100%}
+i.cont_wx { width:30px; height:30px; background:url(http://www.fcguoan.com/public/img/cont_wx.png) 0 0 no-repeat; margin-top:-5px;}
+i.cont_wb { width:30px; height:30px; background:url(http://www.fcguoan.com/public/img/cont_wb.png) 0 0 no-repeat; margin-top:-5px;}
+i.cont_qq { width:30px; height:30px; background:url(http://www.fcguoan.com/public/img/cont_qq.png) 0 0 no-repeat; margin-top:-5px;}
+i.rele_l { width:15px; height:20px; background:url(http://www.fcguoan.com/public/img/rele_l.png) -5px 0 no-repeat; margin-top:-2px;}
+i.rele_r { width:15px; height:20px; background:url(http://www.fcguoan.com/public/img/rele_r.png) 0 0 no-repeat; margin-top:-2px;}
+
+	.xnav {background:rgba(19, 128, 69, 0.8); position:relative; z-index:99999;}
+	.xnav .xlogo {position:relative; }
+	.xnav .xlogo a{ position:absolute; display:block; top:10px; left:50%; margin-left:-2.1em; /*cursor:default;*/}
+
+
+	.xnav .xlogo img { width:4.2em;}
+	.xnav .xsite li { /*float:left; */color:#fff; line-height:36px;}
+	.xnav .xsite li a { color:#fff;}
+	.xnav .xsite .xbtn { background:none; border:0; height:36px; }
+	.xnav .xsite li a:hover { color:rgba(255, 255, 255, 0.7)}
+
+	.container.xsite{padding-left: 0;padding-right:0}
+.container.xsite .wz{
+	color: #fff;
+	position: absolute;
+	right: 2%;
+	top: 10%;
+}
+.container.xsite p.wzz{
+	color: #fff;
+	position: absolute;
+	right: 2%;
+	top: 50%;
+}
+	.xmenu {background:rgba(28, 93, 70, 0.9); position:relative; width:100%; padding-bottom:1.4em;}
+	.xmenu .xsite{ position:relative;}
+	.xmenu li { position:relative;  }
+	.xmenu li a { position:relative; display: block; padding:10px 0 10px 45px; color:#fff;font-size: 16px;line-height: 1}
+	.xmenu .x_my li a, .xmenu .x_cn li a{font-size: 14px;line-height: 18px;}
+	.xmenu .x_my li a i.xicon1{width: 18px;height: 18px;background-size: 100% 100%;margin-right: 12px;vertical-align: middle;}
+	.xmenu .x_my li a i.xicon2{width: 20px;height: 16px;margin-right: 12px;vertical-align: middle;}
+	/*.xnav .xsite .xbtn{display: none;}*/
+	.xmenu li a:hover { position:relative; display: inline-block;/* padding: 10px 15px; */color:#ffea10;}
+	.xmenu .x_my { margin:8px 0px 0 0px;}
+	.xmenu .x_my ul { padding:1em 0; border-top:1px #45796d solid;}
+	.xmenu .x_cn ul { padding:1em 0; border-top:1px #45796d solid;}
+	.xmenu .x_cn { color:#fff;}
+	.xmenu .x_cn a,.xmenu .x_cn a:hover { display:inline-block; padding:0; margin:0;}
+	.xmenu .x_ipt{position:relative}
+	.xmenu ul .x_sr { position:absolute; right:0; top:0;}
+	.navbar-nav li a .open{display: none}
+	.xmenu .mbSub{display:none;}
+
+	.xmenu li .pc-line{display:none;position:absolute;height:0;background:#ffea10;left:50%;top:60px;}
+	.w1200{width:1200px;margin:0 auto;}
+	.subNav{position:absolute;width:100%;height:58px;background:url(http://www.fcguoan.com/public/images/opa_bg.png);left:0;top:74px;display:none;}
+.subNav ul{margin-left: 123px;display:none;}
+	.subNav ul.active{display:block;}
+	.subNav li{float:left;display:inline;color:#000;height:58px;line-height: 58px;padding:0 30px;text-align:center;}
+	.subNav li>a{display:inline-block;height:58px;line-height: 58px;padding:0;color:#000;white-space:nowrap;/*width:65px;*/}
+	.subNav .hover_line{position:absolute;width: 0px;height:4px;background:rgba(28, 93, 70, 0.9);right:100%;bottom:0;}
+	.subNav li>a:hover{position:static;padding:0;color:#000;}
+
+.navbar-nav li .top .open{display: none;}
+
+@media only screen and (max-width: 767px){
+	.xmenu li .pc-line{display: none}
+	.navbar-nav{margin-top: 0!important}
+	.navbar-nav li{position: relative;}
+	.navbar-nav li .top span{float:left;display:inline;}
+	.navbar-nav li .qmmDirct{display: block; position: relative;}
+	.navbar-nav li .top .open{width:30px;height:30px;background:url(http://www.fcguoan.com/public/images/mbSub-open.png) no-repeat center center; position: absolute; top: 50%; margin-top: -15px; right: 1.5rem; display: block;}
+	.navbar-nav li .top.on .open{background:url(http://www.fcguoan.com/public/images/mbSub-close.png) no-repeat center center }
+	.navbar-nav .mbSub .open {background: url(http://www.fcguoan.com/public/images/mbSub-close.png) no-repeat center center;}
+	.navbar-nav .mbSub .open {width: 30px;height: 30px;background: url(http://www.fcguoan.com/public/images/mbSub-open.png) no-repeat center center;position: absolute;top: 41.5%;margin-top: -15px;right: 1.5rem;display: block;}
+	.xmenu li a:hover{color:#fff;}
+	.xmenu .mbSub{padding: 10px 0;border-top:1px solid #45796d;border-bottom:1px solid #45796d;}
+	.xmenu .sub{padding: 10px 0;border-top: 1px solid #45796d;border-bottom: 1px solid #45796d;}
+	.xmenu .mbSub a{font-size: 16px;border-bottom:none;padding:20px 15px 20px 55px;}
+	/*.xmenu .mbSub a:hover{padding:20px 15px 20px 45px;}*/
+	/*.xmenu li a{font-size: 20px;}*/
+	.xmenu .x_cn ul{border-top: none;padding:15px 15px 15px 35px;}
+
+	.navbar-nav{margin: 7.5px 0px;}
+
+
+#bs-example-navbar-collapse-1{
+	left: -70%;
+	transition: left 0.3s;
+	-webkit-transition: left 0.3s;
+	-moz-transition: left 0.3s;
+	-ms-transition: left 0.3s;
+	-o-transition: left 0.3s;
+}
+#bs-example-navbar-collapse-1.active{
+	left: 0;
+}
+
+
+.sousuo{
+	margin: 15px 35px 15px 35px;
+	position: relative;
+}
+.sousuo input{
+	background-color: rgba(192,192,192,0.2);
+	border: 1px solid #fff;
+	width: 100%;
+	height: 28px;
+	padding-left: 30px;
+}
+.sousuo button{
+	background: none;
+	position: absolute;
+	left: 0;
+	top: 0;
+	height: 28px;
+	line-height: 28px;
+	vertical-align: middle;
+	width: 28px;
+	text-align: center;
+}
+.sousuo button i{
+	margin: 0;
+}
+
+}
+.xMnav { position:relative; padding-bottom:7em;}
+	.xMnav .bottomLine { position:absolute; left:0; bottom:0; height:4px; background-color:#ffea10; transition:all 0.3s ease;}
+
+.xban {/* height:32em;*/ padding:0; position:relative;}
+	.xban .xMtoggle { width:100%;}
+
+.xS-top { position:relative; overflow:hidden; margin:0; padding:0; height:260px;}
+	.xS-top .x_tit { position:absolute;left:50%; top:50%; width:10em; margin-left:-5em; margin-top:-.5em; z-index:1; color:#fff; font-size:24px; font-weight:bold; text-align:center;}
+	.xS-top .x_tit span { position:relative; top:.1em; display:inline-block; margin:.5em .8em; font-size:1.2em;}
+	.xS-top .x_img { height:100%; text-align:center;position: relative;}
+	.xS-top .x_img img {height:auto;    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    max-width: inherit;}
+
+
+.xshare { position:absolute; left:0; right:0; bottom:0; height:3.4em; background-color:rgba(0, 0, 0, 0.5); z-index:111;}
+	.xshare .container { padding:0;}
+	.xshare li { float:left; width:20%; text-align:center;}
+	.xshare li a { display:block; line-height:3.4em; padding-top: 1.2rem; height: 54px;}
+	.xshare .xcur a, .xshare li a:hover { border-bottom:2px #ffea10 solid; background-color:rgba(255, 255, 255, 0.1);}
+	.xshare .xcur a { background-color:rgba(255, 255, 255, 0.1);}
+	.xshare li a:hover i.xicon_wx,.xshare li a:hover i.xicon_tb,.xshare li a:hover i.xicon_yk,.xshare li a:hover i.xicon_tt,.xshare li a:hover i.xicon_wb,.xshare .xcur a i.xicon_wx,.xshare .xcur a i.xicon_tb,.xshare .xcur a i.xicon_yk,.xshare .xcur a i.xicon_tt,.xshare .xcur a i.xicon_wb { background-position:0 -28px; }
+
+
+.index_erweima{
+	position: fixed;
+	width: 100%;
+	height: 100%;
+	left: 0;
+	top: 0;
+	background-color: #000;
+	background-color: rgba(0,0,0,0.7);
+	display: none;
+	z-index: 999999999;
+}
+.index_erweima .index_erweima_con{
+	width: 150px;
+	height: 150px;
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	margin-top: -75px;
+	margin-left: -75px;
+}
+.index_erweima .index_erweima_con i.close{
+	position: absolute;
+	top: -40px;
+    right: -40px;
+    width: 36px;
+    height: 36px;
+    cursor: pointer;
+    background-image: url(http://www.fcguoan.com/public/images/fancybox_sprite@2x.png) ;
+	background-size: 44px 152px;
+	opacity: 1;
+}
+.index_erweima .index_erweima_con img{
+	/*display: none;*/
+	max-width: 100%;
+	margin: 0 auto;
+}
+
+
+
+.xyg {padding:2em 0 0 0;}
+.xyg .container { padding:0; }
+
+.xintegral img{width: 2.5rem;}
+
+.xintegral { position:relative; }
+	.xintegral .xtit { border-bottom:1px #ccc solid; height:2.2em; text-align:center;}
+	.xintegral .xtit .a_link { display:inline-block; width:6em; font-size: 16px; font-weight:bold; /*line-height:2em;*/ line-height: 42px; border-bottom:3px #000 solid; color:#000 }
+	.xintegral .xmove { position:relative; height:2.8em; background-color:#009748; text-align:center; margin:2em 0; font-size:12px;}
+	.xintegral .xmove a { color:#fff; line-height:2.8em;}
+	.xintegral .xcont { position:relative; margin-top:2em; background:url(http://www.fcguoan.com/public/img/xshooterbg.jpg) 0 0 no-repeat; background-size:100%;font-size:12px;}
+		.xrank { margin-left:9em;}
+		.xrank .cur { background:rgba(0, 150, 70, 0.3); }
+		.xrank span { display:inline-block; text-align:center; color:#fff; line-height:2.6em;}
+		.xrank span.s1,.xrank span.s2 { width:4em;}
+		.xrank span.s3,.xrank span.s4 { width:6.4em;}
+		.xrank .xttl span { font-weight:bold;}
+	.xintegral .xbox { position:absolute; left:0; top:0; bottom:0; width:9em; background:rgba(0, 166, 81, 0.7)}
+	.xintegral .xbox span { display:block; padding:1em; font-size:1.2em; color:#fff;}
+	.xintegral .xbox span.s0 { position:absolute; right:0; bottom:0; font-size:10em; padding:0; margin:0; line-height:1em; font-family:Soleto-Regular;}
+
+.xintegral .xtit .a_link, .xshooter .xtit .a_link, .xnews .xtit .a_link, .xvideo .xtit .a_link, .xres .xtit .a_link{cursor: unset;}
+.xintegral .xtit .a_link:hover, .xshooter .xtit .a_link:hover, .xnews .xtit .a_link:hover, .xvideo .xtit .a_link:hover, .xres .xtit .a_link:hover{color: initial}
+
+.xshooter { position:relative; }
+	.xshooter .xtit { border-bottom:1px #ccc solid; height:2.2em; text-align:center;}
+	.xshooter .xtit span { display:inline-block; width:6em; font-weight:bold; line-height:2em; border-bottom:3px #000 solid; color:#000 }
+	.xshooter .xmove { position:relative; height:2.8em; background-color:#009748; text-align:center; margin:2em 0; font-size:12px;}
+	.xshooter .xmove a { color:#fff; line-height:2.8em;}
+	.xshooter .xcont { position:relative; margin-top:2em; width:100%; overflow:hidden;}
+	.xshooter .xcont ul { margin:0 1.6em;}
+	.xshooter .xcont li { position:relative; float:left; width:31.5%; margin-right:.6em; overflow:hidden;padding:0;}
+	.xshooter .xcont img {width:100%; }
+.xshooter .xcont li:hover{
+	opacity: 0.7;
+	color: #fff;
+	background: rgba(0,0,0,0.8);
+}
+.xshooter .xcont img:hover{transition: all 0.3s 0s ease;}
+	.xshooter .xcont li.li_box { margin-right:0;}
+	.xshooter .xprice { position:absolute; width:100%; bottom:0;background-color:rgba(0, 0, 0, 0.7); line-height:2em;}
+	.xshooter .xprice span { display:inline-block; font-size:10px;}
+	.xshooter .xprice .xnum { font-family:Soleto-Regular; font-size:1em; color:#ffea10; padding-left:6px;}
+	.xshooter .xprice .xbra { color:#fff;}
+	.xshooter .xname { position:absolute; top:2px; left:2px; right:0; text-align:left; color:#fff; padding-right:6px; font-size:11px;}
+	.xshooter .xNo { position:absolute; right:0; top:0;}
+
+.xdjd { overflow:hidden; padding:0; }
+
+
+	.xcaic .container { position:relative; margin-top:140px;}
+	.xcaic .x_c { position:absolute; top:20px; margin-left:0px; width:20%;}
+		.xcaic .x_c span { display:block; margin-top:10px; font-size:12px; line-height:20px; text-align:center; color:#fff;}
+	.xcaic .x_d { position:absolute; top:20px; right:0; margin-right:10px; width:20%;}
+		.xcaic .x_d span { display:block; margin-top:10px; font-size:12px; line-height:20px; text-align:center; color:#fff;}
+		.xcaic .x_e { margin:58px auto; margin-bottom:20px; width:300px; font-style:italic; color:#fff; text-align:center;}
+		.xcaic .x_h{margin: 8px auto;margin-bottom: -30px;width: 300px;font-style: italic;color: #fff;text-align: center;position: relative}
+		.xcaic .x_h p{display: inline-block;margin:30px;}
+		.xcaic .x_h img{width:20px;}
+		.xcaic .x_h p:nth-child(1){position: absolute;left: 15%;top: 20%;}
+		.xcaic .x_h p:nth-child(3){position: absolute;right: 15%;top: 20%;}
+		/*.xcaic .x_i{margin: 8px auto;margin-bottom: -9px;width: 300px;font-style: italic;color: #fff;text-align: center;position: relative}*/
+		/*.xcaic .x_i p{display: inline-block;margin:30px;}*/
+		/*.xcaic .x_i p:nth-child(1){position: absolute;left: 10%;top: -20%;font-size: 60px;font-family: Soleto Regular;  font-weight: bolder;}*/
+		/*.xcaic .x_i p:nth-child(3){position: absolute;right: 15%;top: -20%;font-size: 60px;font-family: Soleto Regular;font-weight: bolder;}*/
+		.xcaic .x_e span { font-family:Soleto-Regular; font-size:22px; margin:0 2px;}
+	.xcaic .x_f { margin:0 auto; margin-top:10px; width:140px; font-size:12px; color:#fff; text-align:left;}
+		.xcaic .x_f span { margin:.8em 0;}
+		/*.xcaic .x_f span:first-child,.xcaic .x_f span:last-child{ display:block;}*/
+		.xcaic .x_f i { margin-right:.6em; margin-top:-4px;}
+	.xcaic .x_g { position:absolute; margin-left:-15px; margin-top:10px; width:100%;font-size:12px;}
+
+/*按钮css3*/
+.item_bot{
+	position: relative;
+}
+.item_bot:before {
+	content: '';
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 200%;
+	height: 0;
+	background: #009848;
+	z-index:0;
+}
+.item_bot:after {
+	content: '';
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 200%;
+	height: 0;
+	background: #009848;
+	z-index:0;
+}
+.item_bot:after {
+	top: auto;
+	bottom: -110%;
+}
+.item_bot:hover {
+	background: #009848;
+}
+.item_bot:hover:before{
+	height: 15px;
+}
+.item_bot:hover:after {
+	/*height: 10px;*/
+}
+/*.item_bot:active {*/
+	/*background: #ffea10;*/
+/*}*/
+.item_bot:after{
+	box-sizing: border-box;
+	-webkit-transition: 0.5s;
+	transition: 0.5s;
+	z-index:0;
+}
+.item_bot:before{
+	box-sizing: border-box;
+	-webkit-transition: 0.5s;
+	transition: all .3s ease 0s;
+	z-index:0;
+}
+.xcaic .x_g a i{position: relative; z-index: 1;}
+.xcaic .x_g a:link,.xcaic .x_g a:visited { display:block; line-height:2.8em; text-align:center; font-size:14px; color:#fff; background: rgba(0, 152, 72, 0.5); }
+.xcertify .swiper-slide-active .x_btn a i{position: relative; z-index: 3;}
+.xcaic .x_g a:link,.xcaic .x_g a:visited,.xcertify .swiper-slide-active .x_btn a:link,.xcertify .swiper-slide-active .x_btn a:visited
+{
+	position: relative;
+	-webkit-transition: all .3s ease;
+    -moz-transition: all .3s ease;
+    -o-transition: all .3s ease;
+    transition: all .3s ease; overflow: hidden;
+}
+.xcaic .x_g a:after ,.xcertify .swiper-slide-active .x_btn a:after{
+     opacity: .5;
+  -moz-transform: translateX(-50%) translateY(-50%);
+  -ms-transform: translateX(-50%) translateY(-50%);
+  -webkit-transform: translateX(-50%) translateY(-50%);
+  transform: translateX(-50%) translateY(-50%);
+}
+.xcaic .x_g a:hover:after ,.xcertify .swiper-slide-active .x_btn a:hover:after{
+      height: 140%;
+  opacity: 1;
+}
+.xcaic .x_g a:link:after,.xcaic .x_g a:visited:after{
+    background: none repeat scroll 0 0 #ffea10;}
+.xcertify .swiper-slide-active .x_btn a:link:after,.xcertify .swiper-slide-active .x_btn a:visited:after{
+	 background: none repeat scroll 0 0 #009848;
+}
+
+.xcaic .x_g a:link:after,.xcaic .x_g a:visited:after ,.xcertify .swiper-slide-active .x_btn a:link:after,.xcertify .swiper-slide-active .x_btn a:visited:after{
+    content: "";
+    position: absolute;
+    height: 0%;
+    left: 50%;
+    top: 50%;
+    width: 100%;
+    z-index: 0;
+    -webkit-transition: all .3s ease 0s;
+    -moz-transition: all .3s ease 0s;
+    -o-transition: all .3s ease 0s;
+    transition: all .3s ease 0s;
+}
+.xcaic .x_g a:link:hover, .xcaic .x_g a:visited:hover{
+  color: #333;
+}
+.xcaic .x_g a:link:hover:after,.xcaic .x_g a:visited:hover:after,
+.xcertify .swiper-slide-active .x_btn a:link:hover:after,
+.xcertify .swiper-slide-active .x_btn a:visited:hover:after
+{
+  height: 420%;
+}
+
+
+.xsche { position:relative; padding:0; background:url(http://www.fcguoan.com/public/img/xsche_bg.png);}
+.xsche .xbox{ position:relative; padding-bottom:2.8em;}
+	.xsche .xtit { position:relative; border-bottom:1px #ccc solid; height:2.2em; text-align:center;margin-top:2em; z-index:2; }
+	.xsche .xtit span { position:relative;display:inline-block; width:6em; font-weight:bold; line-height:2em; border-bottom:3px #000 solid; z-index:1; }
+	.xsche .xmove { position:relative; height:2.8em; background-color:#009748; text-align:center; margin:2em 0 0 0; font-size:12px; z-index:2;}
+	.xsche .xmove a { color:#fff; line-height:2.8em;}
+
+
+.xnews { padding:0; position:relative;}
+.xnews .xbox{ position:relative; overflow:hidden; background-color:#eaeaea; height:140px;}
+	.xnews .xtit { position:relative; z-index:1; border-bottom:1px #ccc solid; height:2.2em; text-align:center;margin-top:2em; }
+	.xnews .xtit .a_link {    line-height: 42px; position:relative;display:inline-block; width:6em; font-weight:bold; /*line-height:2em; */border-bottom:3px #000 solid; z-index:1; font-size: 16px; }
+.xnews .xtit .a_link:hover{transform: scale(1.1);transition: all 0.4s;}
+.xnews .xmove { position:relative; height:2.8em; background-color:#009748; text-align:center; margin:2em 0 0 0; font-size:12px;}
+	.xnews .xmove a { color:#fff; line-height:2.8em;}
+	.xnews .xbg { transition:.4s;position:absolute; top:-24px; left:0; width:100%; height:14em; background:url(http://www.fcguoan.com/public/img/newsbg.png) 0 -2em no-repeat; background-size:100%;}
+	.xnews .xcon { margin:2em 0 0 0;}
+	.xnews .xcon .row { margin:0 -5px;}
+	.xnews .xcon .ximg { width:100%; height: 212px; overflow: hidden;}
+	.xnews .xcon .ximg img { width:100%;transition:.4s;}
+	.xnews .xcon .ximg:hover img {transform:scale(1.05);}
+	.xnews .xcon li { padding:0 5px; margin-bottom:10px; }
+	.xnews .xnr { position:relative; padding:10px;background:#fff;}
+	.xnews .xnr strong { display:block; width:100%; font-size:12px; line-height:2em;overflow: hidden;white-space: nowrap;text-overflow: ellipsis;}
+	.xnews .xnr p { display:block; font-size:12px; line-height:1.6em; color:#666; text-overflow: ellipsis;overflow: hidden;white-space: nowrap;}
+	.xnews .xnr span.xname { display:inline-block; font-size:12px; color:#00a651;}
+	.xnews .xnr span.xtime { display:inline-block; font-size:12px; color:#c0c0c0;}
+	.xnews .xnr span.xhr { display:inline-block; font-size:12px; color:#c0c0c0; padding:0 .8em;}
+
+	.xnews .x_s { position:absolute; left:0; right:0; bottom:2px; z-index:10;}
+	.xnews .x_s div { position:relative; left:50%; float:left; }
+	.xnews .x_s ul { position:relative; left:-50%; float:left; }
+	.xnews .x_s li { float:left; font-size:12px; line-height:50px;}
+	.xnews .x_s li a { display:block; padding:0 .8em; margin:0 2px;}
+	.xnews .x_s li a:hover,.xnews .x_s li.cur a { color:#009848; border-bottom:2px #009848 solid;}
+
+
+.xvideo { padding:0; position:relative; background:url(http://www.fcguoan.com/public/img/xvideobg.jpg) 0 -2em no-repeat;}
+.xvideo .xbox{ position:relative; overflow:hidden;}
+	.xvideo .xtit { border-bottom:1px #ccc solid; height:2.2em; text-align:center;margin-top:2em; color:#fff;}
+	.xvideo .xtit .a_link { position:relative;display:inline-block; width:6em; font-weight:bold; /*line-height:2em;*/ border-bottom:3px #fff solid; z-index:1;  line-height: 40px; font-size: 16px;}
+	.xvideo .xmove { position:relative; height:2.8em; background-color:#009748; text-align:center; margin:2em 0 0 0; font-size:12px;}
+	.xvideo .xmove a { color:#fff; line-height:2.8em;}
+	.xvideo .xcon { margin:2em 0 0 0;}
+	.xvideo .xcon .row { margin:0 -5px;}
+	.xvideo .xcon .ximg {  overflow:hidden; width:100%;}
+	.xvideo .xcon .ximg img { width:100%;}
+	.xvideo .xcon li {position:relative;padding:0 5px;margin-bottom:10px;}
+	.xvideo li i.xvideo_i_bg { position:absolute; left:50%; top:50%; background:url(http://www.fcguoan.com/public/img/xvideo_i_bg.png) 0 0 no-repeat; background-size:100%;z-index: 10;width: 83px;height
+		: 83px;margin-left: -42.5px;margin-top: -42.5px;opacity: 0.3;transition:.4s;}
+	.xvideo li i.xvideo_i { position:absolute; left:0; right:0; top:0; bottom:0; background:url(http://www.fcguoan.com/public/img/xvideo_i.png) 0 0 no-repeat; background-size:100%;z-index: 9;}
+	.xvideo .xcon .x_nr { position:absolute; left:5px; right:0; bottom:0; z-index:1; padding:.6em .2em; margin:0;}
+	.xvideo .x_nr .x_a { display:block; width:100%; overflow:hidden;white-space:nowrap;text-overflow:ellipsis;color:#fff; font-size:12px;}
+	.xvideo .x_nr .x_b { display:inline-block; font-size:12px; color:#ccc; }
+	.xvideo .x_nr .x_c { display:inline-block; font-size:12px; color:#ccc; }
+	/*.xvideo li a:hover i.xvideo_i { background-image:url(http://www.fcguoan.com/public/img/xvideo_ihover.png);}*/
+	.xvideo li a img{transition:.4s;}
+	.xvideo li a:hover img {transform:scale(1.05);}
+	.xvideo li a:hover .x_nr { display:block;}
+	.xvideo li a:hover i.xvideo_i_bg{
+		opacity: 1;
+	}
+
+@media only screen and (max-width: 767px){
+	/*移动端样式新加20180324*/
+	.xcaic .x_tit i.xicon12{margin:-217px 0 0 -650px; background-size: 90%;left:50%;}
+	.xcaic .x_f{width:150px;}
+	i.xicon3{margin-right:15px;background-size:1.4em 1.4em;}
+	.xcertify .swiper-slide-active .xdwvs .xp_dw span{line-height:2em;}
+	.xshooter .xcont ul{margin:0 0.6rem;}
+	.xshooter .xcont ul li:nth-of-type(3){margin-right:0!important;}
+	.xshooter .xcont li{height:186px;overflow:hidden;}
+	.xnews .xcon li{height:282px;}
+	.xnews .xnr{/*height:147px;*/background:#fff;}
+	.xvideo .xcon .x_nr{background:rgba(0,0,0,0.5);left:0;padding:1.4em .2em .2em .5em;}
+	.xvideo .xcon .x_nr .x_a{font-size:12px;}
+	.xvideo .xcon .x_nr .del{display: none;}
+	.xdesc .xju a{width:45px;display:inline-block!important;}
+	.xnews .x_s li a{padding:0 0.4em;}
+	.xSnews .xcon li{height:285px;overflow:hidden;}
+	/*.jifen_table tbody tr:nth-of-type(5) .title_1{background:#00a651;}*/
+	.jifen_table tbody tr:nth-of-type(2) .title_1{background:#fff;}
+	.xmenu .xsite>img{width:60px!important;height:55px!important;top:0!important;}
+	/*.xmenu .x_my{margin-top:35px!important;}*/
+	.navbar-nav li a{padding:15px 25px 15px 45px;}
+	.xnews .xnr p{max-height: 54px;overflow: hidden;}
+	/*.xS-top .x_img img{width:100%;}*/
+}
+
+
+
+.xSvideo { padding:0; position:relative;}
+.xSvideo .xbox{ position:relative; overflow:hidden;}
+	.xSvideo .xmove { margin:0; padding:10px 0; border:1px #ddd solid;background-color:#eaeaea; text-align:center; color:#666;}
+	.xSvideo .xcon { margin:0 20px; margin-bottom:20px;}
+	.xSvideo .xcon .row { margin:0 -5px;}
+	.xSvideo .xcon .ximg { position:relative; overflow:hidden; width:100%;height:100%;}
+	.xSvideo .xcon .ximg .trImg{display:block;height:100%}
+	.xSvideo .xcon .ximg img { width:100%;}
+	.xSvideo .xcon li { position:relative; padding:0 5px; margin-bottom:10px;}
+	.xSvideo li i.xvideo_i { position:absolute; left:0; right:0; top:0; bottom:0; background:url(http://www.fcguoan.com/public/img/xvideo_i.png) 0 0 no-repeat; background-size:100%;}
+	/*.xSvideo .xcon .x_nr { position:absolute; left:5px; right:0; bottom:0; z-index:1; padding:.6em .2em; margin:0;}*/
+	.xSvideo .x_nr .x_a,.qmmximg .x_nr .x_a { display:block; width:100%; overflow:hidden;white-space:nowrap;text-overflow:ellipsis;color:#fff; font-size:12px;}
+	.xSvideo .x_nr .x_b { display:inline-block; font-size:12px; color:#ccc; }
+	.xSvideo .x_nr .x_c { display:inline-block; font-size:12px; color:#ccc; }
+	/*.xSvideo li a:hover i.xvideo_i { background-image:url(http://www.fcguoan.com/public/img/xvideo_ihover.png);}*/
+	.xSvideo li a:hover img {transform:scale(1.05);transition:transform 0.3s;}
+	.xSvideo li a:hover .x_nr { display:block;}
+
+.xVnav { background-color:#fff;}
+.xVnav .li_box { width:20%; padding:0 5px;}
+.xVnav li a { display:block; padding:15px 0; text-align:center; font-size:12px;}
+.xVnav li a:hover,.xVnav li.cur a { padding:15px 0 12px 0; color:#009848; border-bottom:3px #009848 solid;}
+
+
+.xres { padding:0; position:relative; }
+.xres .xbox{ position:relative; overflow:hidden;}
+	.xres .xtit { border-bottom:1px #ccc solid; height:2.2em; text-align:center;margin-top:2em; color:#000;}
+	.xres .xtit span { position:relative;display:inline-block; width:6em; font-weight:bold; line-height:2em; border-bottom:3px #000 solid; z-index:1; }
+	.xres .xmove { position:relative; height:2.8em; background-color:#009748; text-align:center; margin:2em 0 0 0; font-size:12px;}
+	.xres .xmove a { color:#fff; line-height:2.8em;}
+	.xres .xcon { margin:2em 0 0 0;}
+	.xres .xcon .row { margin:0 -5px;}
+	.xres .xcon .ximg { overflow:hidden; width:100%;height: 100%;position: relative;background: url(http://www.fcguoan.com/public/img/tuji_bg.jpg) no-repeat;background-size: 100% 100%;}
+	.xres .xcon .ximg img { width:100%; transition: .6s;}
+	.xres .xcon li { padding:0 5px; margin-bottom:10px;overflow:hidden; height: 204px;}
+	.xres .xcon .x_nr { position:absolute;left:5px; right:5px; bottom:0; z-index:1; padding:8px 0 0 0;/*background:rgba(0,0,0,.6);*/height:56px;bottom:0;transition:all 0.6s;padding-left:10px;box-sizing:border-box;display:block!important;margin-bottom:0;opacity: 0;}
+	.xres .x_nr .x_a { display:block; width:100%; overflow:hidden;white-space:nowrap;text-overflow:ellipsis;color:#fff; font-size:12px;}
+	.xres .x_nr .x_b { display:inline-block; font-size:12px; color:#fff; margin-right:3em; }
+	.xres .x_nr .x_c { display:inline-block; font-size:12px; color:#fff; }
+	.xres li a:hover img {transform:scale(1.05);transition:transform 0.6s;opacity: 0.7;}
+	.xres li a:hover .x_nr {opacity: 1;}
+
+.xcoop { padding:0; position:relative; background-color:#333; }
+.xcoop .xbox{ position:relative; overflow:hidden;}
+	.xcoop .xtit { border-bottom:1px #ccc solid; height:2.2em; text-align:center;margin-top:2em; color:#fff;}
+	.xcoop .xtit .a_link { font-size: 16px; position:relative;display:inline-block; width:6em; font-weight:bold; /*line-height:2em;*/ line-height: 42px; border-bottom:3px #fff solid; z-index:1; }
+	.xcoop .xcon { margin:2em 0 0 0;}
+	.xcoop .xcon .row { margin:0 -5px;}
+	.xcoop .xcon .ximg { width:100%; position:relative; overflow:hidden; text-align:center;}
+	.xcoop .xcon .ximg img { margin-left:-2em; width:150%;}
+	.xcoop .xcon li { padding:0 5px; margin-bottom:10px; width:20%; opacity: 0.7;cursor: pointer;transition: all 0.4s;}
+	.xcoop .xcon li:hover{
+		opacity: 1;
+	}
+		/*.xcoop .xmove { position:absolute; left:50%; top:40px; font-style:italic; height:auto; background-color:transparent; text-align:left; margin:0;}*/
+	.xcoop .xmove{
+		 position:relative; height:2.8em; background-color:#009748; text-align:center; margin:2em 0 0 0; font-size:12px;
+	}
+	.xcoop .xmove a { color:#fff; line-height:2.8em;}
+
+
+.xdesc { background-color:#2c2c2c; height:65em;}
+	.xdesc .xbox { position:relative; margin-top:3em;}
+	.xdesc ul { position:absolute; float:left; width:50%;}
+	.xdesc .xju { position:absolute; margin-left:50%; top:48em;}
+	.xdesc ul.u1 { top:0; left:0;}
+	.xdesc ul.u2 { top:0; left:50%;}
+	.xdesc ul.u3 { top:26em; left:0;}
+	.xdesc ul.u4 { top:22em; left:50%;}
+	.xdesc ul.u5 { top:41em; left:0;}
+	.xdesc ul.u6 { top:15em; left:0;}
+	.xdesc ul.u7 { top:11em; left:50%;}
+	.xdesc li { line-height:2.5em; background:url(http://www.fcguoan.com/public/img/desc_li.png) 5px center no-repeat; text-indent:2em; font-size:12px;}
+	.xdesc li a { color:#999;}
+	.xdesc li a:hover { color:#ccc;}
+	.xdesc .xtit { margin-bottom:.5em; background:url(http://www.fcguoan.com/public/img/desc_tit.png) left center no-repeat; line-height:3em; }
+	.xdesc .xtit a { font-size:14px; font-weight:bold; color:#fff; }
+
+
+.xfoot { border-top:2px #00a651 solid; background:#373637; color:#ccc; text-align:center; line-height:1.6em;}
+	.xfoot .container{ padding:1em 0;}
+	.xfoot p { margin:0; font-size:12px;}
+	.xfoot span { padding:0 .5em;}
+
+
+.xSec {padding:0; position:relative;}
+	.xSec .container {padding:0;}
+	/*.sorry{width:100% !important;%;height:100% !important;padding:20%;}*/
+	.xSec .xSec_l,.xSec .xSec_r { width:auto; margin-bottom:20px;}
+	.xSec .xrum { position:absolute; top:-40px; left:15px; height:30px; padding:0;}
+	.xSec .xrum .xicon4 { margin-top:0; float:left; padding:0; width:20px; height:20px; text-indent:-99999px; background:url(http://www.fcguoan.com/public/img/xicon4.png) 0 0 no-repeat;}
+	.xSec .xrum a { margin-right:.5em; color:#fff;}
+	.xSec .xrum a:hover { color:#fff;}
+
+.xVSec .xrum  { top:-80px;}
+
+.xSnews { position:relative; }
+	.xSnews .x_title {border-bottom:1px #ccc solid; text-align:center; padding-top:2em; margin-bottom:20px; color:#333; background-color:#fff; }
+	.xSnews .x_title span {position:relative;display:inline-block; width:6em; font-weight:bold; line-height:2em; border-bottom:3px #000 solid; z-index:1;}
+	.xSnews .xcon { margin:2em 15px 0 15px;}
+	.xSnews .xcon .row { margin:0 -5px;}
+	.xSnews .xcon .ximg { width:100%;}
+	.xSnews .xcon .ximg img { width:100%;}
+	.xSnews .xcon .x_box {box-shadow: 0 0 5px #ccc;}
+	.xSnews .xcon li { padding:0 5px; margin-bottom:10px; }
+	.xSnews .xnr { position:relative; padding:10px;background:#fff;}
+	.xSnews .xnr strong { display:block; width:100%; font-size:12px; line-height:2em;overflow: hidden;white-space: nowrap;text-overflow: ellipsis;}
+	.xSnews .xnr p { display:block; font-size:12px; line-height:1.6em; color:#666;  text-overflow: ellipsis;overflow: hidden;white-space: nowrap;}
+	.xSnews .xnr span.xname { display:inline-block; font-size:12px; color:#00a651;}
+	.xSnews .xnr span.xtime { font-family:Soleto-Regular; display:inline-block; font-size:12px; color:#c0c0c0;}
+	.xSnews .xnr span.xhr { display:inline-block; font-size:12px; color:#c0c0c0; padding:0 .8em;}
+
+
+.xNotice { position:relative; padding:0; background-color:#fff; }
+	.xNotice .x_title {border-bottom:1px #ccc solid; height:3.2em; text-align:center; margin-top:2em; margin-bottom:20px; color:#333; }
+	.xNotice .x_title span {position:relative;display:inline-block; width:6em; font-weight:bold; line-height:2.6em; border-bottom:3px #000 solid; z-index:1;font-size:16px;}
+	.xNotice .xcon {position:relative;}
+	.xNotice .xcon ul { padding-bottom:30px;}
+	.xNotice .x_box { position:relative; overflow:hidden; }
+	.xNotice li .x_box { margin:0 15px; border-bottom:1px #ddd solid; }
+	.xNotice .xcon .ximg { position:absolute; margin:12px 0; width:90px;}
+	.xNotice .xcon .cur { background-color:#f8f8f8; }
+	.xNotice .xcon .xicon16 { position:absolute; right:0; top:50%; background-position:0 -20px;}
+	.xNotice .cur .xicon16 { background-position:0 0;}
+	.xNotice .xnr { position:relative; padding:20px 10px 20px 110px;}
+	.xNotice .xnr strong { display:block; width:100%; font-size:12px; line-height:2em;overflow: hidden;white-space: nowrap;text-overflow: ellipsis;}
+	.xNotice .xnr strong a:hover {color:#00a651;}
+	.xNotice .xnr p { display:block; font-size:12px; line-height:1.6em; color:#666;}
+	.xNotice .xnr span.xname { display:inline-block; font-size:12px; color:#00a651;}
+	.xNotice .xnr span.xtime { display:inline-block; font-size:12px; color:#c0c0c0;font-family: Soleto-Regular;}
+	.xNotice .xnr span.xhr { display:inline-block; font-size:12px; color:#c0c0c0; padding:0 .8em;}
+
+
+.xScals { position:relative; margin:20px; height:2em;}
+
+
+
+.xScals .selectric{margin-left: 10px;cursor: pointer;    display: inline-block;
+    vertical-align: middle;
+}
+.xScals .selectric .top{
+	border-radius: 4px;
+	padding: 6px 12px;
+}
+.xScals .selectric .top:hover{
+	/*background-color: #d4d4d4;*/
+    border-color: #8c8c8c;
+}
+.xScals .selectric .top>p{color:#333;/*font-weight: bold;padding-left: 5px;line-height: 36px;*/margin-bottom: 0;display: inline-block;}
+.xScals .selectric .top .open{
+	display: none;
+}
+.xScals .selectric i.xicon_btnbg {width:15px;height:15px;background:url(http://www.fcguoan.com/public/img/xS_btnbg.png) 0 0 no-repeat;margin-top:-2px;background-size:100%;}
+.xScals .selectric .open .xicon_btnbg{background-position: 0 -15px;}
+
+.xScals .selectric .top .open .on{width:11px;height:7px;background:url(http://www.fcguoan.com/public/images/icon_open_ac.png);margin-left:15px;display:none;}
+.xScals .selectric .top .open .off{width:11px;height:7px;background:url(http://www.fcguoan.com/public/images/icon_open.png);margin-left:15px;display:block;}
+
+.xScals .selectric .top.active{
+    -webkit-box-shadow: inset 0 3px 5px rgba(0,0,0,.125);
+    box-shadow: inset 0 3px 5px rgba(0,0,0,.125);
+    /*background-color: #e6e6e6;*/
+    border-color: #adadad;
+}
+.xScals .selectric .top.active .open .on{display:block;}
+.xScals .selectric .top.active .open .off{display:none;}
+
+
+.xScals .selectric .seleList{/*left:50%;margin-left:-100px;top:36px;display:none;background:#fff;*/
+	position: absolute;
+    top: 100%;
+    left: 0;
+    z-index: 1000;
+    display: none;
+    float: left;
+    min-width: 160px;
+    padding: 5px 0;
+    margin: 2px 0 0;
+    font-size: 14px;
+    text-align: left;
+    list-style: none;
+    background-color: #fff;
+    -webkit-background-clip: padding-box;
+    background-clip: padding-box;
+    border: 1px solid #ccc;
+    border: 1px solid rgba(0,0,0,.15);
+    border-radius: 4px;
+    -webkit-box-shadow: 0 6px 12px rgba(0,0,0,.175);
+    box-shadow: 0 6px 12px rgba(0,0,0,.175);
+
+        margin-top: 10px;
+    margin-left: 12px;
+    width: 110px;
+    border-radius: 9px;
+    padding: 15px 0;
+
+
+        min-width: 100%;
+    text-align: center;
+
+}
+.xScals .selectric .seleList.active{display:block;}
+.xScals .selectric .seleList ul{/*width: 174px;box-shadow: 3px 3px 16px #e8e8e8;border-radius: 3px;max-height:350px;overflow-y: auto*/
+	    max-height: 360px;
+}
+.xScals .selectric .seleList li{/*color:#666;font-size: 14px;letter-spacing: normal;padding:0 25px;height:50px;line-height: 50px*/
+
+}
+.xScals .selectric .seleList li a{
+	display: block;
+    text-align: center;
+    padding: 0 20px;
+    line-height: 40px;
+    font-size: 14px;
+    color: #666;
+}
+.xScals .selectric .seleList li:hover{background:#f5f5f5;color:#00a651;}
+.xScals .selectric .seleList li.selected{font-weight: bold;}
+.xScals .selectric .seleList::after{content:'';width:0;height:0;border-bottom:7px solid #fff;border-left:7px solid transparent;border-right:7px solid transparent;position:absolute;top:-7px;left:50%;margin-left: -3px}
+
+
+
+
+	.xS_btn { background:none; border:0; font-size:12px;}
+	.xScals li { font-size:12px;}
+	.xScals .xSc_Not,.xScals .xSc_year,.xScals .xSc_month { min-width:100%; text-align:center;}
+	.open .xicon_btnbg { background-position:0 -15px;}
+
+.xSnav { margin:20px 0;}
+	.xSnav .x_box { padding:0;}
+	.xSnav .x_box .open span,.xSnav .x_box .xS_btn:hover{ background-color:none;}
+	.xSnav ul { max-height:200px; overflow-y:auto;min-width: 100px; }
+	.xSnav li{ padding:0px;}
+	.xSnav li a{ display:block; padding:3px; line-height:1.4em;}
+
+
+.xScontent { padding:20px 15px; background-color:#fff;}
+	.xScontent h1 { text-align:center; font-family:"Microsoft YaHei"; font-size:20px; line-height:1.6em;}
+	.xScontent .x_info { padding:1.6em 0; font-size:12px; line-height:1.6em; color:#666;}
+	.xScontent .x_info span.xname { display:inline-block; font-size:12px; color:#00a651;}
+	.xScontent .x_info span.xtime { font-family:Soleto-Light; display:inline-block; font-size:12px; color:#c0c0c0;}
+	.xScontent .x_info span.xhr { display:inline-block; font-size:12px; color:#c0c0c0; padding:0 .8em;}
+
+.xScontent .x_info .jiathis_style .jiathis_txt, .xSabs .jiathis_style .jiathis_txt{
+	width: 27px!important;
+	height: 27px!important;
+	border-radius: 50%;
+	padding: 0!important;
+	background: url(http://www.fcguoan.com/public/img/qq.png) center no-repeat;
+	background-color: #c1c9d0;
+	margin-left: 8px;
+}
+.xScontent .x_info .jiathis_style .jiathis_button_tsina .jiathis_txt, .xSabs .jiathis_style .jiathis_button_tsina .jiathis_txt{
+	background-image: url(http://www.fcguoan.com/public/img/weibo.png);
+}
+.xScontent .x_info .jiathis_style .jiathis_button_weixin .jiathis_txt, .xSabs .jiathis_style .jiathis_button_weixin .jiathis_txt{
+	background-image: url(http://www.fcguoan.com/public/img/weixin.png);
+}
+.xScontent .x_info .jiathis_style .jiathis_txt:hover, .xSabs .jiathis_style .jiathis_txt:hover{
+	background-color: #1296db;
+}
+.xScontent .x_info .jiathis_style .jiathis_button_tsina .jiathis_txt:hover, .xSabs .jiathis_style .jiathis_button_tsina .jiathis_txt:hover{
+	background-color: #d81e06
+}
+.xScontent .x_info .jiathis_style .jiathis_button_weixin .jiathis_txt:hover, .xSabs .jiathis_style .jiathis_button_weixin .jiathis_txt:hover{
+	background-color: #34c02e;
+}
+
+	.xScontent .x_share { float:right;}
+	.xScontent .x_share a { margin-left:6px;}
+		.x_share a:hover i.cont_wx { background-position:0 -30px; }
+		.x_share a:hover i.cont_wb { background-position:0 -30px; }
+		.x_share a:hover i.cont_qq { background-position:0 -30px; }
+	.xScontent .x_con { margin-bottom:30px; padding:30px 0; border-bottom:1px #ccc solid; border-top:1px #ccc solid; word-wrap: break-word; overflow-x: hidden; }
+	.xScontent .x_rele { margin-bottom:30px; }
+	.xScontent .x_rele .x_dl,.xScontent .x_rele .x_dr { text-align:center; line-height:30px; overflow: hidden;
+text-overflow:ellipsis;
+white-space: nowrap;}
+	.xScontent .x_rele a { color:#666;overflow:hidden; white-space:nowrap; text-overflow:ellipsis;font-size:12px;}
+	.xScontent .x_rele a:hover { color:#00a651;}
+	.xScontent .x_rele a:hover .rele_l { background-position:-5px -20px;}
+	.xScontent .x_rele a:hover .rele_r { background-position:0 -20px;}
+
+
+.bshare-custom.icon-medium a{
+	width: 27px!important;
+	height: 27px!important;
+	border-radius: 50%;
+	padding: 0!important;
+	background: url(http://www.fcguoan.com/public/img/qq.png) center no-repeat!important;
+	background-color: #c1c9d0!important;
+	margin-left: 8px;
+}
+.bshare-custom.icon-medium a.bshare-sinaminiblog{
+	background-image: url(http://www.fcguoan.com/public/img/weibo.png)!important;
+}
+.bshare-custom.icon-medium a.bshare-weixin{
+	background-image: url(http://www.fcguoan.com/public/img/weixin.png)!important;
+}
+.bshare-custom.icon-medium a:hover{
+	background-color: #1296db!important;
+}
+.bshare-custom.icon-medium a.bshare-sinaminiblog:hover{
+	background-color: #d81e06!important
+}
+.bshare-custom.icon-medium a.bshare-weixin:hover{
+	background-color: #34c02e!important;
+}
+
+.xSabs {padding:20px 0; background-color:#fff;}
+	.xSabs h1 { text-align:center; font-family:"Microsoft YaHei"; font-size:20px; line-height:1.6em;}
+	.xSabs .x_con { margin-bottom:20px; padding:30px 15px; border-bottom:1px #ccc solid; border-top:1px #ccc solid; }
+
+.container .xSabs .x_rele .x_dr{text-align: right;}
+.container .x_rele .x_dl, .container .x_rele .x_dr {line-height:30px; overflow: hidden;
+text-overflow:ellipsis;
+white-space: nowrap;}
+.container .x_rele .x_dl strong, .container .x_rele .x_dr strong{
+	font-weight: normal;
+}
+
+	.xSabs .x_info { padding: 0 1.2em;
+		font-size: 12px;
+		line-height: 1.6em;
+		color: #666;
+		height: 40px;}
+	.xSabs .x_info span.xname { display:inline-block; font-size:12px; color:#00a651;}
+	.xSabs .x_info span.xtime { display:inline-block; font-size:12px; color:#c0c0c0;}
+	.xSabs .x_info span.xhr { display:inline-block; font-size:12px; color:#c0c0c0; padding:0 .8em;}
+	.xSabs .x_share { float:right;}
+	.xSabs .x_share a { margin-left:6px;}
+		.x_share a:hover i.cont_wx { background-position:0 -30px; }
+		.x_share a:hover i.cont_wb { background-position:0 -30px; }
+		.x_share a:hover i.cont_qq { background-position:0 -30px; }
+	.xSabs .x_nav { position:relative; font-size:12px; height:3em; margin-bottom:3px;}
+	.xSabs .x_nav  div { position:relative; left:50%; float:left; }
+	.xSabs .x_nav  ul { position:relative; left:-50%; float:left; }
+	.xSabs .x_nav  li { float:left; text-align:center; line-height:3em;  }
+	.xSabs .x_nav  li a { float:left; padding:0 1.8em; }
+	.xSabs .x_nav  li a:hover,.xSabs .x_nav  li a.cur { color:#00a651;}
+	.xSabs .x_nav  li.cur a { border-bottom:3px #00a651 solid;color:#00a651; }
+	.xSabs .x_nav  li span { float:left;}
+
+.xSimages { padding:0; position:relative; }
+.xSimages .xbox{ position:relative; overflow:hidden;}
+	.xSimages .xcon { margin:0 5px; position:relative; }
+	.xSimages .xcon .row { margin:0 15px;position:relative; overflow:hidden; }
+	.xSimages .xcon .ximg { position:relative; overflow:hidden; width:100%;}
+	.xSimages .xcon .ximg img { width:100%;}
+	.xSimages .xcon li { float: left; position:relative; padding:0 5px; margin-bottom:10px; }
+	.xSimages li i.xvimg_i { position:absolute; left:0; right:0; top:0; bottom:0; z-index:1;background:url(http://www.fcguoan.com/public/img/xSimg_bg.png); }
+	.xSimages .xcon .x_nr { position:absolute; left:5px; right:0; bottom:0; z-index:1; padding:.6em .2em; margin:0;}
+	.xSimages .x_nr .x_a { display:block; width:100%; overflow:hidden;white-space:nowrap;text-overflow:ellipsis;color:#fff; font-size:12px;}
+	.xSimages .x_nr .x_b { display:inline-block; font-size:12px; color:#ccc; }
+	.xSimages .x_nr .x_c { display:inline-block; font-size:12px; color:#ccc; }
+	.xSimages .cur img {transform:scale(1.05);transition:transform 0.3s;}
+	.xSimages .xcom .cur .x_nr { display:block;}
+	.xSimages .xload { margin:15px; padding-bottom:10px; text-align:center;}
+
+	.xSimages .xcon .x_wat:hover .x_nr{display: block;}
+
+.xSmark { padding:0; position:relative; }
+
+.xSn-hot {padding:0; position:relative; overflow:hidden; margin-bottom:20px;}
+	.xSn-hot .x_title {border-bottom:1px #ccc solid; text-align:center;  padding-top:2em; margin-top:2em;  margin-bottom:20px; color:#333; background-color:#fff; }
+	.xSn-hot .x_title span {position:relative;display:inline-block; width:6em; font-weight:bold; line-height:2em; border-bottom:3px #000 solid; z-index:1;}
+	.xSn-hot .xcon { margin:2em 15px 0 15px;}
+	.xSn-hot .xcon .row { margin:0 -5px;}
+	.xSn-hot .xcon .ximg { width:100%;}
+	.xSn-hot .xcon .ximg img { width:100%;}
+	.xSn-hot .xcon .x_box {box-shadow: 0 0 5px #ccc;}
+	.xSn-hot .xcon li { padding:0 5px; margin-bottom:10px; }
+	.xSn-hot .xnr { position:relative; padding:10px;background:#fff;}
+	.xSn-hot .xnr strong { display:block; width:100%; font-size:12px; line-height:2em;overflow: hidden;white-space: nowrap;text-overflow: ellipsis;}
+	.xSn-hot .xnr p { display:block; font-size:12px; line-height:1.6em; color:#666;}
+	.xSn-hot .xnr span.xname { display:inline-block; font-size:12px; color:#00a651;}
+	.xSn-hot .xnr span.xtime { font-family:Soleto-Light; display:inline-block; font-size:12px; color:#c0c0c0;}
+	.xSn-hot .xnr span.xhr { display:inline-block; font-size:12px; color:#c0c0c0; padding:0 .8em;}
+
+.x_page { position:relative; padding-bottom:50px;text-align:center;}
+	.x_page div { position:relative; }
+	.x_page ul { position:relative; left:-50%; float:left; }
+	.x_page li { float:left; text-align:center; line-height:20px;  }
+	.x_page li a { float:left; width:20px; height:20px; margin:0 5px; font-size:14px; font-family:Soleto-Regular;}
+	.x_page li a:hover,.x_page li a.cur { color:#00a651;}
+	.x_page li span { float:left; padding:0 20px;}
+	.x_page li a:hover i,.x_page li a.cur i{ background-position:0 -20px;}
+
+/*  -------   焦点图 ------- */
+.swiper-container { width:100%; height:100%; margin-left:auto; margin-right:auto;}
+.swiper-slide { overflow:hidden; display:-webkit-box; display:-ms-flexbox; display:-webkit-flex; display:flex; -webkit-box-pack:center; -ms-flex-pack:center;  -webkit-justify-content:center; justify-content:center; -webkit-box-align:center; -ms-flex-align:center; -webkit-align-items:center; align-items:center;}
+.swiper-button-next,.swiper-button-prev {width:7%; height:7%; margin-top:-5%; background-size:100%; opacity:.7;}
+.swiper-button-next { background-image:url(http://www.fcguoan.com/public/img/right_bg.png);}
+.swiper-button-prev { background-image:url(http://www.fcguoan.com/public/img/left_bg.png);}
+.swiper-button-next:hover { background-image:url(http://www.fcguoan.com/public/img/right1_bg.png);}
+.swiper-button-prev:hover { background-image:url(http://www.fcguoan.com/public/img/left1_bg.png);}
+.swiper-container-horizontal>.swiper-pagination-bullets, .swiper-pagination-custom, .swiper-pagination-fraction { bottom:5em}
+.swiper-pagination-bullet { width:15%; height:4px; border-radius:0; background-color:#009848; opacity:1;}
+.swiper-pagination-bullet-active { background-color:#ffea10; }
+
+.xcertify {position:relative;width:100%;margin:0 auto;}
+	.xcertify .swiper-container {padding-bottom:1em;}
+	.xcertify .swiper-slide { display:block; width:90%;height:10em; background:url(http://www.fcguoan.com/public/img/lide_b.png) 0 0 no-repeat; background-color:#f0f0f0; background-size:100%;box-shadow:0 8px 30px #ddd;}
+	.xcertify .swiper-button-prev {left:0;margin-top:-22px;width:20px;height:100%; top:0; background:url(http://www.fcguoan.com/public/img/xcertify_l.png) center center no-repeat;}
+
+	.xcertify .swiper-button-next {right:0;margin-top:-22px;width:20px;height:100%; top:0;background:url(http://www.fcguoan.com/public/img/xcertify_r.png) center center no-repeat;}
+	.xcertify .swiper-slide-active {background-image:url(http://www.fcguoan.com/public/img/lide_a.png);background-repeat: no-repeat;background-position: 0 0;background-color:#f0f0f0; background-size:100%;}
+	.xcertify .swiper-pagination { display:none;}
+
+.xcertify .swiper-button-prev{
+	width: 29%;
+	height: 38%;
+	top: 18%;
+	background-position: 2% bottom;
+}
+.xcertify .swiper-button-next{
+	width: 29%;
+	height: 38%;
+	top: 18%;
+	background-position: 98% bottom;
+}
+
+	.xcertify .xcon { position:relative; color:#000; height:100%;}
+	.xcertify .xdwvs { position:absolute; left:40px; top:40px;}
+		.xcertify .xdwvs p { display:inline-block;}
+		.xcertify .xdwvs .xp_dw { font-size:16px;}
+		.xcertify .xdwvs img { display:none;}
+		.xcertify .xdwvs .xp_dw span { line-height:4em; font-weight:bold;}
+		.xcertify .xdwvs .xp_vs span { margin:0 15px;}
+	.xcertify .xdid {position:absolute; left:256px; top:10px;}
+		.xcertify .xdid p { margin:0; line-height:24px;}
+		.xcertify .xdid .x_t { display:none; font-family:BebasRegular; font-size:24px; font-weight:bold; line-height:36px; }
+		.xcertify .xdid .x_d { font-size:16px; }
+	.xcertify .xcis {position:absolute; left:345px; top:60px;font-size:16px;}
+		.xcertify .xcis p { margin:0; line-height:24px;}
+	.xcertify .xtime {position:absolute; margin-top:4px; z-index:2; font-size:16px;}
+		.xcertify .xtime p { padding:0; margin:0; color:#000; line-height:2.4em; text-indent:2.6em;}
+	.xcertify .x_btn {position:absolute; left:200px; bottom:20px; width:120px;/*background-color:#7d7d7d;*/font-size:16px;}
+		.xcertify .x_btn p { text-align:center; padding:0; margin:0; line-height:2.4em;}
+		.xcertify .x_btn .xicon9 { display:none;}
+		.xcertify .x_btn a { color:#fafafa; display: block; background-color: #7d7d7d;}
+		.xcertify .xend .xcis {display:none;}
+		.xcertify .xend .xdid .x_t {display:block;position:absolute; width:200px; left:95px;top:42px; font-weight:normal;}
+		.xcertify .xend .xdid .xf_r { color:#c00; padding-left:10px; font-family:"Microsoft YaHei"; font-weight:bold;}
+
+	.xcertify .swiper-slide-active .xdwvs { position:absolute; left:20px; top:15px;}
+		.xcertify .swiper-slide-active .xdwvs p { float:left; width:75px; font-size:12px; text-align:center;}
+		.xcertify .swiper-slide-active .xdwvs .xp_dw { display:inline-block;}
+		.xcertify .swiper-slide-active .xdwvs img { display:inline-block; height: 4rem;}
+		.xcertify .swiper-slide-active .xdwvs .xp_dw span { display:block; line-height:3em; font-weight:bold;}
+		.xcertify .swiper-slide-active .xdwvs .xp_vs { width:80px;}
+		.xcertify .swiper-slide-active .xdwvs .xp_vs span { overflow:hidden; display:inline-block; width:25px; height:25px; background:url(http://www.fcguoan.com/public/img/icon_vs.png) center center no-repeat; margin:15px 0; text-indent:-99999px;}
+	.xcertify .swiper-slide-active .xdid {position:absolute; left:70%; top:30px;}
+		.xcertify .swiper-slide-active .xdid p { margin:0; line-height:24px;}
+		.xcertify .swiper-slide-active .xdid .x_t { position:relative; left:auto; top:auto; display:inline-block; font-family:BebasRegular; font-size:20px; font-weight:bold; line-height:24px; }
+		.xcertify .swiper-slide-active .xdid .x_d { font-weight:bold; font-size:12px;}
+	.xcertify .swiper-slide-active .xcis {position:absolute; left:70%; top:70px; font-size:12px;}
+		.xcertify .swiper-slide-active .xcis p { margin:0; line-height:24px;}
+	.xcertify .swiper-slide-active .xtime {position:absolute; bottom:0; z-index:2;font-size:12px;}
+		.xcertify .swiper-slide-active .xtime p { padding:0; margin:0; color:#fafafa; line-height:2.2em; text-indent:2em;}
+	.xcertify .swiper-slide-active .x_btn {position:absolute; left:0; bottom:0; width:100%;background-color:#333;font-size:12px;}
+		.xcertify .swiper-slide-active .x_btn p { text-align:right; padding:0; margin:0;  line-height:1.6em;}
+		.xcertify .swiper-slide-active .x_btn .xicon9 { display:inline-block; margin:6px 20px 0 12px;}
+		.xcertify .swiper-slide-active .x_btn a { color:#fafafa;}
+		.xcertify .swiper-slide-active .xcis {display:block;}
+		.xcertify .swiper-slide-active .xdid .xf_r { color:#c00; padding-left:10px;}
+
+.xpop_img { display:none; position:fixed; top:0; right:0; bottom:0; left:0; background:rgba(0, 0, 0, 0.8); z-index:111111111; box-sizing:content-box;}
+.xpop_img .x_box { margin:0 auto; width:80%; margin-top:60%;}
+.xpop_img .x_img img{ width:100%;}
+.xpop_img.cur { display:block; }
+.xpop_img .x_off { display:block; position:absolute; top:20px; right:20px; width:40px; height:40px;background:url(http://www.fcguoan.com/public/img/off_bg.png) 0 0 no-repeat; cursor:pointer;}
+
+.xpop_img video { width:100%; height:100%;}
+
+.ximg.qmmximg{margin-top:4rem;}
+
+
+@media (min-width: 1266px) {
+
+    .container-fluid.xyg {
+        padding-top: 76px !important;
+        padding-bottom: 56px !important;
+    }
+	.xpop_img .x_box { width:1000px; margin-top:130px;}
+
+	.container-fluid, .container { padding:0px; min-width:1204px;}
+	.sorry {
+		width: 100% !important;
+		height: 100% !important;
+		padding: 20%;
+	}
+	.container .wz{display: none;}
+	.container .wzz{display: none;}
+	.container-fluid.playerList{padding-top: 20px !important; margin-bottom: 148px;}
+	.navbar-header{ float:none;/*margin-left:-15px !important;margin-right:-15px !important;*/}
+	.navbar-default .navbar-nav>li>a,.navbar-default .navbar-nav>.active>a, .navbar-default .navbar-nav>.active>a:focus { padding:0; }
+
+	.xtoggle { display:block;}
+	.xMtoggle { display:none;}
+	/*i.xicon3 { margin-right:6px;margin-top:-2px;}*/
+	i.xicon5 { background-position:0 0;}
+	i.xicon6 { width:44px; height:44px;}
+	i.xicon7 { width:44px; height:44px;}
+	i.xicon8 { width:44px; height:44px;}
+	i.xicon9 { width:25px; height:25px;}
+	.xicon4 { float:left; padding:0; margin-top:15px; width:20px; height:20px; text-indent:-99999px; background:url(http://www.fcguoan.com/public/img/xicon4.png) 0 0 no-repeat;}
+
+	.xnav { position:relative; background:rgba(19, 128, 69, 0.8); height:36px; border-bottom:1px #2b8d58 solid; }
+	.xnav .xlogo a { position:absolute; display:block; top:10px; left:600px; margin-left:-55px;}
+	.xnav .xlogo img { width:90px;}
+	.xnav .xlogo a{top: 20px;}
+	.xnav .xlogo a img{width: 90px;}
+	/*.xnav .xsite li { margin-right:30px;}*/
+	.xnav .xsite .xbtn {display:block;background:none; border:0; height:36px; /*margin-right:80px;*/}
+	.xmenu { padding:0; width:100%;}
+	.xmenu .xsite { height:70px; margin:0 auto;}
+	.xmenu {box-shadow: rgba(0,0,0,0.2) 0 5px 10px 0;}
+	.xmenu .xsite ul { float:left;}
+	.xmenu .xsite .xubox {  margin-right:220px;}
+	.xmenu .xsite li { position:relative;float:left; padding:10px 45px; font-size:16px;}
+	.xmenu .xsite li a { padding:15px 0;}
+	.xmenu .xsite .navbar-nav li a{padding: 23px 0 7px;}
+	.xmenu .xsite li a.xicon4{margin-top: 23px;}
+	.subNav li>a{padding-top: 5px;}
+	.subNav li>a:hover{padding-top: 5px;}
+	.xmenu .xsite li a.xicon4 { padding:0;}
+	.xmenu .xsite li a:hover,.xmenu .xsite .xcur a { color:#ffea10;}
+	.xmenu .xsite .xcur a.xicon4,.xmenu .xsite li a.xicon4:hover { background-position:0 -20px;}
+	.xmenu .x_my { margin:8px 15px 0 0;}
+	.xmenu .x_my .word_tit{    position: absolute;
+		top: -40%;
+		z-index: 999999;
+		color: #fff;
+		left:7%;
+	}
+	.xmenu .x_my ul { position:absolute; top:-50px; padding:0; border-bottom:0; z-index:999999;right:10%;}
+	.xmenu .x_my li { float:left; padding:8px 30px 0 0;}
+	.xmenu .x_cn ul { padding:0; border-top:0; position:absolute; left:0; top:-50px; z-index:999999;}
+	.xmenu .x_cn { color:#fff;}
+	.x_ipt{
+		display: none;
+	}
+	.xmenu .x_cn a,.xmenu .x_cn a:hover { display:inline-block; padding:0; margin:0;}
+	.xmenu .x_cn li { padding:8px 30px 0 0;}
+	.xmenu .x_cn li.head_title{padding-top: 23px; line-height: 18px;font-size: 14px;}
+
+
+	.xMnav { padding-bottom:0;}
+
+	.xSnav { float:right; width:394px; margin:0;}
+	.xSnav .xS_btn { font-size:14px;}
+	.xSnav .x_b { font-weight:bold;}
+	.xSnav .xSc_Not { float:right; width:300px; margin:10px 0 0 -110px; border-radius:9px; padding:15px 10px;}
+	.xSnav .xSc_year,.xSnav .xSc_month { margin-top:10px; margin-left:-10px; min-width:130px; padding:15px 0;border:none;border-radius: 0!important}
+	.xSnav .xSc_month{max-height:236px; overflow-y:auto;}
+	.xSnav ul { max-height:360px;}
+	.xSnav .xarrow { position:absolute;display:block;width:15px;height:11px; top:-11px;margin-left:-6px; background:url(http://www.fcguoan.com/public/img/xarrow.png) 0 0 no-repeat;}
+	.xSnav li { padding:0;}
+	.xSnav li a{ display:block; text-align:left; padding:0 20px; line-height:40px; font-size:14px; color:#666; white-space: nowrap;}
+	.xSnav li a:hover{ background-color:#f5f5f5; color:#00a651;}
+	.xSnav .x_tit { display:block; padding:0 20px 15px 20px; font-weight:bold; line-height:30px;text-align:left; }
+	.xSnav .xSc_year a,.xSnav .xSc_month a{ text-align:center;}
+	.xSnav .xSc_year .x_tit,.xSnav .xSc_month .x_tit{ padding:0 0 15px 0; text-align:center;}
+
+	.xSnavb { margin-top:50px; height:70px;line-height:20xp;}
+	.xSnavb .x_tit {float:left; margin-right:20px; font-weight:bold; line-height:30px;}
+	.xSnavb ul {float:left; }
+	.xSnavb li { float:left; position:relative; width:122px; padding:0; margin-bottom:6px;margin-right:6px; border-radius:2px; box-shadow:0 0 4px #eee;}
+	.xSnavb li a { display:block; font-size:12px; line-height:32px; text-align:center; border-radius:4px; background-color:#fff;}
+	.xSnavb li a:hover,.xNewsc li.cur a { color:#00a651;}
+	.xSnavb li i { position:absolute; right:10px; top:8px;}
+	}
+
+
+/*.xban { height:858px; }*/
+	.swiper-button-next,.swiper-button-prev {width:10%; height:10%; margin-top:-3%;background-size:auto;}
+	.swiper-pagination-bullet { width:120px;}
+
+
+	.xS-top {  height:500px;}
+	.xS-top .x_tit { font-size:48px;}
+
+	.xshare { height:56px;}
+	.xshare li a { line-height:54px;}
+	.xshare .xcur a, .xshare li a:hover { border-bottom:2px #ffea10 solid; }
+
+
+	.xintegral { position:relative; float:left; width:568px; margin-right:10px; overflow:hidden;}
+	.xintegral .xtit {text-align:left; border-bottom:1px #ccc solid; height:44px;/* margin-left:134px;*/}
+	.xintegral .xtit span {  margin-left:-134px; display:inline-block; width:130px; font-size:16px; font-weight:bold; line-height:40px; border-bottom:4px #000 solid; }
+	/*.xintegral .xmove { position:absolute; right:0; top:14px; font-style:italic; height:auto; background-color:transparent; text-align:left; margin:0;}*/
+	/*.xintegral .xmove a { color:#666;line-height:inherit;}*/
+	/*.xintegral .xcont { height:300px; margin-top:42px;}*/
+		.xrank { margin-left:176px;;}
+		/*.xrank span {line-height:4.1em;}*/
+		.xrank span.s1,.xrank span.s2 { width:6em;}
+		.xrank span.s3,.xrank span.s4 { width:10em;}
+	.xintegral .xbox { width:176px; }
+	.xintegral .xbox:hover .s0{color:#ffea10;}
+	.xintegral .xbox a{position: relative;height: 100%;display: block;}
+
+	.xintegral .xbox span.s0 {font-size:15em;}
+
+
+	.xshooter { position:relative; float:left; width:626px;overflow:hidden;}
+	.xshooter .xtit { text-align:left; border-bottom:1px #ccc solid; height:44px; margin-left:134px;}
+	.xshooter .xtit .a_link {  margin-left:-134px; display:inline-block; width:130px; font-size:16px; font-weight:bold; line-height:40px; border-bottom:4px #000 solid; }
+	/*.xshooter .xmove { position:absolute; right:0; top:14px; font-style:italic; height:auto; background-color:transparent; text-align:left; margin:0;}*/
+	/*.xshooter .xmove a { color:#666;line-height:inherit;}*/
+	.xshooter .xcont { height:300px; margin-top:42px;}
+	.xshooter .xcont ul { margin:0;}
+	.xshooter .xcont li { width:198px; margin-right:10px;height:300px; }
+	.xshooter .xprice span { line-height:1.4em;}
+	.xshooter .xprice .xnum { font-size:2em; color:#ffea10; padding-left:6px;}
+	.xshooter .xname { position:absolute; top:0; left:0; right:auto; bottom:6px; text-align:right; color:#fff; padding-right:6px; font-size:14px;}
+
+	.xcertify {width:1200px;}
+	.xcertify .swiper-slide {width:500px; height:180px;}
+
+	.xcaic {     overflow: hidden;
+		position: relative;
+		padding: 0;
+		position: relative;
+		 background: url(http://www.fcguoan.com/public/img/caic_bg.jpg) center bottom no-repeat;
+		background-size: cover;
+		height: 383px;}
+	.xcaic .x_tit { position:absolute; left:50%; width:1200px; height:400px; margin-left:-600px;  }
+	.xcaic .x_tit h2 { display:block; color:#ffea10; text-align:center;margin:60px 0; font-size:30px;}
+	.xcaic .x_tit span { position:relative; z-index:2;}
+
+	.xcaic .x_a {position:absolute; top:110px; right:50%; width:686px; margin-right:270px; background:url(http://www.fcguoan.com/public/img/caic_home_bg.png) 0 0 no-repeat;}
+		.xcaic .x_a span { float:right; font-size:22px; line-height:30px; color:#fff;}
+		.xcaic .x_a span.s1 { margin-right:68px; font-family:Soleto-Regular;}
+		.xcaic .x_a span.s2 { margin-right:12px;}
+	.xcaic .x_b {position:absolute; top:110px; left:50%; width:686px; margin-left:270px; background:url(http://www.fcguoan.com/public/img/caic_away_bg.png) 0 0 no-repeat;}
+		.xcaic .x_b span { float:left; font-size:22px; line-height:30px; color:#000;}
+		.xcaic .x_b span.s1 { margin-left:68px; font-family:Soleto-Regular;}
+		.xcaic .x_b span.s2 { margin-left:12px;}
+
+	/*.xcaic .container { position:relative; margin-top:252px;}*/
+	.xcaic .x_c { position:absolute; top:0; margin-left:120px; width:170px;}
+		.xcaic .x_c span { display:block; margin-top:20px; font-size:22px; line-height:40px; text-align:center; color:#fff;}
+	.xcaic .x_d { position:absolute; top:0; right:0; margin-right:130px;width:170px;}
+		.xcaic .x_d img { margin:0 auto;}
+		.xcaic .x_d span { display:block; margin-top:20px; font-size:22px; line-height:40px; text-align:center; color:#fff;}
+		.xcaic .x_e { margin:40px auto; width:600px; font-style:italic; color:#fff; text-align:center;display: block;}
+		.xcaic .x_h { display:none;margin:40px auto; width:600px; font-style:italic; color:#fff; text-align:center;position: relative;}
+		.xcaic .x_h p{display: inline-block;margin:30px;}
+		.xcaic .x_h img{width:100%;}
+	.xcaic .x_h p:nth-child(1){position: absolute;left: 15%;top: 20%;}
+	.xcaic .x_h p:nth-child(3){position: absolute;right: 15%;top: 20%;}
+	.xcaic .x_i {margin:40px auto; width:600px; font-style:italic; color:#fff; text-align:center;position: relative;}
+	.xcaic .x_i p{display: inline-block;margin:30px;}
+	.xcaic .x_i p:nth-child(1){position: absolute;left: 10%;top: -70%;font-size: 130px;font-family:"Soleto-Regular";font-weight: bolder;}
+	.xcaic .x_i p:nth-child(2){line-height: 23px;font-family:"Soleto-Regular";}
+	.xcaic .x_i p:nth-child(3){position: absolute;right: 14%;top: -70%;font-size: 130px;font-family:"Soleto-Regular";font-weight: bolder;}
+	.xcaic .x_i p:nth-child(2) i{font-size:20px;padding: 0 13px;}
+	.xcaic .x_i p:nth-child(2) .word{font-size:16px;}
+	.xcaic .x_e span { font-family:Soleto-Regular; font-size:78px; margin:0 6px;}
+	.xcaic .x_f { margin:0 auto; /*margin-top:60px; */width:500px; font-size:16px; color:#fff; text-align:center;}
+		.xcaic .x_f span { margin:0 1em;display:inline;}
+		.xcaic .x_f span:first-child, .xcaic .x_f span:last-child {display:inline; }
+		.xcaic .x_f i { margin-right:.6em; margin-top:-4px;}
+	.xcaic .x_g { position:relative; margin:0 auto;/* margin-top:50px;*/ width:500px;}
+		.xcaic .x_g a { display:block; line-height:3em; text-align:center; font-size:16px; color:#fff; background-color:#009848;}
+		/*.xcaic .x_g a:hover { background-color:#ffea10; color:#000;}*/
+
+
+	.xsche .xbox{ position:relative;}
+	.xsche .xtit { position:relative; text-align:left; margin-top:0px; border-bottom:1px #ccc solid; height:44px; margin-left:130px;}
+	.xsche .xtit span { position:relative; z-index:1; margin-left:-130px; display:inline-block; width:130px; font-size:16px; font-weight:bold; line-height:40px; border-bottom:4px #000 solid; color:#000; }
+	.xsche .xbg { position:absolute; top:-40px; left:-50px; width:1304px; height:348px; background:#ddd; z-index:1;}
+	/*.xsche .xmove { position:absolute; left:50%; top:10px; font-style:italic; height:auto; background-color:transparent; text-align:left; text-indent:-20px; margin:0;}*/
+	/*.xsche .xmove a { margin-left:556px; display:block; color:#666;line-height:inherit;}*/
+
+
+        .xnews .xbox {
+            position: relative;
+            overflow: hidden;
+            background-color: #eaeaea;
+            height: 140px;
+            transition: background .5s;
+            -moz-transition: background .5s;
+            -webkit-transition: background .5s;
+            -o-transition: background .5s;
+        }
+	.xnews .xtit { position:relative; text-align:left; margin-top:24px; border-bottom:1px #ccc solid; height:44px; /*margin-left:130px;*/}
+	.xnews .xtit span { position:relative; z-index:1; margin-left:-130px; display:inline-block; width:130px; font-size:16px; font-weight:bold; line-height:40px; border-bottom:4px #000 solid; color:#000; }
+
+
+	.out{transition: .4s;transform:scale(1)}
+	.xnews .xcon { margin:30px 0;}
+	.xnews .xcon .row { margin:0 -5px; position:relative;}
+	.xnews .xcon li { padding:0 5px; }
+	.xnews .xnr { position:relative;}
+	.xnews .xnr strong { display:block; font-size:16px; line-height:2em;}
+	.xnews .xnr p { display:block;  line-height:1.6em; color:#666; /*height:4rem;*/height:18px;}
+	.xnews .xnr span.xname { display:inline-block; font-size:12px; color:#00a651;}
+	.xnews .xnr span.xtime { display:inline-block; font-size:12px; color:#c0c0c0;}
+	.xnews .xnr span.xhr { display:inline-block; font-size:12px; color:#c0c0c0; padding:0 .8em;}
+	.xnews .xmove {     position: relative;
+		height: 2.8em;
+		background-color: #009748;
+		text-align: center;
+		margin: 0 0 0 0;
+		font-size: 12px;}
+	.xnews .xmove a { color: #fff;
+		line-height: 2.8em;}
+
+	.xnews .x_s { position:absolute; bottom:2px; left:50%; z-index:10;}
+	/*.xnews .x_s ul { margin-left:-50%;}*/
+	.xnews .x_s ul { margin-left:-61%;}
+	.xnews .x_s li { float:left; font-size:16px; line-height:60px;}
+	.xnews .x_s li a { display:block; padding:0 2em; margin:0 1px;}
+	.xnews .x_s li a:hover,.xnews .x_s li.cur a { color:#009848; border-bottom:2px #009848 solid;padding-bottom:10px;}
+
+
+	.xvideo .xbox{ position:relative; overflow:hidden;}
+	.xvideo .xtit {     border-bottom: 1px #ccc solid;
+		height: 2.2em;
+		text-align: center;
+		margin-top: 2em;
+		color: #fff;}
+	.xvideo .xtit span { position:relative; z-index:1; margin-left:-130px; display:inline-block; width:130px; font-size:16px; font-weight:bold; line-height:40px;}
+	.xvideo .xcon { margin:30px 0;}
+	.xvideo .xcon .row { margin:0 -5px;}
+	.xvideo .xcon li { padding:0 5px;transition:all 0.6s; height: 260px;overflow: hidden;}
+	.xvideo .xcon .ximg { width:auto; overflow:hidden; position:relative;height: 100%;}
+	.xvideo .xcon .ximg img { height:auto;width: 100%;}
+	/*.xvideo .xcon .x_nr { left:0; right:0;!* background:rgba(0,0,0,.6);*!height:56px;bottom:0;transition:all 0.4s;padding-left:12px;box-sizing:border-box;z-index: 11}*/
+	.xvideo .xcon li:hover .x_nr {opacity:1;}
+
+	.xvideo .x_nr .x_a { font-size:16px;}
+	.xvideo .x_nr .x_b { margin-right:50px;}
+	/*.xvideo .xmove { position:absolute;     right: 8%; top:40px; font-style:italic; height:auto; background-color:transparent; text-align:left; margin:0;}*/
+	/*.xvideo .xmove a {color:#666;line-height:inherit; color:#ccc;}*/
+	.xvideo .xmove a:hover { color:#009848;}
+	.xvideo .xmove i.xicon5 { background-position:0 -10px;}
+	.xvideo .xmove a:hover i.xicon5 { background-position:0 -20px;}
+	.xshooter .xcont li:nth-of-type(2) i.xicon6{background:url(http://www.fcguoan.com/public/img/xicon7.png) 0 0 no-repeat;}
+	.xshooter .xcont li:nth-of-type(3) i.xicon6{background:url(http://www.fcguoan.com/public/img/xicon9.png) 0 0 no-repeat;}
+
+	.xVSec .xrum  { top:-115px;}
+	.xSvideo .xbox{ position:relative; overflow:hidden;}
+	.xSvideo .xtit { position:relative; text-align:left; margin-top:24px; border-bottom:1px #ccc solid; height:43px; margin-left:130px;}
+	.xSvideo .xtit span { position:relative; z-index:1; margin-left:-130px; display:inline-block; width:130px; font-size:16px; font-weight:bold; line-height:40px;}
+	.xSvideo .xmove { margin:10px 0; padding:20px 0;}
+	.xSvideo .xcon { margin:0 0 30px 0;}
+	.xSvideo .xcon .row { margin:0 -5px;}
+	.xSvideo .xcon li { padding:0 5px; overflow: hidden; /*height: 260px;*/}
+	/*.xSvideo .xcon li:nth-child(1){left:10px !important;}*/
+	/*.xSvideo .xcon li:nth-child(2){left:411px !important;}*/
+	/*.xSvideo .xcon li:nth-child(3){left:812px !important;}*/
+	.xSvideo li i.xvimg_i { position:absolute; left:0; right:0; top:0; bottom:0; z-index:1;background:url(http://www.fcguoan.com/public/img/xvideo_i.png); }
+	.xSvideo .xcon .ximg { width:auto; overflow:hidden; position:relative;height: 100%;}
+	.xSvideo .xcon .ximg img { max-width:100%;transition: .4s;}
+	.xSvideo .xcon .ximg:hover img {transform:scale(1.05);}
+	.xSimages .xcon .ximg:hover img {    transform: scale(1.05);
+		opacity: 0.7; transition: all 0.6s;  }
+.xSimages .xcon .ximg:hover .x_nr{opacity: 1}
+	.xSimages .xcon .ximg:hover{
+
+	}
+/*.xSvideo .xcon .x_nr ,.qmmximg .x_nr{background: rgba(0,0,0,.6); transition: all 0.6s; padding: 6px 17px; left:0px; right:0px; bottom: -5.7rem;}*/
+
+	.xSvideo.xvideo{background: none;}
+
+	.xSvideo .x_nr .x_a ,.qmmximg .x_nr .x_a{ font-size:16px;}
+	.xSvideo .x_nr .x_b ,.qmmximg .x_nr .x_b{ margin-right:50px;}
+	.ximg.qmmximg{position: relative; overflow: hidden; }
+	.ximg.qmmximg a img{width: 100%;}
+
+
+
+	.qmmximg.ximg { width:auto; height: 100%;background: url(http://www.fcguoan.com/public/img/xvideo_i.png) no-repeat;background-color: #000;}
+	.qmmximg.ximg i.tuji_i{
+		position: absolute;
+		width: 100%;
+		height:100%;
+		left: 0;
+		top: 0;
+		background: url(http://www.fcguoan.com/public/img/xvideo_i.png) no-repeat;
+		background-size: 100% 100%;
+		z-index: 8;
+		opacity: 0; transition: .4s;
+	}
+	.qmmximg.ximg:hover i.tuji_i{
+		opacity: 1;
+	}
+	.qmmximg.ximg img { /*width:auto; */   transition: .4s;display: block;}
+
+	.qmmximg.ximg:hover img {transform:scale(1.05);opacity: 0.7;}
+
+	.qmmximg.ximg .x_nr { transition: all 0.4s; left:0px; right:0px; bottom: 0; padding: 9px 17px;opacity: 0;z-index: 9;background: none;}
+	.qmmximg.ximg .x_a { font-size:16px;}
+	.qmmximg.ximg .x_b { margin-right:50px;}
+	.qmmximg.ximg .x_nr { display:block;}
+	.qmmximg.ximg i.xvimg_i { display:block; }
+	.qmmximg.ximg:hover .x_nr{opacity: 1}
+
+	.qmmximg.ximg .x_nr{color: #fff; line-height: 1.7rem; position: absolute;}
+
+
+
+	.xVnav { background-color:#fff;}
+	.xVnav .li_box { width:20%;}
+	.xVnav li a { display:block; padding:25px 0; text-align:center; font-size:16px;}
+	.xVnav li a:hover,.xVnav li.cur a { padding:25px 0 21px 0; color:#009848; border-bottom:4px #009848 solid;}
+
+
+	.xres .xbox{ position:relative; overflow:hidden;}
+	/*.xres .xtit {*/
+					  /*position: relative;*/
+					  /*text-align: left;*/
+					  /*margin-top: 24px;*/
+					  /*border-bottom: 1px #ccc solid;*/
+					  /*height: 44px;*/
+					  /*margin-left: 130px;}*/
+	/*.xres .xtit .a_link {*/
+							 /*position: relative;*/
+							 /*display: inline-block;*/
+							 /*width: 6em;*/
+							 /*font-weight: bold;*/
+							 /*!* line-height: 2em; *!*/
+							 /*border-bottom: 3px #fff solid;*/
+							 /*z-index: 1;*/
+							 /*line-height: 40px;*/
+							 /*font-size: 16px;}*/
+	.xres .xcon { margin:30px 0;}
+	.xres .xcon .row { margin:0 -5px;}
+	.xres .xcon li { padding:0 5px; }
+	.xres .xcon .ximg { width:auto;}
+	/*.xres .xcon .ximg img { width:auto;}*/
+	.xres .xcon .x_nr { display:none;}
+	.xres .x_nr .x_a { font-size:16px;}
+	/*.xres .xmove { position:absolute;     right: 8%; top:40px; font-style:italic; height:auto; background-color:transparent; text-align:left; margin:0;}*/
+	/*.xres .xmove a {  color:#666;line-height:inherit;}*/
+
+
+	.xcoop .xbox{ position:relative; overflow:hidden;}
+	.xcoop .xtit { .xres .xtit .a_link {
+					   position: relative;
+					   z-index: 1;
+					   margin-left: -130px;
+					   display: inline-block;
+					   width: 130px;
+					   font-size: 16px;
+					   font-weight: bold;
+					   line-height: 40px;
+					   border-bottom: 3px solid #000;}
+	.xcoop .xtit span { position:relative; z-index:1; margin-left:-130px; display:inline-block; width:130px; font-size:16px; font-weight:bold; line-height:40px;}
+	.xcoop .xcon { margin:30px 0;}
+	.xcoop .xcon .row { margin:0 -5px;}
+	.xcoop .xcon li { padding:0 5px; }
+	.xcoop .xcon .ximg { width:auto;}
+	.xcoop .xcon .ximg img { width:auto;}
+
+
+	.xdesc { height:550px;}
+	.xdesc .xbox {margin-top:4em;}
+	.xdesc ul { width:220px;}
+	.xdesc ul.u1 { top:0; left:0;}
+	.xdesc ul.u2 { top:0; left:220px;}
+	.xdesc ul.u3 { top:0; left:440px;}
+	.xdesc ul.u4 { top:0; left:660px;}
+	.xdesc ul.u5 { top:0; left:880px;}
+	.xdesc ul.u6 { top:16em; left:0;}
+	.xdesc ul.u7 { top:12em; left:220px;}
+	.xdesc .xju { position:absolute; right:0; top:0;}
+	.xdesc .xju .x_hr { display:block; min-height:114px; width:100px; border-bottom:1px #424242 solid;}
+	.xdesc .xju .x_hr img { padding-bottom:30px;}
+
+
+	.xSec {padding:0; position:relative;}
+	.xSec .xSec_l { float:left; width:900px; margin-bottom:50px;}
+	.xSec .xSec_r { float:right; width:254px; margin-bottom:50px;}
+	.xSec .container { padding:0;}
+	.xSec .xrum { left:auto;}
+	.xSec .xrum .xicon4 { display:inline-block;}
+
+
+	.xSnews { position:relative; overflow:hidden;}
+	.xSnews .x_title { position:relative; text-align:left; padding-top:0; margin-top:24px; border-bottom:1px #ccc solid; height:44px; margin-left:134px; background:none;}
+	.xSnews .x_title span { position:relative; z-index:1; margin-left:-134px; display:inline-block; width:130px; font-size:16px; font-weight:bold; line-height:40px; border-bottom:4px #000 solid; color:#000; }
+	.xSnews .xcon { margin:30px 0;}
+	.xSnews .xcon .row { margin:0 -5px;}
+	.xSnews .xcon li { padding:0 5px; }
+	.xSnews .xnr { position:relative;}
+	.xSnews .xnr strong { display:block; font-size:16px; line-height:2em;}
+	.xSnews .xnr p { display:block;  line-height:1.6em; color:#666;}
+	.xSnews .xnr span.xname { display:inline-block; font-size:12px; color:#00a651;}
+	.xSnews .xnr span.xtime { display:inline-block; font-size:12px; color:#c0c0c0;}
+	.xSnews .xnr span.xhr { display:inline-block; font-size:12px; color:#c0c0c0; padding:0 .8em;}
+
+	.xNotice { overflow:hidden;}
+	.xNotice .x_box { margin:0 50px; }
+	.xNotice li .x_box { margin:0 50px; }
+	.xNotice .x_title { position:relative; text-align:left; margin-top:24px; border-bottom:1px #ccc solid; height:44px; margin-left:134px;}
+	.xNotice .x_title span { position:relative; z-index:1; margin-left:-134px; display:inline-block; width:130px; font-size:16px; font-weight:bold; line-height:40px; border-bottom:4px #000 solid; color:#000; }
+	.xNotice .xcon .ximg { z-index:1; margin:15px 0; width:120px;}
+	.xNotice .xnr { padding:30px 10px 30px 150px;}
+	.xNotice .xnr strong { font-size:16px; line-height:2em;}
+	.xNotice .xnr p { display:block;  line-height:1.6em; color:#666;}
+	.xNotice .xnr span.xname { display:inline-block; font-size:12px; color:#00a651;}
+	.xNotice .xnr span.xtime { display:inline-block; font-size:12px; color:#c0c0c0;}
+	.xNotice .xnr span.xhr { display:inline-block; font-size:12px; color:#c0c0c0; padding:0 .8em;}
+
+
+
+.xNewsc {padding:0; position:relative; overflow:hidden;}
+	.xNewsc .x_title {border-bottom:3px #000 solid; height:40px; margin-top:2em; margin-bottom:30px; color:#333; }
+	.xNewsc .x_title span {font-weight:bold; line-height:2em; font-size:16px; }
+	.xNewsc ul {}
+	.xNewsc li { padding:0; margin-bottom:6px; height: 32px;}
+	.xNewsc li a { display:block; font-size:12px; line-height:32px; text-align:center;margin-right:6px; border-radius:4px; background-color:#fff;}
+	.xNewsc li a:hover,.xNewsc li.cur a { color:#00a651;}
+	.xNewsc li i { position:absolute; right:10px; top:8px;}
+
+
+.xSn-time {padding:0; position:relative; overflow:hidden;}
+	.xSn-time .x_title {border-bottom:3px #000 solid; height:40px; margin-top:2em; margin-bottom:30px; color:#333; }
+	.xSn-time .x_title span {font-weight:bold; line-height:2em; font-size:16px; }
+	.xSn-time ul {}
+	.xSn-month { display:none;}
+	.xSn-time li { position:relative; border-bottom:1px #e3e3e3 solid;}
+	.xSn-time .xSn-year { padding:0; background-color:#fff; font-family:Soleto-Regular; font-size:14px;}
+	.xSn-time li .xSnt { font-weight:400;}
+	.xSn-time .xSn-year a { display:block; font-size:12px; line-height:45px; text-indent:20px;}
+	.xSn-time .xSn-year a:hover,.xSn-time li a.cur { color:#fff; background-color:#00a651;}
+	.xSn-time .xSn-year a:hover i.year_bg,.xSn-time li a.cur i.year_bg{ background-position:0 -20px;}
+	.xNewsc li.cur a {border-bottom:1px #e3e3e3 solid;}
+	.xSn-time .xSn-month a { text-indent:30px; background-color:#fafafa;}
+	.xSn-time .xSn-month a:hover {background-color:#f8f8f8; color:#00a651;}
+	.xSn-time li i { position:absolute; right:10px; top:14px;}
+
+
+.xScontent { padding:50px 90px;}
+	.xScontent h1 { font-size:30px;}
+	.xScontent .x_con { padding:50px 0; }
+	.xScontent .x_rele a { font-size:14px;}
+	.xScontent .x_rele .x_dl{ text-align:left;}
+	.xScontent .x_rele .x_dr { text-align:right;}
+
+
+.xSabs { padding:50px 90px;}
+	.xSabs h1 { font-size:34px;}
+	.xSabs .x_con { padding:50px 0; }
+	.xSabs .x_nav { font-size:16px; height:4em;}
+	.xSabs .x_nav  li { line-height:4em; }
+	.xSabs .x_nav  li a { padding:0 2.6em; }
+	.xSabs .x_info {/* padding:1em 5em;*/}
+
+
+.xSimages .xbox{ position:relative; overflow:hidden;}
+	.xSimages .xcon { margin:0 0 60px 0;}
+	.xSimages .xcon .row { margin:0 -5px;}
+	.xSimages .xcon li { padding:0 5px; height: 260px;overflow: hidden;}
+	.xSimages li i.xvimg_i { display:none; }
+	.xSimages .xcon .ximg { width:auto; height: 100%;
+		background: url(http://www.fcguoan.com/public/img/xvideo_i.png) no-repeat;background-color: #000;}
+	.xSimages .xcon .ximg i.tuji_i{
+		position: absolute;
+		width: 100%;
+		height:100%;
+		left: 0;
+		top: 0;
+		background: url(http://www.fcguoan.com/public/img/xvideo_i.png) no-repeat;
+		background-size: 100% 100%;
+		z-index: 8;
+		opacity: 0; transition: .4s;
+	}
+	.xSimages .xcon .ximg:hover i.tuji_i{opacity: 1;}
+	.xSimages .xcon .ximg img { /*width:auto; */   transition: .4s;display: block;}
+	.xSimages .xcon .ximg:hover img {transform:scale(1.05);opacity: 0.7;}
+
+	.xSimages .xcon .x_nr { transition: all 0.4s; left:0px; right:0px; bottom: 0; padding: 9px 17px;opacity: 0;z-index: 9;background: none;}
+	.xSimages .x_nr .x_a { font-size:16px;}
+	.xSimages .x_nr .x_b { margin-right:50px;}
+	.xSimages .cur .x_nr { display:block;}
+	.xSimages .cur i.xvimg_i { display:block; }
+	.xSimages .xcon .ximg:hover .x_nr{opacity: 1}
+
+
+.xSn-hot {padding:0; position:relative; overflow:hidden;}
+	.xSn-hot .x_title {border-bottom:3px #000 solid; height:40px; padding-top:0; margin-top:2em; margin-bottom:30px; color:#333; text-align:left; background:none; }
+	.xSn-hot .x_title span {font-weight:bold; line-height:2em; border:0;  font-size:16px; }
+	.xSn-hot .xcon { margin:30px 0;}
+	.xSn-hot .xcon .row { margin:0 -5px;}
+	.xSn-hot .xcon li { padding:0 5px; }
+	.xSn-hot .xnr { position:relative;}
+	.xSn-hot .xnr strong { display:block; font-size:16px; line-height:2em;}
+	.xSn-hot .xnr p { display:block;  line-height:1.6em; color:#666;}
+	.xSn-hot .xnr span.xname { display:inline-block; font-size:12px; color:#00a651;}
+	.xSn-hot .xnr span.xtime { display:inline-block; font-size:12px; color:#c0c0c0;}
+	.xSn-hot .xnr span.xhr { display:inline-block; font-size:12px; color:#c0c0c0; padding:0 .8em;}
+
+
+.xS_marg { position:relative; top:-36px;}
+	.xS_marg .xSec_r { position:relative; top:60px;}
+
+
+.x_page li a { margin:0 10px;}
+
+.x_topbtn { position:fixed; z-index:111111111; bottom:30px; right:50px;}
+.x_topbtn a { display:block; width:78px; height:78px; background:url(http://www.fcguoan.com/public/img/topbtn_bg.png) 0 0 no-repeat;}
+
+.xfoot p { display:inline-block;}
+.xfoot .container{ padding:1.6em 0;}
+
+.xcertify .swiper-container {padding-bottom:3.1em;}
+.xcertify .swiper-slide-active .xdwvs { position:absolute; left:30px; top:30px;}
+.xcertify .swiper-slide-active .xdwvs p { float:left; width:100px; font-size:12px; text-align:center;}
+.xcertify .swiper-slide-active .xdwvs .xp_dw { display:inline-block;}
+.xcertify .swiper-slide-active .xdwvs img { display:inline-block; /*height: 4rem;*/}
+.xcertify .swiper-slide-active .xdwvs .xp_dw span { display:block; line-height:6.4em; font-weight:bold;    font-size: 12px;  width: 105px;}
+.xcertify .swiper-slide-active .xdwvs .xp_vs { width:80px;}
+.xcertify .swiper-slide-active .xdwvs .xp_vs span { overflow:hidden;display:inline-block;width:25px; height:25px; background:url(http://www.fcguoan.com/public/img/icon_vs.png) center center no-repeat; margin:15px 0; text-indent:-99999px;}
+.xcertify .swiper-slide-active .xdid {position:absolute; left:356px; top:36px;}
+.xcertify .swiper-slide-active .xdid p { margin:0; line-height:24px;}
+.xcertify .swiper-slide-active .xdid .x_t { display:inline-block; font-family:BebasRegular; font-size:24px; font-weight:bold; line-height:36px; }
+.xcertify .swiper-slide-active .xdid .x_d { font-weight:bold; font-size:14px;}
+.xcertify .swiper-slide-active .xcis {position:absolute; left:356px; top:96px; font-size:14px;}
+.xcertify .swiper-slide-active .xcis p { margin:0; line-height:24px;}
+.xcertify .swiper-slide-active .xtime {position:absolute; bottom:0; z-index:2;font-size:14px;}
+.xcertify .swiper-slide-active .xtime p { padding:0; margin:0; color:#fafafa; line-height:2.8em; text-indent:2.6em;}
+.xcertify .swiper-slide-active .x_btn {position:absolute; left:0; bottom:0; width:100%;background-color:#333;font-size:14px;}
+.xcertify .swiper-slide-active .x_btn p { text-align:right; padding:0; margin:0;  line-height:2.4em;}
+.xcertify .swiper-slide-active .x_btn .xicon9 { display:inline-block; margin:12px 20px 0 12px;}
+.xcertify .swiper-slide-active .x_btn a { color:#fafafa;}
+.xcertify .xend .xdid .x_t {font-size:16px; color:#666;}
+.xcertify .xend .xdid .xf_r {font-size:18px; }
+
+.container-fluid>.navbar-collapse, .container-fluid>.navbar-header, .container>.navbar-collapse, .container>.navbar-header{margin: 0px auto;}
+
+
+}
+
+.whj_jqueryPaginationCss-2 {
+    display: inline-block;
+    user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+}
+
+.whj_jqueryPaginationCss-2 div {
+    display: inline-block;
+    vertical-align: bottom;
+    height: 24px;
+    line-height: 24px;
+}
+
+.whj_jqueryPaginationCss-2 .whj_padding {
+    padding: 1px 9px;
+    margin: 2px 15px;
+}
+
+.whj_jqueryPaginationCss-2 .whj_bgc {
+    /*background-color: #5194ca;*/
+    color: #666666;
+    cursor: pointer;
+}
+
+.whj_jqueryPaginationCss-2 .whj_border {
+    /*border: 1px solid #5194ca;*/
+}
+
+.whj_jqueryPaginationCss-2 .whj_color {
+    color: #666666;
+    /*display: none;*/
+}
+
+.whj_jqueryPaginationCss-2 .whj_hover:hover {
+    /*background-color: #d4f1ff;
+    color: #5194ca;
+    cursor: pointer;*/
+    color: #00a651;
+}
+.whj_jqueryPaginationCss-2 .whj_border[name="whj_previousPage"]{
+	background: url(http://www.fcguoan.com/public/img/page_l.jpg) center no-repeat;
+	overflow: hidden;
+	text-indent: -10000000px;
+}
+.whj_jqueryPaginationCss-2 .whj_border[name="whj_nextPage"]{
+	background: url(http://www.fcguoan.com/public/img/page_r.jpg) center no-repeat;
+	overflow: hidden;
+	text-indent: -10000000px;
+}
+.whj_jqueryPaginationCss-2 .whj_checked {
+    /*background-color: #d4f1ff;*/
+    color: #00a651;
+}
+
+.whj_jqueryPaginationCss-2 .whj_hoverDisable {
+    opacity: 0.7;
+    filter: alpha(opacity=70);
+}
+
+.whj_jqueryPaginationCss-2 select {
+    height: 28px;
+    vertical-align: bottom;
+    padding: 0px;
+    outline: none;
+}
+
+.whj_jqueryPaginationCss-2 input {
+    padding: 0px;
+    height: 26px;
+    outline: none;
+    text-align: center;
+    width: 60px;
+    vertical-align: bottom;
+}
+
+.whj_jqueryPaginationCss-2 div, .whj_jqueryPaginationCss-2 input, .whj_jqueryPaginationCss-2 select {
+    margin: 2px;
+}
+
+
+.xSmark .selectric{margin-left: 10px;cursor: pointer;    display: inline-block;
+    vertical-align: middle;
+}
+.xSmark .selectric .top{
+	border-radius: 4px;
+	padding: 6px 12px;
+}
+.xSmark .selectric .top:hover{
+	background-color: #d4d4d4;
+    border-color: #8c8c8c;
+}
+.xSmark .selectric .top>p{color:#333;/*font-weight: bold;padding-left: 5px;line-height: 36px;*/margin-bottom: 0;display: inline-block;}
+.xSmark .selectric .top .open{
+	display: none;
+}
+.xSmark .selectric i.xicon_btnbg {width:15px;height:15px;background:url(http://www.fcguoan.com/public/img/xS_btnbg.png) 0 0 no-repeat;margin-top:-2px;background-size:100%;}
+.xSmark .selectric .open .xicon_btnbg{background-position: 0 -15px;}
+
+.xSmark .selectric .top .open .on{width:11px;height:7px;background:url(http://www.fcguoan.com/public/images/icon_open.png);margin-left:15px;display:none;}
+.xSmark .selectric .top .open .off{width:11px;height:7px;background:url(http://www.fcguoan.com/public/images/icon_open.png);margin-left:15px;display:block;}
+
+.xSmark .selectric .top.active{
+	-webkit-box-shadow: inset 0 3px 5px rgba(0,0,0,.125);
+    box-shadow: inset 0 3px 5px rgba(0,0,0,.125);
+    background-color: #e6e6e6;
+    border-color: #adadad;
+}
+.xSmark .selectric .top.active .open .on{display:block;}
+.xSmark .selectric .top.active .open .off{display:none;}
+
+
+.xSmark .selectric .seleList{/*left:50%;margin-left:-100px;top:36px;display:none;background:#fff;*/
+	position: absolute;
+    top: 100%;
+    left: 0;
+    z-index: 1000;
+    display: none;
+    float: left;
+    min-width: 160px;
+    padding: 5px 0;
+    margin: 2px 0 0;
+    font-size: 14px;
+    text-align: left;
+    list-style: none;
+    background-color: #fff;
+    -webkit-background-clip: padding-box;
+    background-clip: padding-box;
+    border: 1px solid #ccc;
+    border: 1px solid rgba(0,0,0,.15);
+    border-radius: 4px;
+    -webkit-box-shadow: 0 6px 12px rgba(0,0,0,.175);
+    box-shadow: 0 6px 12px rgba(0,0,0,.175);
+
+        margin-top: 10px;
+    margin-left: -6px;
+    width: 110px;
+    border-radius: 9px;
+    padding: 15px 0;
+
+
+        min-width: 100%;
+    text-align: center;
+
+}
+.xSmark .selectric .seleList.active{display:block;}
+.xSmark .selectric .seleList ul{/*width: 174px;box-shadow: 3px 3px 16px #e8e8e8;border-radius: 3px;max-height:350px;overflow-y: auto*/
+	    max-height: 360px;
+}
+.xSmark .selectric .seleList li{/*color:#666;font-size: 14px;letter-spacing: normal;padding:0 25px;height:50px;line-height: 50px*/
+
+}
+.xSmark .selectric .seleList li a{
+	display: block;
+    text-align: center;
+    padding: 0 20px;
+    line-height: 40px;
+    font-size: 14px;
+    color: #666;
+}
+.xSmark .selectric .seleList li:hover{background:#f5f5f5;color:#00a651;}
+.xSmark .selectric .seleList li.selected{font-weight: bold;}
+.xSmark .selectric .seleList::after{content:'';width:0;height:0;border-bottom:7px solid #fff;border-left:7px solid transparent;border-right:7px solid transparent;position:absolute;top:-7px;left:50%;margin-left: -3px}
+
+
+@media only screen and (max-width: 1266px){
+	.navbar-collapse.collapse{left:-350px;}
+	.fancybox-outer{max-width: 94.1% !important;}
+	.fancybox-nav{width: 50% !important;}
+	.fancybox-prev{ left: 0px !important; }
+	.fancybox-next{ right: 0px !important;}
+	.fancybox-outer:hover .fancybox-nav span{visibility: hidden !important;}
+
+	.container-fluid>.navbar-collapse, .container-fluid>.navbar-header, .container>.navbar-collapse, .container>.navbar-header{margin: 0px auto;}
+	.qmmSite{overflow-y: auto;}
+	.xnews .xcon .ximg{height: auto;}
+	.xcaic .x_c,.xcaic .x_d{width: 15%;}
+	/*.xScals .col-sm-6{width: 100%;}*/
+	.xScals.xSnav  .col-xs-3.col-sm-6.x_box,.xScals.xSnav  .col-xs-3.col-sm-4.x_box{width: 25%;}
+	.xScals .selectric .seleList ul{overflow-y:auto;}
+	/*.container{width: 96%}*/
+	.navBtn{float:left;}
+	.xmenu{position:absolute;}
+	.navbar-collapse.collapse{display:block;position: absolute; left: -70%}
+	.navbar-collapse.collapse.in{left:0;}
+	.navbar-collapse.collapse{height:auto;-webkit-transition-property:left;transition-property:left}
+	.container-fluid>.navbar-collapse, .container-fluid>.navbar-header, .container>.navbar-collapse, .container>.navbar-header{margin:0;}
+	.wap_Schedule .wapItem_mid img{width: 2.9rem;padding-top:5px;}
+	.xSimages .xcon li{height: 190px;}
+	.xSimages .xcon .ximg{height: 100%; overflow: hidden;}
+	.xSabs h1{font-size: 30px;}
+	.xSabs .x_nav{font-size: 16px;}
+	.xS_marg .xSec_r.xtoggle{display: none !important;}
+	.xS_marg{top: 0px;}
+	.xintegral{width: 48%; margin-right: 2%;}
+	/*.xshooter{width: 50%;}*/
+
+	.xintegral,.xshooter{width: 100%; margin: 0px auto 20px; float: none;}
+	.xintegral .xbox{width: 176px;}
+
+	/*.xshooter .xcont li{ width: 29.86%; margin-right: 3%;}*/
+	.xintegral .xcont{background-size: cover;}
+	/*.xintegral .xbox{width: 34%;}*/
+	.xrank span.s1, .xrank span.s2{width: 18%;}
+	.xrank span.s3, .xrank span.s4{width: 31%;}
+	.xintegral .xbox span.s0{font-size: 13em;}
+	.xdesc .xju { position:absolute; margin-left:50%; top:22em;}
+	.xSec .xScals{text-align: center;}
+	.xSec .xSec_l{float: none; margin: 0px auto;}
+	.qmmToggle li.col-sm-6 ,.qmmStoggle .col-sm-6.col-xs-12{width: 100%;}
+	.xSimages .xcon li{float: left !important; position: static !important;}
+
+
+	.navbar{margin-bottom: 0px !important;}
+	.sorry{
+		width: 50% !important;
+		/* padding: 20%; */
+		margin: 25%;
+	}
+	.navbar-toggle{display: block !important;}
+	/*.container-fluid, .container{padding-left: 0px;padding-right: 0px ; min-width: auto;}*/
+
+	.xdesc.container-fluid, .xdesc.container-fluid .container{padding: 0px 30px;}
+	.xnav.navbar-header{float: none !important;    margin-left: -15px;
+		margin-right: -15px;}
+	/*div#bs-example-navbar-collapse-1{position: absolute; width: 55%;}*/
+	.xnav .xlogo a{left: 50%; margin-left: -2.1em;}
+	.xubox li a.xicon4{width: 100%; background: none;}
+	.xnav {height:inherit; }
+	.xnav .xlogo a {/* position:absolute; display:block; top:10px; left:600px; margin-left:-55px;*/}
+	.xnav .xlogo a img { width:4.2rem;}
+	.xnav .xlogo a{top: 20px;}
+	.collapse{display: none;}
+	/*.xnav .xlogo a img{width: 102px;}*/
+	.xnav .xsite li { margin-right:30px;}
+	.xnav .xsite .xbtn { background:none; border:0; height:36px; margin-right:80px;}
+	.xmenu { padding:0; width:350px;}
+	.xmenu .mbSub{background:url(http://www.fcguoan.com/public/images/mb-sub.png); padding: 0px 45px;}
+	.xmenu li a{display: block;}
+	.xmenu .xsite { height:70px; margin:0 auto;}
+	.xmenu .xsite ul { float:none;}
+
+	.xmenu .xsite .xubox {  margin-right:0px !important;}
+	.xmenu .xsite li { position:relative; float: none !important; padding:0px;text-align: left;}
+	.qmmMenu .container-fluid, .qmmMenu .container{ min-width: inherit!important; width: 100%!important;}
+	/*.xmenu .xsite li a { padding:15px 0;}*/
+	/*.xmenu .xsite .navbar-nav li a{padding: 23px 0 7px;}*/
+	.navbar-nav{float: none !important;}
+	.xmenu .xsite li a {padding:15px 25px 15px 45px;}
+	.xmenu .xsite li a.xicon4{margin-top: 0px;float: none; font-size: 16px;}
+	.subNav li>a{padding-top: 5px;}
+	.subNav li>a:hover{padding-top: 5px;}
+	.xmenu .xsite li a:hover,.xmenu .xsite .xcur a { color:#ffea10;text-align: left;}
+	.xmenu .xsite .xcur a.xicon4,.xmenu .xsite li a.xicon4:hover { background-position:0 -20px;}
+	.xmenu .x_my { margin:0px 15px 0 0;}
+	.word_tit{display:none;}
+	.xmenu .x_my ul { position:static;}
+	.xmenu .x_my li { float:left;/* padding:8px 30px 0 0;*/}
+	.xmenu .x_cn ul { position:static;}
+	.xmenu .x_cn { color:#fff;}
+	.x_ipt input{
+		width: 90%;
+		height: 30px;
+		background: url(http://www.fcguoan.com/public/images/back.png);
+		/* opacity: 0.4; */
+		margin: 0 5%;
+		color: #fff;
+		padding:0 5px;
+	}
+	.x_ipt .sousuo{
+		background: url(http://www.fcguoan.com/public/img/xicon3.png) center no-repeat;
+		position: absolute;
+		width: 20px;
+		height: 20px;
+		right: 7%;
+		bottom: 9%;
+	}
+	.xmenu .x_cn a:nth-child(1),.xmenu .x_cn a:nth-child(1):hover { padding:0px 20px 0px 45px!important;}
+	.xmenu .x_cn a:nth-child(2),.xmenu .x_cn a:nth-child(2):hover { padding-left:20px !important;}
+
+
+	.xmenu li .pc-line{display: none}
+	.navbar-nav{margin-top: 0!important}
+	.navbar-nav li{position: relative;}
+	.navbar-nav li .top span{float:left;display:inline;}
+	.navbar-nav li .qmmDirct{display: block; position: relative; padding: 10px 0px;}
+	.navbar-nav li .top .open{width:30px;height:30px;background:url(http://www.fcguoan.com/public/images/mbSub-open.png) no-repeat center center; position: absolute; top: 50%; margin-top: -15px; right: 1.5rem; display: block;}
+	.navbar-nav li .top.on .open{background:url(http://www.fcguoan.com/public/images/mbSub-close.png) no-repeat center center }
+	.navbar-nav .mbSub .open {background: url(http://www.fcguoan.com/public/images/mbSub-close.png) no-repeat center center;}
+	.navbar-nav .mbSub .open {width: 30px;height: 30px;background: url(http://www.fcguoan.com/public/images/mbSub-open.png) no-repeat center center;position: absolute;top: 41.5%;margin-top: -15px;right: 1.5rem;display: block;}
+
+	.xcertify{width: 100%;}
+
+}
+@media only screen and (max-width: 1204px){
+	.container-fluid, .container{width:100%;min-width:100%;}
+	.xVnav li a {font-size:12px;}
+	.xSec .xrum{display: none;}
+}
+@media only screen and (max-width: 1024px){
+	.xSimages .xcon li{height: 138px;}
+	.xSec .xSec_l{width: 100%;}
+	.xSabs{padding: 0px;}
+	.xr{display:none;}
+}
+
+@media (max-width:960px){
+
+	.xcaic .x_tit { position:absolute; width:100%; height:120px; left: 0px; margin: 0px;}
+	.xcaic .x_tit h2{font-size: 22px;}
+
+	.xdesc { background-color:#2c2c2c; height:65em;}
+	.xdesc .xbox { position:relative; margin-top:3em;}
+	.xdesc ul { position:absolute; float:left; width:50%;}
+	.xdesc .xju { position:absolute; margin-left:50%; top:48em;}
+	.xdesc ul.u1 { top:0; left:0;}
+	.xdesc ul.u2 { top:0; left:50%;}
+	.xdesc ul.u3 { top:26em; left:0;}
+	.xdesc ul.u4 { top:22em; left:50%;}
+	.xdesc ul.u5 { top:41em; left:0;}
+	.xdesc ul.u6 { top:15em; left:0;}
+	.xdesc ul.u7 { top:11em; left:50%;}
+	.xdesc li { line-height:2.5em; background:url(http://www.fcguoan.com/public/img/desc_li.png) 5px center no-repeat; text-indent:2em; font-size:12px;}
+	.xdesc li a { color:#999;}
+	.xdesc li a:hover { color:#ccc;}
+	.xdesc .xtit { margin-bottom:.5em; background:url(http://www.fcguoan.com/public/img/desc_tit.png) left center no-repeat; line-height:3em; }
+	.xdesc .xtit a { font-size:14px; font-weight:bold; color:#fff; }
+
+
+
+	.xcaic .x_a{width: 50%;margin-right:10%; background-position: right center;}
+	.xcaic .x_b{width: 50%;margin-left: 10%; background-position: left center;}
+	.xcaic .x_a span.s1{margin-right: 30px;}
+	.xcaic .x_b span.s1{margin-left: 30px;}
+	.xcaic .x_a span,.xcaic .x_b span{font-size: 16px; line-height: 20px; }
+	.xcaic .x_c { position:absolute; top:20px; margin-left:0px; width:20%;}
+	.xcaic .x_c span,.xcaic .x_d span { display:block; margin-top:10px; font-size:12px; line-height:20px;}
+	.xcaic .x_d { position:absolute; top:20px; right:0; margin-right:10px; width:20%;}
+	.xcaic .x_e{width: 100%;}
+	.xcaic .x_e span { font-size: 50px;}
+	.xcaic .x_f span{white-space: nowrap; font-size: 12px; margin-bottom: 10px;}
+	.xcaic .x_f span.xtoggle{display: none;}
+	.xcaic .x_f span:first-child, .xcaic .x_f span:last-child{display: block;}
+
+
+}
+
+@media only screen and (max-width: 767px){
+
+.xVSec .xrum{top: -40px;}
+
+.xshooter .xcont li:nth-of-type(2) i.xicon6{background-image:url(http://www.fcguoan.com/public/img/xicon7.png);}
+.xshooter .xcont li:nth-of-type(3) i.xicon6{background-image:url(http://www.fcguoan.com/public/img/xicon9.png);}
+
+.xres .xcon li{height: auto;}
+
+.xres li a img{transform: scale(1.05); transition: transform 0.6s; opacity: 0.7;}
+.xres .xcon .x_nr{opacity: 1;}
+
+
+.xSmark .selectric .top>p, .xScals .selectric .top>p{font-size: 12px;}
+.xSmark .selectric .top, .xScals .selectric .top{min-width: 88px;}
+
+.xSimages .xload{display: none;}
+.xS-top{height: 150px;}
+.xSabs .x_nav ul{overflow: hidden;}
+
+.container .x_rele a{color: #666; overflow: hidden; white-space: nowrap; text-overflow: ellipsis; font-size: 12px;}
+/*.xSabs .x_rele .x_dr{text-align: left;}*/
+.container .x_rele .x_dl, .container .x_rele .x_drP, .container .xSabs .x_rele .x_dr{text-align: center;}
+.xSnews .xcon li{height: auto;}
+.xnews .xcon .ximg{height: 10rem;}
+.xSvideo .xcon .row { margin:0 -5px;height: auto!important;}
+.comItem.xvideo .xcon li{box-sizing: border-box;position: static!important; height: auto;}
+.xvideo .xcon li .ximg{height: 9.3rem;overflow: hidden; position: relative; }
+.xSvideo .x_nr .x_b{display: block;}
+.xSvideo .xcon{margin: 0px 5px;}
+.col-xs-6 .col-sm-6{position: static !important;}
+.xSimages .xcon li{height: 160px; overflow: hidden; position: static !important;}
+.xSimages .xcon .ximg{height: 100%;}
+.xSimages .xcon .x_b{display:none;}
+.xSimages .xcon .x_c{display:none;}
+.xSimages.qmmImages{margin-bottom: 20px;}
+/*.xSimages.qmmImages .x_nr .del{display: none}*/
+.xSimages.qmmImages .x_nr .x_a{font-size:12px;}
+.xSec.xVSec .xSvideo{background: none;}
+.xScals .selectric .seleList ul{max-height: inherit;}
+.xcaic{height:auto}
+.xcaic .x_tit i.xicon12 { position:absolute; width:1059px; height:439px; margin:-226px 0 0 -650px; z-index:0;left:50%;}
+}
+.xcaic .container{box-sizing:border-box;height:100%;padding-bottom:80px;}
+.xcaic .x_g{position:absolute;margin:0;left:0;bottom:0;width:100%;}
+.xsche{overflow:hidden;}
+
+@media (min-width:768px){
+	.tel_ticon{display: none}
+    .xSvideo .xcon li {
+        padding: 0 5px;
+        overflow: hidden;
+        height: 259px;
+		position:static !important;
+    }
+	.related .right .imgBox.video_img .x_nr{
+		opacity: 1;
+	}
+	.xSec .container {
+		padding: 0;
+	}
+	.container-fluid, .container {
+		padding: 0;
+		min-width: 1204px;
+	}
+	.container-fluid.xsche{
+		overflow: initial;
+	}
+	.xSimages .xcon {
+		margin: 0 0 60px 0;
+	}
+	.xSimages .xcon .row {
+		margin: 0 -5px;
+	}
+	.xSimages .xcon li {
+		padding: 0 5px;
+		height: 260px;
+		overflow: hidden;
+	}
+	.xSimages .xcon .ximg {
+		width: auto;
+		height: 100%;
+		background: url(http://www.fcguoan.com/public/img/xvideo_i.png) no-repeat;
+		background-color: #000;
+	}
+	.xSimages .xcon .ximg img {
+		/* width: auto; */
+		transition: .4s;
+		display: block;
+	}
+	.xSimages .xcon .x_nr {
+		transition: all 0.4s;
+		left: 0px;
+		right: 0px;
+		bottom: 0;
+		padding: 9px 17px;
+		opacity: 0;
+		z-index: 9;
+		background: none;
+	}
+	/*.xSimages .xcon .x_nr:hover{*/
+		/*opacity: 1;*/
+	/*}*/
+	.xSimages .x_nr .x_a {
+		font-size: 16px;
+	}
+	.xSec .xrum {
+		left: auto;
+	}
+	.xSec {
+		padding: 0;
+		position: relative;
+	}
+	.container-fluid, .container {
+		padding: 0;
+	}
+	.chakan{
+		display:none;
+	}
+	.xS_marg {
+		position: relative;
+		top: -36px;
+	}
+	.x_topbtn a {
+		display: block;
+		width: 78px;
+		height: 78px;
+		background: url(http://www.fcguoan.com/public/img/topbtn_bg.png) 0 0 no-repeat;
+	}
+	.xS_marg .xSec_r {
+		position: relative;
+		top: 60px;
+	}
+	.xScontent h1 {
+		font-size: 30px;
+	}
+	.xScontent .x_con {
+		padding: 50px 0;
+	}
+	.xScontent {
+		padding: 50px 90px;
+	}
+	.xSabs h1 {
+		font-size: 34px;
+	}
+	.xSabs .x_nav li {
+		line-height: 4em;
+	}
+	.xSabs .x_nav li a {
+		padding: 0 2.6em;
+	}
+	.xSabs .x_nav {
+		font-size: 16px;
+		height: 4em;
+	}
+	.xSabs {
+		padding: 50px 90px;
+	}
+	.xSec .container {
+		padding: 0;
+	}
+	.x_topbtn {
+		position: fixed;
+		z-index: 111111111;
+		bottom: 30px;
+		right: 50px;
+	}
+	.xintegral {
+		position: relative;
+		float: left;
+		width: 568px;
+		margin-right: 10px;
+		overflow: hidden;
+	}
+	.xintegral .xtit {
+		text-align: left;
+		border-bottom: 1px #ccc solid;
+		height: 44px;
+		/* margin-left: 134px; */
+	}
+	.xintegral .xcont {
+		height: 300px;
+		margin-top: 42px;
+	}
+	.xintegral .xbox {
+		width: 176px;
+	}
+	.xrank {
+		margin-left: 176px;
+	}
+	.xrank ul li{
+		line-height:50px;
+	}
+	.xrank span.s1, .xrank span.s2 {
+		width: 6em;
+	}
+	.xrank span.s3, .xrank span.s4 {
+		width: 10em;
+	}
+	.xshooter .xname {
+		position: absolute;
+		top: auto;
+		left: auto;
+		right: 0;
+		bottom: 6px;
+		text-align: right;
+		color: #fff;
+		padding-right: 6px;
+		font-size: 14px;
+	}
+	.xcertify .swiper-slide-active .x_btn .xicon9 {
+		display: inline-block;
+		margin: 12px 20px 0 12px;
+	}
+	.xcertify .swiper-slide-active .xtime p {
+		padding: 0;
+		margin: 0;
+		color: #fafafa;
+		line-height: 2.8em;
+		text-indent: 2.6em;
+	}
+	.xSnews .x_title {
+		position: relative;
+		text-align: left;
+		padding-top: 0;
+		margin-top: 24px;
+		border-bottom: 1px #ccc solid;
+		height: 44px;
+		margin-left: 134px;
+		background: none;
+	}
+	.xSnews .x_title span {
+		position: relative;
+		z-index: 1;
+		margin-left: -134px;
+		display: inline-block;
+		width: 130px;
+		font-size: 16px;
+		font-weight: bold;
+		line-height: 40px;
+		border-bottom: 4px #000 solid;
+		color: #000;
+	}
+	.xNotice .x_title {
+		position: relative;
+		text-align: left;
+		margin-top: 24px;
+		border-bottom: 1px #ccc solid;
+		height: 44px;
+		margin-left: 134px;
+	}
+	.xNotice .x_title span {
+		position: relative;
+		z-index: 1;
+		margin-left: -134px;
+		display: inline-block;
+		width: 130px;
+		font-size: 16px;
+		font-weight: bold;
+		line-height: 40px;
+		border-bottom: 4px #000 solid;
+		color: #000;
+	}
+	.xNotice {
+		overflow: hidden;
+	}
+	.xNotice .x_box {
+		margin: 0 50px;
+	}
+	.xNotice li .x_box {
+		margin: 0 50px;
+	}
+	.xSnews .xcon {
+		margin: 30px 0;
+	}
+	.xNotice .xnr strong {
+		font-size: 16px;
+		line-height: 2em;
+	}
+	.xSnews .xnr strong {
+		display: block;
+		font-size: 16px;
+		line-height: 2em;
+	}
+	.xNewsc .x_title span {
+		font-weight: bold;
+		line-height: 2em;
+		font-size: 16px;
+	}
+	.xSn-time .x_title span {
+		font-weight: bold;
+		line-height: 2em;
+		font-size: 16px;
+	}
+	/*.container-fluid, .container {
+		padding: 0;
+		min-width: 1204px;
+	}*/
+	.xcertify .swiper-container {
+		padding-bottom: 3.1em;
+	}
+	.xcertify .swiper-slide-active .xdwvs .xp_dw {
+		display: inline-block;
+	}
+	.xcertify .swiper-slide-active .xdwvs img {
+		display: inline-block;
+		/* height: 4rem; */
+	}
+	.xcertify .swiper-slide-active .xdid {
+		position: absolute;
+		left: 356px;
+		top: 36px;
+	}
+	.xcertify .swiper-slide-active .xdid .x_t {
+		display: inline-block;
+		font-family: BebasRegular;
+		font-size: 24px;
+		font-weight: bold;
+		line-height: 36px;
+	}
+	.xcertify .swiper-slide-active .xdid .x_d {
+		font-weight: bold;
+		font-size: 14px;
+	}
+	.xcertify .swiper-slide-active .xcis {
+		position: absolute;
+		left: 356px;
+		top: 96px;
+		font-size: 14px;
+	}
+	.xcertify .swiper-slide-active .xtime {
+		position: absolute;
+		bottom: 0;
+		z-index: 2;
+		font-size: 14px;
+	}
+	.xcertify .swiper-slide-active .x_btn {
+		position: absolute;
+		left: 0;
+		bottom: 0;
+		width: 100%;
+		background-color: #333;
+		font-size: 14px;
+	}
+	.xcertify .swiper-slide-active .xdwvs .xp_dw span {
+		display: block;
+		line-height: 6.4em;
+		font-weight: bold;
+	}
+	.xp_dw {
+		display: inline-block;
+	}
+	.xcaic .x_tit {
+		position: absolute;
+		left: 50%;
+		width: 1200px;
+		height: 400px;
+		margin-left: -600px;
+	}
+	.xcaic .x_tit h2 {
+		display: block;
+		color: #ffea10;
+		text-align: center;
+		margin: 140px 0;
+		font-size: 30px;
+	}
+	.xcaic .x_tit span {
+		position: relative;
+		z-index: 2;
+	}
+	.xcaic .x_tit i.xicon12 {
+		position: absolute;
+		width: 100%;
+		height: 439px;
+		margin: -226px 0 0 0;
+		z-index: 0;
+		left: 0
+	}
+	.xcaic .x_a {
+		position: absolute;
+		top: 160px;
+		right: 50%;
+		width: 686px;
+		margin-right: 270px;
+		background: url(http://www.fcguoan.com/public/img/caic_home_bg.png) 0 0 no-repeat;
+	}
+	.xcaic .x_b {
+		position: absolute;
+		top: 160px;
+		left: 50%;
+		width: 686px;
+		margin-left: 270px;
+		background: url(http://www.fcguoan.com/public/img/caic_away_bg.png) 0 0 no-repeat;
+	}
+	.xcertify .swiper-slide-active .xdwvs {
+		position: absolute;
+		left: 30px;
+		top: 30px;
+		padding: 0 25px;
+	}
+	.xcaic .container {
+		position: relative;
+		margin-top: 252px;
+	}
+	.xdesc ul.u2 {
+		top: 0;
+		left: 220px;
+	}
+	.xdesc ul.u3 {
+		top: 0;
+		left: 440px;
+	}
+	.xdesc ul.u4 {
+		top: 0;
+		left: 660px;
+	}
+	.xdesc ul.u5 {
+		top: 0;
+		left: 880px;
+	}
+	.xdesc ul.u6 {
+		top: 16em;
+		left: 0;
+	}
+	.xdesc ul.u7 {
+		top: 12em;
+		left: 220px;
+	}
+	.xdesc .xju {
+		position: absolute;
+		right: 0;
+		top: 0;
+	}
+	.xdesc .xbox {
+		margin-top: 4em;
+	}
+	.xdesc ul {
+		width: 220px;
+	}
+	.xdesc {
+		height: 550px;
+	}
+	.xSec .xSec_r {
+		float: right;
+		width: 254px;
+		margin-bottom: 50px;
+	}
+	.xSec .xSec_l {
+		float: left;
+		width: 900px;
+		margin-bottom: 50px;
+	}
+	.xNewsc {
+		padding: 0;
+		position: relative;
+		overflow: hidden;
+	}
+	.xNewsc li {
+		padding: 0;
+		margin-bottom: 6px;
+		height: 32px;
+	}
+	.xNewsc .x_title {
+		border-bottom: 3px #000 solid;
+		height: 40px;
+		margin-top: 2em;
+		margin-bottom: 30px;
+		color: #333;
+	}
+	.xSn-time {
+		padding: 0;
+		position: relative;
+		overflow: hidden;
+	}
+	.xSn-time .x_title {
+		border-bottom: 3px #000 solid;
+		height: 40px;
+		margin-top: 2em;
+		margin-bottom: 30px;
+		color: #333;
+	}
+	.xSn-time .xSn-year {
+		padding: 0;
+		background-color: #fff;
+		font-family: Soleto-Regular;
+		font-size: 14px;
+		position: relative;
+		border-bottom: 1px #e3e3e3 solid;
+	}
+	.xSn-time .xSn-year a {
+		display: block;
+		font-size: 12px;
+		line-height: 45px;
+		text-indent: 20px;
+	}
+	.xSn-time li i {
+		position: absolute;
+		right: 10px;
+		top: 14px;
+	}
+	.xSn-month {
+		display: none;
+	}
+	.xNewsc li a {
+		display: block;
+		font-size: 12px;
+		line-height: 32px;
+		text-align: center;
+		margin-right: 6px;
+		border-radius: 4px;
+		background-color: #fff;
+	}
+	.xcaic {
+		position: relative;
+		padding: 0;
+		height: 685px;
+	}
+	.xcaic .x_g {
+		position: relative;
+		margin: 0 auto;
+		margin-top: 50px;
+		width: 500px;
+	}
+	.xnews .xbg {
+		background-size: 100% auto;
+		transition: background .5s;
+		-moz-transition: background .5s;
+		-webkit-transition: background .5s;
+		-o-transition: background .5s;
+		position: absolute;
+		top: 0px;
+		left: 50%;
+		margin-left: -830px;
+		width: 520px;
+		height: 160px;
+		background: url(http://www.fcguoan.com/public/img/newsbg.png) 0 -140px no-repeat;
+	}
+	.xnews .xmove{
+		position: absolute;
+		left: 50%;
+		top: 40px;
+		font-style: italic;
+		height: auto;
+		background-color: transparent;
+		text-align: left;
+		margin: 0;
+		z-index: 999;
+	}
+	.xnews .xmove a{
+		margin-left: 556px;
+		display: block;
+		color: #666;
+		line-height: inherit
+	}
+	.xsche .xmove {
+		position: absolute;
+		left: 50%;
+		top: 10px;
+		font-style: italic;
+		height: auto;
+		background-color: transparent;
+		text-align: left;
+		text-indent: -20px;
+		margin: 0;
+	}
+	.xsche .xmove a {
+		margin-left: 556px;
+		display: block;
+		color: #666;
+		line-height: inherit;
+	}
+	.xintegral .xmove {
+		position: absolute;
+		right: 0;
+		top: 14px;
+		font-style: italic;
+		height: auto;
+		background-color: transparent;
+		text-align: left;
+		margin: 0;
+	}
+	.xintegral .xmove a {
+		color: #666;
+		line-height: inherit;
+	}
+	.xshooter .xmove {
+		position: absolute;
+		right: 0;
+		top: 14px;
+		font-style: italic;
+		height: auto;
+		background-color: transparent;
+		text-align: left;
+		margin: 0;
+	}
+	.xshooter .xmove a {
+		color: #666;
+		line-height: inherit;
+	}
+	.xvideo .xmove {
+		position: absolute;
+		left: 50%;
+		top: 40px;
+		font-style: italic;
+		height: auto;
+		background-color: transparent;
+		text-align: left;
+		margin: 0;
+	}
+	.xvideo .xmove a {
+		margin-left: 556px;
+		display: block;
+		color: #666;
+		line-height: inherit;
+		color: #ccc;
+	}
+	.xres .xmove {
+		position: absolute;
+		left: 50%;
+		top: 40px;
+		font-style: italic;
+		height: auto;
+		background-color: transparent;
+		text-align: left;
+		margin: 0;
+	}
+	.xres .xmove a {
+		margin-left: 556px;
+		display: block;
+		color: #666;
+		line-height: inherit;
+	}
+	.xvideo .xcon .x_nr {
+		left: 0;
+		right: 0;
+		/* background: rgba(0,0,0,.6); */
+		height: 56px;
+		bottom: 0;
+		transition: all 0.4s;
+		padding-left: 12px;
+		box-sizing: border-box;
+		opacity: 0;
+		z-index: 11;
+	}
+	.xres .xtit {
+		position: relative;
+		text-align: left;
+		margin-top: 24px;
+		border-bottom: 1px #ccc solid;
+		height: 44px;
+		margin-left: 130px;
+	}
+	.xres .xtit .a_link {
+		position: relative;
+		z-index: 1;
+		margin-left: -130px;
+		display: inline-block;
+		width: 130px;
+		font-size: 16px;
+		font-weight: bold;
+		line-height: 40px;
+		border-bottom: 3px solid #000;
+	}
+	.xvideo .xtit {
+		position: relative;
+		text-align: left;
+		margin-top: 24px;
+		border-bottom: 1px #ccc solid;
+		height: 43px;
+    }
+	.xvideo .xtit .a_link {
+		position: relative;
+		display: inline-block;
+		width: 6em;
+		font-weight: bold;
+		/* line-height: 2em; */
+		border-bottom: 3px #fff solid;
+		z-index: 1;
+		line-height: 40px;
+		font-size: 16px;
+	}
+	.xcoop .xtit {
+		position: relative;
+		text-align: left;
+		margin-top: 24px;
+		border-bottom: 1px #ccc solid;
+		height: 44px;
+		/* margin-left: 130px; */
+	}
+
+
+
+	.xcoop .xmove { position:absolute; left:50%; top:40px; font-style:italic; height:auto; background-color:transparent; text-align:left; margin:0;}
+	.xcoop .xmove a { margin-left:556px; display:block; color:#fff;line-height:inherit;font-size: 12px;}
+		.xcoop .xmove a:hover { color:#009848;}
+	.xcoop .xmove i.xicon5 { background-position:0 -10px;}
+	.xcoop .xmove a:hover i.xicon5 { background-position:0 -20px;}
+	.xcoop .xmove{left: 83%;}
+	.xcoop .xmove a{margin-left: 0;}
+}
+
+@media (max-width: 768px) {/*.xSvideo .xcon .x_nr{background: rgba(0,0,0,.6);}*/
+	.xnews .xcon li,.xnews .xcon .ximg{height: auto;}
+	.ban_fonts_lili{right: 10rem;}
+	.ban_fonts_lili a h2{font-size: 2.3rem;}
+	.ban_fonts_lili a h3{font-size: 4rem;}
+	.xSabs .x_nav  ul{text-align: center;}
+	.xSabs .x_nav  li{float: none;display: inline-block;}
+	.xNotice .x_box,.xNotice li .x_box{margin: 0px 3%;}
+	.tel_ticon{display: block;}
+	.xcaic .x_e span { font-size: 24px;}
+	.xcaic .x_c span,.xcaic .x_d span {font-size: 16px;}
+	.xshooter .xcont{height: auto;}
+	.xintegral .xtit,.xshooter .xtit,.xnews .xtit,.xsche .xtit{text-align: center;}
+	/*.xintegral .xmove,.xshooter .xmove{display: none;}*/
+	.xshooter .xcont li{width: 31.5%; margin-right: 2%; height: inherit;}
+	.xshooter .xtit .a_link{margin: 0px;}
+	.xshooter .xtit,.xsche .xtit,.xsche .xtit span,.xSnews .x_title span,.xNotice .x_title span{margin: 0px;}
+	/*.xnews .x_s,.xnews .x_s div,.xnews .x_s ul{position: static; float: none; margin: 0px;}*/
+	.xnews .x_s ul{text-align: center;}
+	.xnews .x_s ul li{display: inline-block; *display: inline; float: none; font-size: 14px;}
+	.xSnews .x_title,.xNotice .x_title{margin: 0px; text-align: center;}
+	.xS-top .x_tit{font-size: 24px;}
+	.whj_jqueryPaginationCss-2 .whj_padding{margin: 2px 1%;}
+
+	.xmenu .mbSub{padding: 0px;}
+	.navbar-nav li .qmmDirct{padding: 0px;}
+	.xmenu .x_cn a:nth-child(1),.xmenu .x_cn a:nth-child(1):hover { padding:0px 20px 0px 0px!important;}
+	.xcaic .x_c,.xcaic .x_d{width: 20%;}
+	.xSabs h1{font-size: 24px;}
+	.xSabs .x_nav{font-size: 14px;}
+	.xSabs .x_nav  div{float: none; left: 0px; overflow: hidden;}
+	.xSabs .x_nav  ul{left: 0px;float: none;}
+	.xSabs .x_nav  li{/*width: 20%;*/ margin: 0px 2%;}
+	.xSabs .x_nav  li a{text-align: center; width: 100%; padding: 0px;}
+	.xSabs .x_nav  li span{float: none;}
+	.xcertify .swiper-container{padding-bottom: 0;margin-bottom: 3rem;}
+	.xsche .xmove{margin:0;}
+
+
+
+	/* 手机端放着了啊 */
+	.xvideo .x_nr .x_b, .xvideo .x_nr .x_c{
+		display: none;
+	}
+	.xvideo .xcon .x_nr{
+		padding: .5em .2em .2em .5em
+	}
+	/*.xNotice .x_title{
+		height: auto;
+	}
+	.xNotice .x_title span{
+		font-size: 12px;
+		padding: 25px 0 21px 0;
+		line-height: inherit;
+	}*/
+	.xres .x_nr .x_a{
+		font-size: 12px;
+	}
+
+	/* 手机端7.12改动 */
+	.xcertify .swiper-button-prev{
+		background: url(http://www.fcguoan.com/public/img/xcertify_l.png) center center no-repeat !important;
+		top: 28%;
+		left: -12%;
+	}
+	.xcertify .swiper-button-next{
+		background: url(http://www.fcguoan.com/public/img/xcertify_r.png) center center no-repeat !important;
+		top: 28%;
+		right: -12%;
+	}
+	.xres .xtit{
+		height: 46px;
+	}
+	.xres .xtit .a_link{
+		line-height: 42px;
+		display: inline-block;
+		width: 6em;
+		font-weight: bold;
+		border-bottom: 3px #000 solid;
+		font-size: 16px;
+		color: #000;
+	}
+	.xcoop .xtit{
+		height: 46px;
+	}
+	.xcoop .xtit .a_link{
+		border-bottom: 4px solid #000;
+	}
+	.xres .xmove{
+		margin: 0;
+	}
+	.qmmximg.ximg .x_a{
+		font-size: 12px;
+	}
+	.related .right .imgBox.video_img .x_nr .x_a{
+		font-size: 12px !important;
+	}
+	.related .right .imgBox.video_img .x_nr .x_b{
+		display: none !important;
+	}
+	.related .right .imgBox.video_img .x_nr{
+		opacity: 1 !important;
+		height: 24px !important;
+	}
+
+}
+
+
+@media screen and (max-width:580px){
+	.xSabs .x_nav  li a{padding: 0px;}
+	.xintegral .xbox{width: 30%;}
+	.xintegral .xbox span.s0{font-size: 10em;}
+	.xrank{margin-left: 30%;}
+
+	.ban_fonts_lili{right: 5rem;}
+	.ban_fonts_lili a h2{font-size: 1.6rem;}
+	.ban_fonts_lili a h3{font-size: 2.3rem;}
+	/*.xcaic .x_g{width: 80%;}*/
+	.xcertify .swiper-slide{width: 90%; /*background: #f0f0f0 !important;*/}
+	.xcertify .swiper-slide-active .xdwvs{ width: 48%; box-sizing: border-box;left:10%; /*border-right: 1px solid #cccccc;padding-right: 8%;*/}
+	.xcertify .swiper-slide-active .xdwvs p,.xcertify .swiper-slide-active .xdwvs .xp_vs{width: 33%;}
+	.xcertify .swiper-slide-active .xcis,.xcertify .swiper-slide-active .xdid{right: 4%; left: auto;}
+	.xnews .x_s ul li{font-size: 12px;}
+}
+
+
+@media only screen and (max-width: 580px){
+
+	.xSimages .xcon li{height: 120px; }
+	.xcertify .swiper-slide-active .xcis{width:80px;right:6%;top:78px;}
+	.xcertify .swiper-slide-active .xcis p{line-height: 1.3}
+	.xshooter .xname{font-size: 12px;}
+	.xshooter .xprice .xnum{font-size: 1.5em;}
+}
+
+
+@media only screen and (max-width: 460px){
+
+	.xSimages .xcon li{height: 96px; }
+
+	.xcaic .x_c span, .xcaic .x_d span{font-size: 12px;}
+	.xcaic .x_e span{font-size: 16px;}
+	.xcaic .x_c, .xcaic .x_d{width: 18%;}
+	.xcertify .swiper-slide-active{background-position: 0 50%}
+	/*.xcertify .swiper-slide-active .xdwvs { width: 44%;padding-right: 5%; left: 25px;}*/
+	.xcertify .swiper-slide-active .xdid .x_d{font-size: 12px;}
+	/*.xcertify .swiper-slide-active .xcis, .xcertify .swiper-slide-active .xdid{right: 8%;}*/
+	.xmenu{width:70%;}
+}
+
+.bsTop{
+	width: 208px!important;
+}
+.bsFrameDiv div{
+	width: 208px!important;
+	height: 208px!important;
+}
+.bsFrameDiv img{
+	width: 170px!important;
+	height: 170px!important;
+}
+.enn{
+	/*margin: 15% auto;*/
+	/*display: block;*/
+	width: 45px;
+	height: 45px;
+	position: relative;
+	/*display: block;*/
+	width: 1.5em;
+	height: 0.25em;
+	background: #fff;
+	border-radius: 3px;
+	cursor: pointer;
+	transition: transform .2s ease;
+	padding: 0;
+	margin: 22px 10px;
+}
+.enn:before,.enn:after {
+	border-radius: 3px;
+	transition: transform .3s ease;
+}
+.enn:before {
+	content: '';
+	display: block;
+	position: absolute;
+	width: 1.5em;
+	height: 0.25em;
+	top: -0.5em;
+	background: #fff;
+}
+.enn:after {
+	content: '';
+	display: block;
+	position: absolute;
+	width: 1.5em;
+	height: 0.25em;
+	top: 0.5em;
+	background: #fff;
+}
+.enn.closee {
+	width: 45px;
+	height: 45px;
+	/*margin: 15% auto;*/
+	left: 20px;
+	bottom:-5px;
+	position: relative;
+	display: block;
+	width: 0;
+	height: 0;
+	background: #fff;
+	transform: rotate(-180deg);
+}
+.enn.closee:before, span.closee:after {
+	transition: transform .3s ease;
+}
+.enn.closee:before {
+	content: '';
+	display: block;
+	position: absolute;
+	width: 1.5em;
+	height: 0.25em;
+	top: 0;
+	background: #fff;
+	transform: rotate(-45deg);
+}
+.enn.closee:after {
+	content: '';
+	display: block;
+	position: absolute;
+	width: 1.5em;
+	height: 0.25em;
+	top: 0;
+	background: #fff;
+	transform: rotate(45deg);
+}
+
+
+
+
+.cover{
+	display: none;
+	position:fixed;
+	width:100%;
+	height:auto;
+	left:0;
+	top:0;
+	right:0;
+	bottom:0;
+	background:#000;
+	z-index:100001;
+	opacity:0.8;
+}
+.fancy-margin{margin-right: 17px}
+.fancy-lock{overflow:hidden!important;width:auto;}
+
+.fancy-close{
+	display:block;
+	position:absolute;
+	width:32px;
+	height:32px;
+	background:url(http://www.fcguoan.com/public/img/close.png) no-repeat center;
+	background-size: cover;
+	left:80%;
+	top:15%;
+}
+.fancy_inp{position:absolute;padding:0 5px 5px 5px;left:50%;width:360px;height:40px;top:50%;margin:-20px 0 0 -180px;border-bottom:1px solid rgba(102,102,102,0.8);}
+
+.fancy_inp input{float:left;display:inline-block;width:340px;height:30px;line-height: 30px;font-size: 22px;background:none;color:#fff;padding:0 5px;}
+@media only screen and (max-width: 425px){}
+	/*._player .p_detail .p_name {*/
+		/*width: 260px;*/
+		/*margin: 0 auto;*/
+	/*}*/
+@media only screen and (max-width: 750px) {
+.container-fluid .swiper-slide > a{display: none!important;}
+
+	.xvideo .xcon li {
+		box-sizing: border-box;
+		position: static !important;
+		height:auto;
+	}
+}
+/* 7.12改动 */
+.tel_head{
+	display: none;
+	position: absolute;
+    top: 7px;
+    z-index: 999999;
+    right: 19px;
+    color: #fff;
+    font-size: 12px;
+    text-align: right;
+    font-weight: 200;
+}
+.tel_head p:first-child{
+	margin-bottom: 2px;
+}
+.sousuo_mb{
+	height: 100%;
+    position: fixed;
+    z-index: 9999;
+    top: 0;
+    left: 0;
+    background: rgba(0,0,0,.6);
+	width: 100%;
+	display: none;
+}
+.sousuo_mb.active{
+	display: block;
+}
+.sousuo_mb input{
+	display: block;
+    height: 49px;
+    margin: 0 auto;
+    margin-top: 45vh;
+    border: none;
+    border-bottom: 2px solid #fff;
+    color: #fff;
+    font-size: 23px;
+	text-align: left;
+	background-color:rgba(0, 0, 0, 0)
+}
+input::-webkit-input-placeholder{
+	color:#fff;
+}
+input::-moz-placeholder{   /* Mozilla Firefox 19+ */
+	color:#fff;
+}
+input:-moz-placeholder{    /* Mozilla Firefox 4 to 18 */
+	color:#fff;
+}
+input:-ms-input-placeholder{  /* Internet Explorer 10-11 */
+	color:#fff;
+}
+@media screen and (max-width:768px){
+	.tel_head{
+		display: block;
+	}
+	.sousuo_mb{
+		display: none;
+	}
+}
+/* 7.15改动 */
+.sousuo{
+	display: none;
+}
+.jifen_table tbody i{
+	margin-top: 4px;
+}
+@media screen and (max-width:768px){
+.sousuo{
+	display: block;
+}
+.head_title{
+	display: none;
+}
+.xcaic .x_tit i.xicon12{
+	margin: -228px 0 0 -530px;
+}
+.xcertify .swiper-slide{
+	height: 150px;
+}
+.x_page{
+	padding-bottom: 0;
+	padding-top: 50px;
+}
+.ScheduleBox .find_bisai{
+	font-style: italic;
+}
+.navbar-toggle{
+	height: 30px;
+    background: url(http://www.fcguoan.com/public/images/caidan.png) no-repeat center center;
+    background-size: 100%;
+	margin-left: 18px;
+	background-color: transparent !important;
+}
+.navbar-toggle.active{
+	background: url(http://www.fcguoan.com/public/images/guanbi.png) no-repeat center center;
+	background-size: 100%;
+	background-color: transparent !important;
+}
+}

@@ -338,16 +338,16 @@ def edit_fee():
 @requires_auth
 def testmail():
     msgExp=[
-                {
-                    "subject":"第一封",
-                    "addr":"12730529@qq.com",
-                    "msgHTML":"<h2>h2标签内容</h2>"
-                },
-                {
-                    "subject":"第二封",
-                    "addr":"12730529@qq.com",
-                    "msgHTML":"<p>p标签里的内容<p>"
-                }
-            ]
+        {
+            "subject": "队费提醒",
+            "addr": "12730529@qq.com",
+            "msgHTML": "<h3>亲爱的 李涛，</h3><p>你的队费还有 -169元，该交费了哦。</p>"
+        },
+            {
+                "subject":"队费提醒",
+                "addr":"12730529@qq.com",
+                "msgHTML":"<h3>亲爱的 李涛，</h3><p>你的队费还有 -169元，该交费了哦。</p>"
+            }
+        ]
     sendMail(msgExp)
     return 'success'
