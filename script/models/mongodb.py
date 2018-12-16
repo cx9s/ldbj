@@ -3,7 +3,7 @@ from script.config import MONGODB_URI
 from werkzeug.security import generate_password_hash
 from werkzeug.security import check_password_hash
 from flask_login import UserMixin
-import json
+from flask import jsonify
 import uuid
 
 
@@ -61,7 +61,6 @@ class Player:
         res_list = []
         for item in cursor:
             res_list.append(item)
-        print(res_list)
         return res_list
 
     def update(self, queryExp, setExp):

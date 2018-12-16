@@ -1,5 +1,5 @@
 # -*-coding:utf-8-*-
-from flask import jsonify, request, url_for, json, redirect, abort, flash
+from flask import jsonify, request, url_for, json, redirect, abort, flash, get_flashed_messages
 from . import api
 from script.models.mongodb import Player, Fee
 import re
@@ -282,41 +282,38 @@ def edit_fee():
             insExp.append(fee)
 
         fee = Fee()
-        data = fee.insert(insExp)
-
-        flashExp = '成功更新 '+str(i)+' 名队员费用，共计 '+str(totalAmount)+' 元！'
-        """
-        使用 $in
-        res_list = fee.getNameAndTotalUndue()
-        if len(res_list) != 0:
-            print(res_list)
-            msgExp = []
-            msgFlash = '已向欠费队员：'
-            player = Player()
-            for item in res_list:
-                p = player.get({'name':item['_id']})
-                p = p[0]
-                if type(p['email']) != None and p['email'] != '':
-                    msgExp.append({
-                        "subject": "队费提醒",
-                        "addr": p['email'],
-                        "msgHTML": "<p>亲爱的 "+p['name']+"，该交费了哦</p>"
-                    })
-                    msgFlash += p['name']
-            if len(msgExp) != 0:
-                print('send mail')
-                flash(msgFlash, 'success')
-            
-            msgExp = [
-                {
-                    "subject": "队费提醒",
-                    "addr": "12730529@qq.com",
-                    "msgHTML": "<h2>亲爱的 "+playerList[0]+"</h2><p>该交费了哦</p>"
-                }
-            ]
-            sendMail(msgExp)
-            """
+        fee.insert(insExp)
+        get_flashed_messages();
+        flashExp = '成功更新 '+str(i)+' 名队员费用，日期 ' + date+ ' ，地点 ' + loc + ' ，共计 '+str(totalAmount)+' 元！'
         flash(flashExp, 'success')
+
+        #send topup notice emails
+        nameFeeList = fee.getNameAndTotalUndue();
+        if len(nameFeeList) != 0:
+            msgExp = []
+            player = Player()
+            for item in nameFeeList:
+                email = player.getItems({'name': item['_id'], 'email': {'$gt': ''}}, {'email': 1, '_id': 0}, '_id')
+                if len(email) == 0:
+                    fExp = item['_id'] + ' 余额为 ' + str(item['total']) + ' 元，未发送缴费提醒邮件。'
+                    flash(fExp, 'danger')
+                else:
+                    e = email[0]['email']
+                    msgExp.append({
+                        "subject": "队费通知",
+                        "addr": e,
+                        "msgHTML": "<h3>亲爱的 " + item['_id'] + "，</h3><p>绿动北京提醒您，</p><p>截至目前，您的队费余额为 " + str(
+                            item['total']) + "元，该交费了哦。</p>"
+                    })
+                    fExp = item['_id'] + ' 余额为 ' + str(item['total']) + ' 元，已发送提醒邮件至 ' + e +' 。'
+                    flash(fExp, 'warning')
+
+            if len(msgExp) != 0:
+                sendMail(msgExp)
+
+        elif len(nameFeeList) == 0:
+            flash('没有队员欠费，未发送缴费提醒邮件。', 'info')
+
         return redirect("/editfee")
     else:
         return redirect("/auth/login")

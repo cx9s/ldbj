@@ -7,14 +7,14 @@
 
         <section class="jumbotron">
             <h1 class="h1" style="text-align: center;">更新球队费用</h1>
-            {% with success = get_flashed_messages(category_filter=['success']) %}
-                {% if success %}
-                    <div class="alert alert-success">
+            {% for message in get_flashed_messages(with_categories=True) %}
+                {% if success or warning or danger %}
+                    <div class="alert alert-{{ message[0] }}">
                         <button type="button" class="close" data-dismiss="alert">&times;</button>
-                        {{ success[0] }}
+                        {{ message[1] }}
                     </div>
-                {% endif %}
-            {% endwith %}
+                {% endif%}
+            {% endfor %}
 
             <hr class="my-4">
 
