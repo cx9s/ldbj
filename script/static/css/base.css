@@ -3,4 +3,4 @@ html {background-color: #eee;}
 .navbar-brand {background: url(../img/ldLogo.png) 0 0 no-repeat; background-size: contain; -moz-background-size: contain; -o-background-size: contain;
     -webkit-background-size: contain; padding-left: 36px;}
 
-h1.index { text-align: center; color: #0d823b;}
+h1.index { color: #0d823b;}
