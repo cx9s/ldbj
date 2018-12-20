@@ -1,0 +1,140 @@
+{% extends 'base.html' %}
+{% set active_page = 'attend' %}
+{% block head %} {% endblock %}
+{% block style %} {% endblock %}
+
+{% block body %}
+        <section class="jumbotron">
+            <h1 class="display-6" style="text-align: center;">出勤统计</h1>
+            <form action="javascript:get_attend();">
+                <fieldset>
+                    <div class="form-group">
+                        <label class="col-form-label" for="dateStart">开始日期</label>
+                        <input type="date" class="form-control" required placeholder="" min="0" id="dateStart" name="dateStart">
+                    </div>
+                    <div class="form-group">
+                        <label class="col-form-label" for="dateEnd">结束日期</label>
+                        <input type="date" class="form-control" required placeholder="" min="0" id="dateEnd" name="dateEnd">
+                    </div>
+                    <div class="invalid-feedback" id="dateInvalid">请确保"开始日期"早于"结束日期"。</div>
+                    <button class="btn btn-secondary my-2 my-sm-0" type="submit">Search</button>
+                </fieldset>
+            </form>
+
+            <hr class="my-4">
+
+            <div id="attendList" style=" width: 100%;">
+
+            </div>
+        </section>
+
+{% endblock %}
+
+{% block jscript %}
+<script src="https://www.amcharts.com/lib/4/core.js"></script>
+<script src="https://www.amcharts.com/lib/4/charts.js"></script>
+<script src="https://www.amcharts.com/lib/4/themes/animated.js"></script>
+
+<script language="JavaScript" type="application/javascript">
+
+$(function(){
+    //set #date to today
+    var now = new Date();
+    var month = (now.getMonth() + 1);
+    var day = now.getDate();
+    if (month < 10)
+        month = "0" + month;
+    if (day < 10)
+        day = "0" + day;
+    var today = now.getFullYear() + '-' + month + '-' + day;
+    $('#dateEnd').val(today);
+    $('#dateStart').val('2012-01-01');
+
+});
+
+
+function drawChart(data, height){
+    am4core.useTheme(am4themes_animated);
+    var chart = am4core.create("attendList", am4charts.XYChart);
+    chart.scrollbarY = new am4core.Scrollbar();
+
+    // Add data
+    chart.data = data;
+
+    // Create axes
+    var categoryAxis = chart.yAxes.push(new am4charts.CategoryAxis());
+    categoryAxis.dataFields.category = "_id";
+    categoryAxis.renderer.grid.template.location = 0;
+    categoryAxis.renderer.minGridDistance = 20;
+    categoryAxis.renderer.labels.template.horizontalCenter = "right";
+    categoryAxis.renderer.labels.template.verticalCenter = "middle";
+    categoryAxis.renderer.labels.template.rotation = 0;
+    categoryAxis.tooltip.disabled = true;
+    categoryAxis.renderer.minHeight = 110;
+
+    var valueAxis = chart.xAxes.push(new am4charts.ValueAxis());
+    valueAxis.renderer.minWidth = 50;
+    valueAxis.renderer.labels.template.dy = -height + 50;
+    //valueAxis.title.text = "出勤次数";
+
+    // Create series
+    var series = chart.series.push(new am4charts.ColumnSeries());
+    series.sequencedInterpolation = true;
+    series.dataFields.categoryY = "_id";
+    series.dataFields.valueX = "total";
+    series.tooltipText = "[{categoryY}: bold]{categoryY}：{valueX}[/]";
+    series.columns.template.strokeWidth = 0;
+
+    series.tooltip.pointerOrientation = "vertical";
+
+    series.columns.template.column.cornerRadiusTopRight = 10;
+    series.columns.template.column.cornerRadiusBottomRight = 10;
+    series.columns.template.column.fillOpacity = 0.8;
+
+    // on hover, make corner radiuses bigger
+    var hoverState = series.columns.template.column.states.create("hover");
+    hoverState.properties.cornerRadiusTopRight = 0;
+    hoverState.properties.cornerRadiusBottomRight = 0;
+    hoverState.properties.fillOpacity = 1;
+
+    series.columns.template.adapter.add("fill", function(fill, target){
+    return chart.colors.getIndex(target.dataItem.index);
+    })
+
+    // Cursor
+    chart.cursor = new am4charts.XYCursor();
+
+
+};
+
+function get_attend() {
+    dateStart = $('#dateStart').val();
+    dateEnd = $('#dateEnd').val();
+    if (Date.parse(new Date(dateStart)) >= Date.parse(new Date(dateEnd))){
+        $('#dateInvalid').show();
+    }else{
+        $.ajax({
+            url: "/api/attend?dateStart="+dateStart+"&dateEnd="+dateEnd,
+            type: "GET",
+            dataType: "json",
+            success: function (data) {
+                console.log(data)
+                var str = '';
+                for (var i = 0; i < data.length; i++) {
+                    str += '<p>'+data[i]._id+' : '+data[i].total+'</p>';
+                }
+                height = data.length * 32
+                $('#attendList').css('height', height+'px');
+                drawChart(data, height);
+            },
+            error: function (response, status, error) {
+                console.log('Error: ' + error + ". Status: " + status);
+            },
+            async: false
+        });
+    }
+};
+
+</script>
+
+{% endblock %}

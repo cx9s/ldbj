@@ -27,37 +27,47 @@
         <span class="navbar-toggler-icon"></span>
       </button>
 
-        {% if current_user.username == 'admin' %}
-            {% set navigation = [
-                                ('/', 'index', '首页'),
-                                ('/player', 'player', '球员信息'),
-                                ('/fee', 'fee', '队费查询'),
-                                ('/video', 'video', '精彩视频'),
-                                ('/about', 'about', '球队章程'),
-                                ('/editplayer', 'editplayer', '修改球员'),
-                                ('/editfee', 'editfee', '更新队费'),
-                                ('/auth/logout', 'logout', '退出登录'),
-                                ] -%}
-
-            {% else %}
-            {% set navigation = [
-                                ('/', 'index', '首页'),
-                                ('/player', 'player', '球员信息'),
-                                ('/fee', 'fee', '队费查询'),
-                                ('/video', 'video', '精彩视频'),
-                                ('/about', 'about', '球队章程'),
-                                ('/auth/login', 'login', '管理员登录')
-                                ] -%}
-        {% endif%}
-
         {% set active_page = active_page|default('index') -%}
+
       <div class="collapse navbar-collapse" id="navbarColor03">
         <ul class="navbar-nav mr-auto">
-            {% for href, id, caption in navigation %}
-            <li class="nav-item{%if id == active_page %} active{% endif %}">
-                <a class="nav-link" href="{{href|e}}">{{caption|e}}</a>
+            <li class="nav-item">
+                <a class="nav-link {%if active_page == 'index' %}active{% endif %}" href="/">首页</a>
             </li>
-            {% endfor %}
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle {%if active_page == 'player' or active_page == 'fee' or active_page == 'attend' %}active{% endif %}" data-toggle="dropdown" href="#">绿动球员</a>
+                <div class="dropdown-menu">
+                    <a class="dropdown-item {%if active_page == 'player' %}active{% endif %}" href="/player">球员资料</a>
+                    <a class="dropdown-item {%if active_page == 'fee' %}active{% endif %}" href="/fee">队费查询</a>
+                    <a class="dropdown-item {%if active_page == 'attend' %}active{% endif %}" href="/attend">出勤统计</a>
+                </div>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="https://i.youku.com/i/UMjg4MDczMjQ4/videos?spm=a2hzp.8253876.0.0" target="_blank">精彩视频</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link {%if active_page == 'about' %}active{% endif %}" href="/about">球队章程</a>
+            </li>
+
+            {% if current_user.username == 'admin' %}
+
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle {%if active_page == 'editplayer' or active_page == 'editfee' %}active{% endif %}" data-toggle="dropdown" href="#">管理员</a>
+                <div class="dropdown-menu">
+                    <a class="dropdown-item {%if active_page == 'editplayer' %}active{% endif %}" href="/editplayer">修改球员</a>
+                    <a class="dropdown-item {%if active_page == 'editfee' %}active{% endif %}" href="/editfee">更新队费</a>
+                    <a class="dropdown-item" href="/auth/logout">退出登录</a>
+                </div>
+            </li>
+
+            {% else %}
+
+            <li class="nav-item">
+                <a class="nav-link {%if active_page == 'login' %}active{% endif %}" href="/auth/login">管理员登录</a>
+            </li>
+
+            {% endif %}
+
         </ul>
       </div>
     </nav>

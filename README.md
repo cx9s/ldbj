@@ -1,6 +1,7 @@
 # ldbj
 
-#mail
+#updata elements by https://bootswatch.com/spacelab/
 #Statistics
-#bootstrap(fcguoan.com)
+#bootstrap
+#deeper jinja2 template
 #react

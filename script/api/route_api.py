@@ -5,6 +5,7 @@ from script.models.mongodb import Player, Fee
 import re
 import functools
 from script.models.mail import sendMail
+from bson.son import SON
 
 
 # restful api
@@ -337,3 +338,16 @@ def testmail():
         ]
     sendMail(msgExp)
     return 'success'
+
+
+#statistics
+@api.route("/attend")
+def attend():
+    dateStart = request.args.get('dateStart')
+    dateEnd = request.args.get('dateEnd')
+    match = {'$and':[{'date':{'$gte': dateStart,'$lt': dateEnd}}, {'amount':{'$lt': 0}}]}
+    group = {'_id': "$%s" % 'name','total': {'$sum': 1}}
+    sort = SON([('total', 1), ('name', 1)])
+    fee = Fee()
+    res_list = fee.getAggregate(match, group, sort)
+    return jsonify(res_list)

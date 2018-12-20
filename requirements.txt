@@ -2,7 +2,7 @@ Flask==0.12
 flask-socketio
 flask-mail==0.9.1
 Flask-PageDown==0.2.2
-Flask-Admin==1.4.2
+Flask-Admin==1.5.2
 Flask-Moment==0.5.1
 itsdangerous==0.24
 Jinja2==2.8

@@ -6,7 +6,6 @@ from flask_login import UserMixin
 from flask import jsonify
 import uuid
 
-
 def connectDB():
     client = pymongo.MongoClient(MONGODB_URI,
                                  connectTimeoutMS = 30000,
@@ -105,6 +104,13 @@ class Fee:
         group = {'_id': "$%s" % 'name','total': {'$sum': '$amount'}}
         match = {'total': {'$lte': 0}}
         cursor = self.collection.aggregate([{'$group': group},{'$match': match}])
+        res_list = []
+        for item in cursor:
+            res_list.append(item)
+        return res_list
+
+    def getAggregate(self, match, group, sort):
+        cursor = self.collection.aggregate([{'$match': match}, {'$group': group}, {'$sort': sort}])
         res_list = []
         for item in cursor:
             res_list.append(item)

@@ -15,6 +15,10 @@ def player():
 def fee():
     return render_template('fee.html')
 
+@main.route('/attend')
+def attend():
+    return render_template('attend.html')
+
 @main.route('/video')
 def video():
     return render_template('video.html')

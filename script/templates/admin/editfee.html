@@ -7,14 +7,16 @@
 
         <section class="jumbotron">
             <h1 class="display-6" style="text-align: center;">更新球队费用</h1>
-            {% for message in get_flashed_messages(with_categories=True) %}
-                {% if success or warning or danger %}
-                    <div class="alert alert-{{ message[0] }}">
-                        <button type="button" class="close" data-dismiss="alert">&times;</button>
-                        {{ message[1] }}
-                    </div>
-                {% endif%}
-            {% endfor %}
+            {% with messages = get_flashed_messages(with_categories=true) %}
+                {% if messages %}
+                    {% for category, msg in messages %}
+                        <div class="alert alert-{{ category }}">
+                            <button type="button" class="close" data-dismiss="alert">&times;</button>
+                            {{ msg }}
+                        </div>
+                    {% endfor %}
+                {% endif %}
+            {% endwith %}
 
             <hr class="my-4">
 
@@ -31,7 +33,15 @@
                     </div>
                     <div class="form-group">
                         <label class="col-form-label" for="totalAmount">总金额</label>
-                        <input type="number" class="form-control" required placeholder="" step="0.1" id="totalAmount" name="totalAmount">
+                        <div class="input-group mb-3">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text">￥</span>
+                        </div>
+                        <input type="number" class="form-control" required placeholder="" step="1" id="totalAmount" name="totalAmount">
+                        <div class="input-group-append">
+                            <span class="input-group-text">.00</span>
+                        </div>
+                        </div>
                         <p class="text-danger">扣款填复数（-），充值填正数（+）。</p>
                     </div>
                     <div class="form-group">
