@@ -1,4 +1,4 @@
-from flask import request, redirect, render_template, url_for
+from flask import request, redirect, render_template, url_for, get_flashed_messages
 from script.models.mongodb import User
 from script.models.form import LoginForm
 from flask_login import login_user, logout_user, login_required, current_user
@@ -24,6 +24,8 @@ def login():
         remember_me = request.form.get('remember_me', False)
         user = User(user_name)
         if user.verify_password(password):
+            #clear login alert message
+            get_flashed_messages();
             login_user(user)
             return redirect(request.args.get('next') or url_for('main.index'))
     return render_template('admin/login.html', title="Sign In", form=form)

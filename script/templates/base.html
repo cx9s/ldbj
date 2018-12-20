@@ -48,26 +48,20 @@
             <li class="nav-item">
                 <a class="nav-link {%if active_page == 'about' %}active{% endif %}" href="/about">球队章程</a>
             </li>
-
-            {% if current_user.username == 'admin' %}
-
             <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle {%if active_page == 'editplayer' or active_page == 'editfee' %}active{% endif %}" data-toggle="dropdown" href="#">管理员</a>
+                <a class="nav-link dropdown-toggle {%if active_page == 'editplayer' or active_page == 'editfee' %}active{% endif %}" data-toggle="dropdown" href="#">管理员功能</a>
                 <div class="dropdown-menu">
                     <a class="dropdown-item {%if active_page == 'editplayer' %}active{% endif %}" href="/editplayer">修改球员</a>
                     <a class="dropdown-item {%if active_page == 'editfee' %}active{% endif %}" href="/editfee">更新队费</a>
+
+                    {% if current_user.username == 'admin' %}
+
                     <a class="dropdown-item" href="/auth/logout">退出登录</a>
+
+                    {% endif %}
+
                 </div>
             </li>
-
-            {% else %}
-
-            <li class="nav-item">
-                <a class="nav-link {%if active_page == 'login' %}active{% endif %}" href="/auth/login">管理员登录</a>
-            </li>
-
-            {% endif %}
-
         </ul>
       </div>
     </nav>

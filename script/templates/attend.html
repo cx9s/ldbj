@@ -56,7 +56,7 @@ $(function(){
 function drawChart(data, height){
     am4core.useTheme(am4themes_animated);
     var chart = am4core.create("attendList", am4charts.XYChart);
-    chart.scrollbarY = new am4core.Scrollbar();
+    chart.scrollbarX = new am4core.Scrollbar();
 
     // Add data
     chart.data = data;
@@ -74,7 +74,7 @@ function drawChart(data, height){
 
     var valueAxis = chart.xAxes.push(new am4charts.ValueAxis());
     valueAxis.renderer.minWidth = 50;
-    valueAxis.renderer.labels.template.dy = -height + 50;
+    valueAxis.renderer.labels.template.dy = -height + 45;
     //valueAxis.title.text = "出勤次数";
 
     // Create series
@@ -85,7 +85,7 @@ function drawChart(data, height){
     series.tooltipText = "[{categoryY}: bold]{categoryY}：{valueX}[/]";
     series.columns.template.strokeWidth = 0;
 
-    series.tooltip.pointerOrientation = "vertical";
+    //series.tooltip.pointerOrientation = "vertical";
 
     series.columns.template.column.cornerRadiusTopRight = 10;
     series.columns.template.column.cornerRadiusBottomRight = 10;
