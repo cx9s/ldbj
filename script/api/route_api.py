@@ -347,7 +347,12 @@ def attend():
     dateEnd = request.args.get('dateEnd')
     match = {'$and':[{'date':{'$gte': dateStart,'$lt': dateEnd}}, {'amount':{'$lt': 0}}]}
     group = {'_id': "$%s" % 'name','total': {'$sum': 1}}
-    sort = SON([('total', 1), ('name', 1)])
+    sort = SON([('total', -1), ('name', 1)])
+    groupTotal = {'_id': "$%s" % 'date','total': {'$sum': 1}}
+    sortTotal = SON([('_id', 1)])
     fee = Fee()
     res_list = fee.getAggregate(match, group, sort)
+    total = fee.getAggregate(match, groupTotal, sortTotal)
+    for item in res_list:
+        item['percent'] = format(round(item['total']/len(total), 3), '.0%')
     return jsonify(res_list)
