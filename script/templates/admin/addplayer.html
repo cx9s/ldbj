@@ -1,12 +1,12 @@
 {% extends 'base.html' %}
-{% set active_page = 'editplayer' %}
+{% set active_page = 'addplayer' %}
 {% block head %} {% endblock %}
 {% block style %} {% endblock %}
 
 {% block body %}
 
         <section class="jumbotron">
-            <h1 class="display-6" style="text-align: center;">修改球员信息</h1>
+            <h1 class="display-6" style="text-align: center;">新增球员</h1>
             {% with success = get_flashed_messages(category_filter=['success']) %}
                 {% if success %}
                     <div class="alert alert-success">
@@ -15,34 +15,31 @@
                     </div>
                 {% endif %}
             {% endwith %}
-            <form class="form-inline my-2 my-lg-0" action="javascript:get_player($('#playerList').val());">
-                <div class="form-group">
-                    <select class="custom-select form-control mr-2" style="max-width: 50%;" id="playerList">
-                        <option selected="" value="">请选择</option>
-                        <!--<option value="陈譞">陈譞</option>-->
-                    </select>
-
-                    <button class="btn btn-secondary my-2 my-sm-0" type="submit">Search</button>
-                </div>
-            </form>
 
             <hr class="my-4">
 
-            <form method="post" action="api/edit_player">
+            <form method="post" action="api/add_player">
                 <fieldset>
-                    <legend>全部信息</legend>
+                    <legend>球员信息</legend>
                     <div class="form-group">
                         <label class="col-form-label" for="name">球员姓名</label>
-                        <input type="text" class="form-control" required readonly placeholder="" id="name" name="name">
+                        <input type="text" class="form-control" required placeholder="" id="name" name="name">
                     </div>
                     <div class="form-group">
-                        <label class="col-form-label" for="num">球衣号码</label>
+                        <label class="col-form-label" for="num">球衣号码（号码为"0"将球员下放到预备队，例"奥托"。号码大于"0"则显示在球员资料及队费页。）</label>
                         <input type="number" class="form-control" required placeholder="" min="0" id="num" name="num">
-                        <p class="text-danger">号码修改为"0"将球员下放到预备队，例"奥托"。号码大于"0"则显示在球员资料及队费页。</p>
+                        <p class="text-danger" id="checkText">请输入球员号码。</p>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-form-label" for="playerList">查看现有球员号码</label>
+                        <select class="custom-select form-control mr-2" style="max-width: 50%;" id="playerList" name="playerList">
+                            <option selected="" value="">查看</option>
+                            <!--<option value="陈譞">陈譞</option>-->
+                        </select>
                     </div>
                     <div class="form-group">
                         <label for="position">场上位置</label>
-                            <select multiple class="form-control" required id="position" name="position">
+                        <select multiple class="form-control" required id="position" name="position">
                             <option value="GK">守门员</option>
                             <option value="CB">中后卫</option>
                             <option value="SB">边后卫</option>
@@ -80,7 +77,7 @@
                         <input type="text" class="form-control" required placeholder="" id="addr" name="addr">
                     </div>
                     <input type="hidden" name="csrf_token" value="{{ csrf_token() }}" />
-                    <button type="submit" class="btn btn-primary">确认修改</button>
+                    <button type="submit" class="btn btn-primary">确认</button>
                 </fieldset>
             </form>
 
@@ -111,31 +108,26 @@ $(function(){
 	});
 });
 
-//get a player details
-function get_player(name) {
-    if ( name && name != '') {
+
+$('#num').on('input propertychange',function () {
+    num = $('#num').val();
+    if (num == '' || num == 'e'){
+        $('#checkText').text('请输入球员号码。');
+    }else if (num == 0){
+        $('#checkText').text('"0"可用，球员将下放到预备队。');
+    }else if(num > 0){
         $.ajax({
-            url: "/api/get_player_by_name?n=" + name,
+            url: "/api/check_num_exist?n="+num,
             type: "GET",
             dataType: "json",
             success: function (data) {
-                var res_player = data[0];
-                $('#name').val(res_player.name);
-                $('#num').val(res_player.num);
-
-                for (var i in res_player.position){
-                    $("#position option").each(function(){
-                        if($(this).val() == res_player.position[i]){
-                            $(this).attr("selected",true);
-                        }
-                    });
+                console.log(data)
+                if(data.valid){
+                    $('#checkText').text('该号码可用。');
                 }
-
-                $('#dob').val(res_player.dob);
-                $('#phone').val(res_player.phone);
-                $('#addr').val(res_player.addr);
-                $('#email').val(res_player.email);
-
+                else{
+                    $('#checkText').text('该号码已被占用。点击下面查看已有号码。');
+                }
             },
             error: function (response, status, error) {
                 console.log('Error: ' + error + ". Status: " + status);
@@ -143,7 +135,8 @@ function get_player(name) {
             async: false
         });
     }
-}
+
+});
 
 </script>
 {% endblock %}

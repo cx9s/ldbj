@@ -27,6 +27,11 @@ def video():
 def about():
     return render_template('about.html')
 
+@main.route('/addplayer')
+@login_required
+def addplayer():
+    return render_template('admin/addplayer.html')
+
 @main.route('/editplayer')
 @login_required
 def editplayer():

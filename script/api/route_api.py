@@ -6,6 +6,7 @@ import re
 import functools
 from script.models.mail import sendMail
 from bson.son import SON
+from flask_login import current_user
 
 
 # restful api
@@ -206,9 +207,18 @@ def del_fee(name, date):
 # restful api end
 
 @api.route('/get_name_num_list')
-def get_name_list():
+def get_name_num_list():
     player = Player()
     queryExp = {'num':{'$gt':0}}
+    itemsExp = {"name":1, "num":1, "_id":0}
+    res_list = player.getItems(queryExp, itemsExp, 'num')
+    return jsonify(res_list)
+
+#all players including whose num is 0
+@api.route('/get_name_num_all_list')
+def get_name_num_all_list():
+    player = Player()
+    queryExp = {}
     itemsExp = {"name":1, "num":1, "_id":0}
     res_list = player.getItems(queryExp, itemsExp, 'num')
     return jsonify(res_list)
@@ -222,14 +232,58 @@ def get_player_by_name():
     return jsonify(res_list)
 
 
-from flask_login import current_user
-
 @api.route('/get_feeList_by_name')
 def get_feeList_by_name():
     name = request.args.get('n')
     fee = Fee()
     res_list = fee.getAndSort({"name":name}, [('date', -1)])
     return jsonify(res_list)
+
+
+@api.route('/check_num_exist')
+def check_num_exist():
+    num = int(request.args.get('n'))
+    player = Player()
+    res_list = player.get({"num":num})
+    print(res_list)
+    if len(res_list) == 0:
+        return jsonify({'valid':True})
+    else:
+        return jsonify({'valid':False})
+
+
+@api.route('/add_player', methods=['POST'])
+def add_newplayer():
+    if current_user.is_authenticated:
+        request_json = {key: dict(request.form)[key][0] for key in dict(request.form)}
+        query_json = {
+            "name":"",
+            "num":0,
+            "dob":"",
+            "position":[],
+            "phone":0,
+            "email":"",
+            "addr":""
+        }
+        name = request_json['name']
+        query_json['name'] = name
+        query_json['num'] = int(request_json['num'])
+        query_json['dob'] = request_json['dob']
+
+        posList = request.form.getlist('position')
+        for index, item in enumerate(posList):
+            query_json['position'].append(item)
+
+        query_json['phone'] = int(request_json['phone'])
+        query_json['email'] = request_json['email']
+        query_json['addr'] = request_json['addr']
+
+        player = Player()
+        player.insertOne(query_json)
+        flash('新增 ' +name+' 成功！', 'success')
+        return redirect("/addplayer")
+    else:
+        return redirect("/auth/login")
 
 
 @api.route('/edit_player', methods=['POST'])

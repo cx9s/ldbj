@@ -49,8 +49,9 @@
                 <a class="nav-link {%if active_page == 'about' %}active{% endif %}" href="/about">球队章程</a>
             </li>
             <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle {%if active_page == 'editplayer' or active_page == 'editfee' %}active{% endif %}" data-toggle="dropdown" href="#">管理员功能</a>
+                <a class="nav-link dropdown-toggle {%if active_page == 'addplayer' or active_page == 'editplayer' or active_page == 'editfee' %}active{% endif %}" data-toggle="dropdown" href="#">管理员功能</a>
                 <div class="dropdown-menu">
+                    <a class="dropdown-item {%if active_page == 'addplayer' %}active{% endif %}" href="/addplayer">新增球员</a>
                     <a class="dropdown-item {%if active_page == 'editplayer' %}active{% endif %}" href="/editplayer">修改球员</a>
                     <a class="dropdown-item {%if active_page == 'editfee' %}active{% endif %}" href="/editfee">更新队费</a>
 
