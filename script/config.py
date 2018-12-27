@@ -23,10 +23,11 @@ ENABLE_MAIL_NOTICE = False
 # the host of mail server
 MAIL_SERVER = 'smtp.qq.com'
 # default sender
-MAIL_DEFAULT_SENDER = '3420225518@qq.com'
-MAIL_USERNAME = '3420225518@qq.com'
+MAIL_DEFAULT_SENDER = 'ldbjfc@qq.com'
+MAIL_USERNAME = 'ldbjfc@qq.com'
 # the password of default sender
 MAIL_PASSWORD = 'iysumtueunjedbjj'
+MAIL_FROM_NAME = '绿动北京足球俱乐部'
 MAIL_PORT = 465
 MAIL_USE_TLS = False
 MAIL_USE_SSL = True
