@@ -355,7 +355,7 @@ def edit_fee():
                 else:
                     e = email[0]['email']
                     msgExp.append({
-                        "subject": "队费通知",
+                        "subject": "【绿动北京】队费通知",
                         "addr": e,
                         "msgHTML": "<h3>亲爱的 " + item['_id'] + "，</h3><p>绿动北京提醒您，</p><p>截至目前，您的队费余额为 " + str(
                             item['total']) + "元，该交费了哦。</p>"

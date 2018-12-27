@@ -21,12 +21,12 @@ SECONDS = 900
 # the flag whether open email notification
 ENABLE_MAIL_NOTICE = False
 # the host of mail server
-MAIL_SERVER = 'smtp.sina.com'
+MAIL_SERVER = 'smtp.qq.com'
 # default sender
-MAIL_DEFAULT_SENDER = 'liqi723@sina.com'
-MAIL_USERNAME = 'liqi723@sina.com'
+MAIL_DEFAULT_SENDER = '3420225518@qq.com'
+MAIL_USERNAME = '3420225518@qq.com'
 # the password of default sender
-MAIL_PASSWORD = 'liqi0723'
+MAIL_PASSWORD = 'iysumtueunjedbjj'
 MAIL_PORT = 465
 MAIL_USE_TLS = False
 MAIL_USE_SSL = True
