@@ -7,7 +7,7 @@
     <section class="jumbotron">
         <h1 class="display-6" style="text-align: center;">管理员登录</h1>
         <hr class="my-4">
-        <form action="{{ url_for("auth.login", next=request.args.get('next')) }}" method="post" name="login">
+        <form action="{{ url_for('auth.login', next=request.args.get('next')) }}" method="post" name="login">
             {{ form.csrf_token }}
             <p>
                 {{ form.username.label }}<br>

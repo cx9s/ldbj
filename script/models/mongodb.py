@@ -1,5 +1,5 @@
 import pymongo
-from script.config import MONGODB_URI
+from script.config import MONGODB_URI, MONGODB_DB
 from werkzeug.security import generate_password_hash
 from werkzeug.security import check_password_hash
 from flask_login import UserMixin
@@ -7,12 +7,17 @@ from flask import jsonify
 import uuid
 
 def connectDB():
+    """
     client = pymongo.MongoClient(MONGODB_URI,
                                  connectTimeoutMS = 30000,
                                  socketTimeoutMS = None,
                                  socketKeepAlive = True)
     db = client.get_default_database()
-    return  db
+
+"""
+    client = pymongo.MongoClient(MONGODB_URI)
+    db = client.get_database(MONGODB_DB)
+    return db
 
 
 #player model

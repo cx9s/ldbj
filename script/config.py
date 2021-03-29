@@ -14,7 +14,8 @@ SQLALCHEMY_DATABASE_URI = 'sqlite:///projdb.sqlite'
 PAGESIZE = 50
 
 # $heroku config:get MONGODB_URI
-MONGODB_URI = 'mongodb://heroku_m90g1d47:jc639222qm88pkui341ek34ser@ds147190.mlab.com:47190/heroku_m90g1d47'
+MONGODB_URI = 'mongodb+srv://cx9:cx9830918@ldbj.fybgy.mongodb.net/ldbj?retryWrites=true&w=majority'
+MONGODB_DB = 'ldbj'
 
 SECONDS = 900
 

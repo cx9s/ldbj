@@ -69,7 +69,7 @@ def main():
 
     player = Player()
     for row in resList:
-       player.insert(row)
+       player.insertOne(row)
 
 
     print('~~~~~~~main end~~~~~~~')

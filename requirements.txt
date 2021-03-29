@@ -14,8 +14,8 @@ flask_sqlalchemy
 PyMySQL==0.7.9
 oauth2client>=2.0.0
 Markdown==2.6.7
+PyMongo==3.6.0
 Flask-PyMongo==0.5.1
-PyMongo==3.4.0
 xmljson
 gevent
 gunicorn
